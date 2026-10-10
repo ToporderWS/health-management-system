@@ -1,11 +1,52 @@
-# 个人健康管理系统（Personal Health Management System）
+# 个人健康管理系统
 
-版本：**V3.2 FINAL**
+**Personal Health Management System · V3.2 FINAL**
 
-一套覆盖 **普通用户（小程序）/ 医生 / 健身教练 / 管理员** 四角色、前后端分离的完整健康管理系统。
+> 基于 **UniApp + Vue3 + Flask + MySQL** 的四角色健康管理系统，包含微信小程序、医生工作台、健身教练工作台与管理员后台。
 
-本系统面向 **个人健康管理** 与 **毕业设计展示**，用于健康数据记录、健康趋势展示、医生与教练的
-人工健康管理建议，**不构成任何自动医疗诊断系统**。
+![Python](https://img.shields.io/badge/Python-Flask-3776AB?logo=python&logoColor=white) ![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vuedotjs&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white) ![UniApp](https://img.shields.io/badge/UniApp-WeChat%20Mini%20Program-07C160) ![Status](https://img.shields.io/badge/Project-V3.2%20FINAL-00875A)
+
+本项目用于**个人健康数据记录、趋势展示与毕业设计/学习演示**。医生和健身教练可以在授权关系内提供人工建议；系统不提供自动疾病诊断、处方或医疗决策。
+
+## 项目亮点
+
+- **四角色协同**：普通用户、医生、健身教练、管理员，各有独立登录与权限边界。
+- **双前端架构**：UniApp 微信小程序面向用户；Vue3 + Element Plus PC 端面向业务人员与管理员。
+- **真实数据可视化**：健康指标、睡眠、运动与健康计划使用 MySQL 数据展示趋势和统计。
+- **关系级数据隔离**：医生仅可访问已绑定患者；教练仅可访问已绑定学员；后端校验 JWT 角色与数据归属。
+- **完整管理后台**：12 个一级管理模块，覆盖审核、绑定、数据监管、内容运营和操作日志。
+- **工程化交付**：数据库初始化脚本、接口文档、自动化测试与部署说明。
+
+## 界面预览
+
+目前 README 未包含已入库的截图资源。建议将**脱敏后的真实界面截图**放入 `docs/screenshots/`，然后启用以下示例：
+
+```md
+![小程序首页](docs/screenshots/miniapp-home.png)
+![健康数据报告](docs/screenshots/miniapp-report.png)
+![PC 管理后台](docs/screenshots/admin-dashboard.png)
+```
+
+> 截图请隐藏手机号、真实姓名、头像及健康隐私信息；在图片文件确实上传到仓库之前，不使用失效的图片链接。
+
+## 快速导航
+
+- [四角色介绍](#一四角色介绍) · [技术栈](#二技术栈) · [项目目录](#三项目目录)
+- [环境准备](#四环境准备) · [数据库导入](#五数据库导入) · [后端启动](#六后端python-环境--依赖--env--启动)
+- [PC 端启动](#七pc-管理端启动) · [小程序启动](#八微信小程序启动hbuilderx)
+- [管理员模块](#十八管理员-12-个一级模块说明) · [验证脚本](#二十一验证脚本使用)
+- [安全配置](#二十三jwt_secret-配置与安全约定) · [验收结果](#二十四最终验收结果v32-final-封板)
+
+## 运行架构
+
+```text
+微信小程序（普通用户） ──────┐
+                             ├── Flask REST API（8080）── MySQL 8.0
+PC Web（医生 / 教练 / 管理员）─┘            │
+                                        └── static/upload 图片存储
+```
+
+> **公开仓库说明**：GitHub 仅存放源代码与非敏感示例配置。实际运行需要自行配置 MySQL、环境变量、后端服务与小程序局域网 IP；克隆仓库不代表系统已部署上线。
 
 ---
 
@@ -205,8 +246,8 @@ npm run preview        # 预览生产构建
 2. 修改 `miniapp/common/config.js`：
 
 ```js
-export const API_BASE_URL = 'http://192.168.2.219:8080/api'
-export const STATIC_BASE_URL = 'http://192.168.2.219:8080/static/upload/'
+export const API_BASE_URL = 'http://<你的电脑局域网IP>:8080/api'
+export const STATIC_BASE_URL = 'http://<你的电脑局域网IP>:8080/static/upload/'
 ```
 
 3. 运行时勾选「不校验合法域名」（微信开发者工具 → 详情 → 本地设置）。
@@ -248,21 +289,11 @@ export const STATIC_BASE_URL = 'http://192.168.2.219:8080/static/upload/'
 
 ---
 
-## 十二、测试账号
+## 十二、演示账号与初始化数据
 
-| 角色 | 账号 | 密码 | 状态 |
-| --- | --- | --- | --- |
-| 管理员 | `admin` | `123456` | — |
-| 医生 | `doctor001` | `123456` | 已审核通过（`audit_status=1`） |
-| 医生 | `doctor002` | `123456` | 已审核通过 |
-| 医生 | `doctor003` | `123456` | 待审核（`audit_status=0`，用于演示审核流程） |
-| 健身教练 | `coach001` | `123456` | 已审核通过 |
-| 健身教练 | `coach002` | `123456` | 已审核通过 |
-| 健身教练 | `coach003` | `123456` | 待审核 |
-| 普通用户 | `13800138001` | `123456` | 小林同学 |
-| 普通用户 | `13800138002` | `123456` | 阿may |
+项目初始化 SQL 包含用于本地教学演示的角色账号及示例数据。账号清单与初始化逻辑请查看 `database/health_management.sql`，**仅可在隔离的本地测试环境使用**。
 
-> ⚠️ **正式使用前必须修改以上全部测试密码**，并替换 `JWT_SECRET` 与数据库密码。
+> **安全提示**：示例密码不适合公网环境。部署前应更换全部初始化账号密码、数据库密码及 `JWT_SECRET`，禁用或移除不必要的演示账号，且不要将真实用户健康数据提交到公开仓库。
 
 ---
 
@@ -448,3 +479,11 @@ python -c "import secrets;print(secrets.token_urlsafe(64))"
 | 受保护数据（小林同学 / 阿may / 小孙 / 小周 + doctor001-003 + coach001-003 及绑定） | **INTACT** |
 
 **结论**：`PROJECT_FINAL_SEAL = PASS`。完整记录见 **`docs/FINAL_PROJECT_SEAL_REPORT.md`**。
+
+---
+
+## 使用范围与免责声明
+
+本项目面向学习、研究和毕业设计演示。所有健康指标、报告与建议仅供健康管理信息展示，不替代专业医疗诊断、治疗或急救服务。请勿将真实个人健康信息、账号凭据或生产数据库备份提交到公开仓库。
+
+**开源许可**：当前仓库未声明许可证；如需授权他人复制、修改或再分发，请在明确选择许可证后添加 `LICENSE` 文件。
