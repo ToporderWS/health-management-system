@@ -492,35 +492,21 @@ python -c "import secrets;print(secrets.token_urlsafe(64))"
 
 ---
 
-## 系统界面展示
-
-### PC 管理系统
-
-#### 系统入口
-![系统入口](docs/screenshots/后台首页.png)
-
-#### 管理员登录
-![管理员登录](docs/screenshots/管理员首页.png)
-
-#### 管理员工作台
-![管理员工作台](docs/screenshots/管理员后台页面.png)
-
-#### 医生端
-![医生端](docs/screenshots/医生端首页.png)
-
-#### 健身教练端
-![健身教练端](docs/screenshots/健身教练首页.png)
 
 ### 微信小程序
 
-#### 小程序首页
-![小程序首页](docs/screenshots/小程序首页.jpg)
+<table>
+  <tr>
+    <th>小程序首页</th>
+    <th>健康数据录入</th>
+    <th>健康数据报告</th>
+    <th>个人中心</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/小程序首页.jpg" width="190"></td>
+    <td><img src="docs/screenshots/数据录入.jpg" width="190"></td>
+    <td><img src="docs/screenshots/数据报告.jpg" width="190"></td>
+    <td><img src="docs/screenshots/个人中心.jpg" width="190"></td>
+  </tr>
+</table>
 
-#### 健康数据录入
-![健康数据录入](docs/screenshots/数据录入.jpg)
-
-#### 健康数据报告
-![健康数据报告](docs/screenshots/数据报告.jpg)
-
-#### 个人中心
-![个人中心](docs/screenshots/个人中心.jpg)
