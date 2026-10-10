@@ -1,0 +1,274 @@
+{
+  "before_ts": "2026-10-01 19:40:02",
+  "after_ts": "2026-10-01 19:42:45",
+  "count_delta": {
+    "users": {
+      "before": 13,
+      "after": 15,
+      "delta": 2
+    },
+    "doctor_user": {
+      "before": 18,
+      "after": 21,
+      "delta": 3
+    },
+    "coach_user": {
+      "before": 12,
+      "after": 14,
+      "delta": 2
+    },
+    "doctor_patient": {
+      "before": 7,
+      "after": 8,
+      "delta": 1
+    },
+    "coach_student": {
+      "before": 7,
+      "after": 8,
+      "delta": 1
+    },
+    "health_record": {
+      "before": 10,
+      "after": 11,
+      "delta": 1
+    },
+    "sleep_record": {
+      "before": 7,
+      "after": 8,
+      "delta": 1
+    },
+    "sport_record": {
+      "before": 12,
+      "after": 13,
+      "delta": 1
+    },
+    "health_plan": {
+      "before": 8,
+      "after": 9,
+      "delta": 1
+    },
+    "doctor_advice": {
+      "before": 6,
+      "after": 7,
+      "delta": 1
+    },
+    "medical_notice": {
+      "before": 6,
+      "after": 7,
+      "delta": 1
+    },
+    "medical_record": {
+      "before": 6,
+      "after": 7,
+      "delta": 1
+    },
+    "sport_goal": {
+      "before": 5,
+      "after": 6,
+      "delta": 1
+    },
+    "training_plan": {
+      "before": 6,
+      "after": 7,
+      "delta": 1
+    },
+    "fitness_advice": {
+      "before": 6,
+      "after": 7,
+      "delta": 1
+    },
+    "admin_operation_log": {
+      "before": 243,
+      "after": 264,
+      "delta": 21
+    }
+  },
+  "protected_check": {
+    "users": {
+      "intact": true,
+      "before": [
+        {
+          "id": 1,
+          "phone": "13800138001",
+          "nickname": "小林同学"
+        },
+        {
+          "id": 2,
+          "phone": "13800138002",
+          "nickname": "阿may"
+        },
+        {
+          "id": 12,
+          "phone": "13844475825",
+          "nickname": "小孙"
+        },
+        {
+          "id": 13,
+          "phone": "13814142525",
+          "nickname": "小周"
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "phone": "13800138001",
+          "nickname": "小林同学"
+        },
+        {
+          "id": 2,
+          "phone": "13800138002",
+          "nickname": "阿may"
+        },
+        {
+          "id": 12,
+          "phone": "13844475825",
+          "nickname": "小孙"
+        },
+        {
+          "id": 13,
+          "phone": "13814142525",
+          "nickname": "小周"
+        }
+      ]
+    },
+    "doctors": {
+      "intact": true,
+      "before": [
+        {
+          "id": 1,
+          "doctor_name": "doctor001",
+          "audit_status": 1
+        },
+        {
+          "id": 2,
+          "doctor_name": "doctor002",
+          "audit_status": 1
+        },
+        {
+          "id": 3,
+          "doctor_name": "doctor003",
+          "audit_status": 1
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "doctor_name": "doctor001",
+          "audit_status": 1
+        },
+        {
+          "id": 2,
+          "doctor_name": "doctor002",
+          "audit_status": 1
+        },
+        {
+          "id": 3,
+          "doctor_name": "doctor003",
+          "audit_status": 1
+        }
+      ]
+    },
+    "coaches": {
+      "intact": true,
+      "before": [
+        {
+          "id": 1,
+          "coach_name": "coach001",
+          "audit_status": 1
+        },
+        {
+          "id": 2,
+          "coach_name": "coach002",
+          "audit_status": 1
+        },
+        {
+          "id": 3,
+          "coach_name": "coach003",
+          "audit_status": 1
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "coach_name": "coach001",
+          "audit_status": 1
+        },
+        {
+          "id": 2,
+          "coach_name": "coach002",
+          "audit_status": 1
+        },
+        {
+          "id": 3,
+          "coach_name": "coach003",
+          "audit_status": 1
+        }
+      ]
+    },
+    "xiaozhou_doctors": {
+      "intact": true,
+      "before": [
+        {
+          "doctor_id": 2,
+          "user_id": 13
+        }
+      ],
+      "after": [
+        {
+          "doctor_id": 2,
+          "user_id": 13
+        }
+      ]
+    },
+    "xiaozhou_coaches": {
+      "intact": true,
+      "before": [
+        {
+          "coach_id": 1,
+          "user_id": 13
+        }
+      ],
+      "after": [
+        {
+          "coach_id": 1,
+          "user_id": 13
+        }
+      ]
+    },
+    "xiaozhou_biz": {
+      "intact": true,
+      "before": {
+        "health_record": 1,
+        "sleep_record": 1,
+        "sport_record": 1,
+        "health_plan": 1,
+        "doctor_advice": 1,
+        "medical_notice": 1,
+        "medical_record": 1,
+        "sport_goal": 0,
+        "training_plan": 1,
+        "fitness_advice": 1
+      },
+      "after": {
+        "health_record": 1,
+        "sleep_record": 1,
+        "sport_record": 1,
+        "health_plan": 1,
+        "doctor_advice": 1,
+        "medical_notice": 1,
+        "medical_record": 1,
+        "sport_goal": 0,
+        "training_plan": 1,
+        "fitness_advice": 1
+      }
+    }
+  },
+  "residual_after": {
+    "sec_users": 0,
+    "sec_doctors": 0,
+    "sec_coaches": 0
+  },
+  "all_intact": true
+}
+
+PROTECTED_ALL_INTACT = True

@@ -1,0 +1,251 @@
+{
+ "leftovers": [
+  {
+   "name": "__pycache__",
+   "type": "dir",
+   "files": 2
+  },
+  {
+   "name": "_append_mem.py",
+   "type": "file",
+   "size": 5739
+  },
+  {
+   "name": "_append_mem2.py",
+   "type": "file",
+   "size": 4248
+  },
+  {
+   "name": "_append_mem3.py",
+   "type": "file",
+   "size": 3408
+  },
+  {
+   "name": "_build2.log",
+   "type": "file",
+   "size": 988
+  },
+  {
+   "name": "_cmp_pixels.py",
+   "type": "file",
+   "size": 1660
+  },
+  {
+   "name": "_diag_fps.py",
+   "type": "file",
+   "size": 5932
+  },
+  {
+   "name": "_diag_overflow.py",
+   "type": "file",
+   "size": 5749
+  },
+  {
+   "name": "_diag_perf.py",
+   "type": "file",
+   "size": 7217
+  },
+  {
+   "name": "_diag_perf2.py",
+   "type": "file",
+   "size": 5397
+  },
+  {
+   "name": "_fix_anim_place.py",
+   "type": "file",
+   "size": 5072
+  },
+  {
+   "name": "_fix_verify.py",
+   "type": "file",
+   "size": 5143
+  },
+  {
+   "name": "_fix_verify2.py",
+   "type": "file",
+   "size": 4661
+  },
+  {
+   "name": "_fix_verify3.py",
+   "type": "file",
+   "size": 4381
+  },
+  {
+   "name": "_measure.log",
+   "type": "file",
+   "size": 672
+  },
+  {
+   "name": "_measure_anim_delta.py",
+   "type": "file",
+   "size": 4438
+  },
+  {
+   "name": "_mem.log",
+   "type": "file",
+   "size": 414
+  },
+  {
+   "name": "_patch_anim.py",
+   "type": "file",
+   "size": 10488
+  },
+  {
+   "name": "_patch_verify2.py",
+   "type": "file",
+   "size": 6472
+  },
+  {
+   "name": "_prep_illustrations.py",
+   "type": "file",
+   "size": 2859
+  },
+  {
+   "name": "_probe2.log",
+   "type": "file",
+   "size": 3331
+  },
+  {
+   "name": "_probe3.log",
+   "type": "file",
+   "size": 2542
+  },
+  {
+   "name": "_probe_click.py",
+   "type": "file",
+   "size": 12525
+  },
+  {
+   "name": "_probe_login.py",
+   "type": "file",
+   "size": 2059
+  },
+  {
+   "name": "_probe_login2.py",
+   "type": "file",
+   "size": 4286
+  },
+  {
+   "name": "_probe_login3.py",
+   "type": "file",
+   "size": 8104
+  },
+  {
+   "name": "_run_build2.py",
+   "type": "file",
+   "size": 2286
+  },
+  {
+   "name": "_shot_audit.py",
+   "type": "file",
+   "size": 7606
+  },
+  {
+   "name": "_shot_login.log",
+   "type": "file",
+   "size": 503
+  },
+  {
+   "name": "_shot_login.py",
+   "type": "file",
+   "size": 2819
+  },
+  {
+   "name": "_tune_anim.py",
+   "type": "file",
+   "size": 6777
+  },
+  {
+   "name": "_verify_anim.py",
+   "type": "file",
+   "size": 41642
+  },
+  {
+   "name": "_verify_login.py",
+   "type": "file",
+   "size": 38991
+  },
+  {
+   "name": "_verify_out",
+   "type": "dir",
+   "files": 54
+  },
+  {
+   "name": "_verify_portal.py",
+   "type": "file",
+   "size": 24656
+  },
+  {
+   "name": "anim_run4.log",
+   "type": "file",
+   "size": 9411
+  },
+  {
+   "name": "login_verify.log",
+   "type": "file",
+   "size": 19027
+  }
+ ],
+ "leftover_count": 37,
+ "plaintext_pwd_files": [
+  {
+   "file": "_probe3.log",
+   "n_lines": 2,
+   "sample": [
+    "[\"coach001\",\"123456\"]",
+    "点击前值 = [\"coach001\",\"123456\"]"
+   ]
+  },
+  {
+   "file": "_probe_click.py",
+   "n_lines": 1,
+   "sample": [
+    "PW = '123456'"
+   ]
+  },
+  {
+   "file": "_probe_login.py",
+   "n_lines": 5,
+   "sample": [
+    "print('=== 后端连通性 / 三角色登录探测（密码统一 123456）===')",
+    "('管理员', '/admin/login', {'admin_name': 'admin', 'password': '123456'}),",
+    "('医生', '/doctor/login', {'doctor_name': 'doctor001', 'password': '123456'}),",
+    "('教练', '/coach/login', {'coach_name': 'coach001', 'password': '123456'}),"
+   ]
+  },
+  {
+   "file": "_probe_login3.py",
+   "n_lines": 1,
+   "sample": [
+    "fill(ws, 1, '123456')"
+   ]
+  },
+  {
+   "file": "_shot_audit.py",
+   "n_lines": 1,
+   "sample": [
+    "ADMIN = ('admin', '123456')"
+   ]
+  },
+  {
+   "file": "_verify_login.py",
+   "n_lines": 1,
+   "sample": [
+    "PASSWORD = '123456'"
+   ]
+  },
+  {
+   "file": "login_verify.log",
+   "n_lines": 12,
+   "sample": [
+    "PASS  管理员页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['admin', '123456'] rect0={'x': 1189.453125, 'y': 409.09375, 'w': 270, 'h': 38, 'tag': '",
+    "PASS  医生页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['doctor001', '123456'] rect0={'x': 1189.453125, 'y': 399.609375, 'w': 270, 'h': 38, 'tag",
+    "PASS  健身教练页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['coach001', '123456'] rect0={'x': 1189.453125, 'y': 399.609375, 'w': 270, 'h': 38, 'ta",
+    "[diag] 健身教练 第 1 次提交未跳转：点击到达按钮 0 次 / snap={\"path\":\"/coach/login\",\"vals\":[\"coach001\",\"123456\"],\"form\":{\"coach_name\":\"coach001\",\"password\":\"123456\"},\"errors\":[],\"i"
+   ]
+  }
+ ],
+ "dist_file_count": 68,
+ "dist_contains_leftover": [],
+ "referenced_by_src": []
+}

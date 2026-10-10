@@ -1,0 +1,42 @@
+== BEFORE ==
+  users              4
+  doctor_user        5
+  coach_user         4
+  doctor_patient     3
+  coach_student      3
+  health_record      5
+  sleep_record       3
+  sport_record       7
+  health_plan        3
+  doctor_advice      2
+  medical_notice     2
+  medical_record     2
+  sport_goal         1
+  training_plan      2
+  fitness_advice     2
+
+== api_test 结果行 ==
+   测试汇总：共 199 项，PASS 198 项，FAIL 1 项
+   FAIL [清理] 本轮测试数据精确清理（TEMP_TEST_DATA_RESIDUE = 0）
+  exit code = 1
+
+== AFTER vs BEFORE ==
+  users              before=4    after=6    delta=2   <-- DELTA
+  doctor_user        before=5    after=8    delta=3   <-- DELTA
+  coach_user         before=4    after=6    delta=2   <-- DELTA
+  doctor_patient     before=3    after=3    delta=0
+  coach_student      before=3    after=3    delta=0
+  health_record      before=5    after=5    delta=0
+  sleep_record       before=3    after=3    delta=0
+  sport_record       before=7    after=7    delta=0
+  health_plan        before=3    after=3    delta=0
+  doctor_advice      before=2    after=2    delta=0
+  medical_notice     before=2    after=2    delta=0
+  medical_record     before=2    after=2    delta=0
+  sport_goal         before=1    after=1    delta=0
+  training_plan      before=2    after=2    delta=0
+  fitness_advice     before=2    after=2    delta=0
+  admin_operation_log before=303  after=324  (+21 审计留痕，允许)
+
+  PROTECTED_INTACT = True
+  BUSINESS_COUNT_RESTORED = False

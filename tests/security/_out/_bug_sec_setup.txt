@@ -1,0 +1,40 @@
+== 0. 清理历史 sec 测试数据（保证干净起点） ==
+无需清理：未发现 sec_ 测试实体
+== 1. 注册测试用户 ==
+  user  sec_user_a     id=56    http=200 注册成功
+  user  sec_user_b     id=57    http=200 注册成功
+== 2. 注册测试医生/教练 ==
+  doctor sec_doctor_a   id=80    http=200 注册申请已提交，请等待管理员审核。
+  doctor sec_doctor_b   id=81    http=200 注册申请已提交，请等待管理员审核。
+  coach sec_coach_a    id=58    http=200 注册申请已提交，请等待管理员审核。
+  coach sec_coach_b    id=59    http=200 注册申请已提交，请等待管理员审核。
+== 3. 管理员审核通过 ==
+  audit doctor id=80    http=200 审核通过
+  audit doctor id=81    http=200 审核通过
+  audit coach id=58    http=200 审核通过
+  audit coach id=59    http=200 审核通过
+== 4. 建立绑定关系 ==
+  bind  doctor 80-56 http=200 医患关系绑定成功
+  bind  doctor 81-57 http=200 医患关系绑定成功
+  bind  coach 58-56 http=200 教练学员关系绑定成功
+  bind  coach 59-57 http=200 教练学员关系绑定成功
+== 5. 造业务数据 ==
+
+== 准备完成 ==
+{
+ "created_at": "2026-10-01",
+ "pwd": "sec123456",
+ "users": {
+  "a": 56,
+  "b": 57
+ },
+ "doctors": {
+  "a": 80,
+  "b": 81
+ },
+ "coaches": {
+  "a": 58,
+  "b": 59
+ },
+ "admin": "admin"
+}

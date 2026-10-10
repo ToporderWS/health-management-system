@@ -1,0 +1,8 @@
+MODE = DRY-RUN ; 锚点 6/6 命中
+   [1] #   utils/config.js  = 全项目唯一 API 地址来源（读取 VITE_API_BASE_URL，并以相对 /api 兜底）
+   [1] #   .env.production  = 生产同源相对路径 /api（由同源 Web Server 反向代理到 Flask:8080）
+   [1] add("utils/config.js 读取 VITE_API_BASE_URL 并以相对 /api 兜底（不含硬编码 IP）",
+   [1]     and "'/api'" in cfg_src and "192.168." not in cfg_src, "")
+   [1] add(".env.production 使用同源相对路径 /api（不含硬编码 IP）",
+   [1]     "VITE_API_BASE_URL=/api" in prod and "192.168." not in prod, prod.strip()[:120])
+new_bytes = 11488

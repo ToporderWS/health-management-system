@@ -1,0 +1,5 @@
+  user    http=200 token=len=185
+  doctor  http=200 token=len=188
+  coach   http=200 token=len=187
+  admin   http=200 token=len=185
+old tokens saved -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\_jwt_old_tokens.json (4 roles)

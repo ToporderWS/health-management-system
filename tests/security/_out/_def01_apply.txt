@@ -1,0 +1,7 @@
+MODE = APPLY
+SRC  = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\management-web
+DEST = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\manual-probes
+
+[0] 清单文件缺失: ['_append_mem.py', '_append_mem2.py', '_append_mem3.py', '_build2.log', '_cmp_pixels.py', '_diag_fps.py', '_diag_overflow.py', '_diag_perf.py', '_diag_perf2.py', '_fix_anim_place.py', '_fix_verify.py', '_fix_verify2.py', '_fix_verify3.py', '_measure.log', '_measure_anim_delta.py', '_mem.log', '_patch_anim.py', '_patch_verify2.py', '_prep_illustrations.py', '_probe2.log', '_probe3.log', '_probe_click.py', '_probe_login.py', '_probe_login2.py', '_probe_login3.py', '_run_build2.py', '_shot_audit.py', '_shot_login.log', '_shot_login.py', '_tune_anim.py', '_verify_anim.py', '_verify_login.py', '_verify_portal.py', 'anim_run4.log', 'login_verify.log']
+[0] 白名单外未识别顶层项: 无
+!! 守卫失败 -> 整批中止，不执行任何操作

@@ -1,0 +1,7 @@
+MODE = APPLY ; 锚点 3/3 命中
+bytes: 31223 -> 37339  (delta +6116)
+lines: 528 -> 528
+   含 'STORAGE_ITEM_01_API_ADDRESS = PASS' ? True
+   含 '## 十二、存量事项① 处置记录' ? True
+   含 '已处置**（2026-10-01 19:40' ? True
+   含 '第 3 版（存量事项① 处置）' ? True

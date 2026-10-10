@@ -1,0 +1,61 @@
+MODE = DRY-RUN
+SRC  = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\management-web
+DEST = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\manual-probes
+
+[0] 清单文件缺失: 无
+[0] 白名单外未识别顶层项: 无
+
+[1] 明文口令文件取证（迁移前）
+  _probe_click.py      sha256=385088ec997646c8 size=12525 hit_lines=1
+  _probe_login.py      sha256=ff26a97678c224ca size=2059 hit_lines=5
+  _probe_login3.py     sha256=4e789f011f7c377f size=8104 hit_lines=1
+  _shot_audit.py       sha256=cd51e927072c2421 size=7606 hit_lines=1
+  _verify_login.py     sha256=c27f383c7de0a8d3 size=38991 hit_lines=1
+  _probe3.log          sha256=edd89aa221158f50 size=2542 hit_lines=2
+  login_verify.log     sha256=5b3464f4030946c8 size=19027 hit_lines=12
+
+[2] 将建立目标目录: C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\manual-probes
+
+[3] 迁移文件 (35 个)
+    (dry) move _append_mem.py
+    (dry) move _append_mem2.py
+    (dry) move _append_mem3.py
+    (dry) move _build2.log
+    (dry) move _cmp_pixels.py
+    (dry) move _diag_fps.py
+    (dry) move _diag_overflow.py
+    (dry) move _diag_perf.py
+    (dry) move _diag_perf2.py
+    (dry) move _fix_anim_place.py
+    (dry) move _fix_verify.py
+    (dry) move _fix_verify2.py
+    (dry) move _fix_verify3.py
+    (dry) move _measure.log
+    (dry) move _measure_anim_delta.py
+    (dry) move _mem.log
+    (dry) move _patch_anim.py
+    (dry) move _patch_verify2.py
+    (dry) move _prep_illustrations.py
+    (dry) move _probe2.log
+    (dry) move _probe3.log
+    (dry) move _probe_click.py
+    (dry) move _probe_login.py
+    (dry) move _probe_login2.py
+    (dry) move _probe_login3.py
+    (dry) move _run_build2.py
+    (dry) move _shot_audit.py
+    (dry) move _shot_login.log
+    (dry) move _shot_login.py
+    (dry) move _tune_anim.py
+    (dry) move _verify_anim.py
+    (dry) move _verify_login.py
+    (dry) move _verify_portal.py
+    (dry) move anim_run4.log
+    (dry) move login_verify.log
+    迁移成功 35 / 失败 0
+
+[4] 迁移目录 (1 个)
+    (dry) move _verify_out (54 files)
+
+[5] 删除纯 Python 编译缓存 (1 个)
+    (dry) rmtree __pycache__ (2 files)

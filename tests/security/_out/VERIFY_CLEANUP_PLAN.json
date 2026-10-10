@@ -1,0 +1,48 @@
+{
+  "users": [
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "doctors": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "coaches": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "child_rows_by_user_id": {
+    "health_record": 6,
+    "sleep_record": 3,
+    "sport_record": 3,
+    "health_plan": 4,
+    "doctor_advice": 3,
+    "medical_notice": 3,
+    "medical_record": 3,
+    "sport_goal": 3,
+    "training_plan": 3,
+    "fitness_advice": 3,
+    "doctor_patient": 3,
+    "coach_student": 3
+  },
+  "doctor_side_rows": {
+    "doctor_advice.doctor_id": 3,
+    "medical_notice.doctor_id": 3,
+    "medical_record.doctor_id": 3
+  },
+  "problems": [],
+  "safe": true
+}

@@ -1,0 +1,24 @@
+==== REPORT (index.vue, 9931 bytes, LF) ====
+  [OK ] weight-card          hit=1
+  [OK ] bp-card              hit=1
+  [OK ] sport-card           hit=1
+  [OK ] sporttype-card       hit=1
+  [OK ] sleepquality-card    hit=1
+  [OK ] sleeptrend-card      hit=1
+  [OK ] pick-helper          hit=1
+  [OK ] line-series-pick     hit=1
+  [OK ] ring-guard           hit=1
+  => APPLIED, 9931 -> 11053 bytes
+==== HOME (index.vue, 12349 bytes, LF) ====
+  [OK ] more-link-entity     hit=1
+  [OK ] hero-spacing         hit=1
+  [OK ] hero-title           hit=1
+  [OK ] hero-user-gap        hit=1
+  [OK ] hero-avatar          hit=1
+  [OK ] hero-notice          hit=1
+  [OK ] overview-value       hit=1
+  [OK ] home-card-title      hit=1
+  => APPLIED, 12349 -> 12498 bytes
+
+MODE = APPLY
+RESULT = BOTH_OK

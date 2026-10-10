@@ -1,0 +1,102 @@
+== 行数 == {"users": 20, "doctor_user": 29, "coach_user": 20}
+
+== users ==
+  id=1    phone=13800138001  nickname=小林同学             created=2026-10-01 12:51:53
+  id=2    phone=13800138002  nickname=阿may             created=2026-10-01 12:51:53
+  id=3    phone=13990830469  nickname=测试用户A改           created=2026-10-01 12:54:30
+  id=4    phone=13990830516  nickname=测试用户A改           created=2026-10-01 12:55:16
+  id=5    phone=13890830516  nickname=接口测试用户B          created=2026-10-01 12:55:44
+  id=6    phone=13990830630  nickname=测试用户A改           created=2026-10-01 12:57:10
+  id=7    phone=13890830630  nickname=接口测试用户B          created=2026-10-01 12:57:40
+  id=8    phone=13990830676  nickname=测试用户A改           created=2026-10-01 12:57:57
+  id=9    phone=13890830676  nickname=接口测试用户B          created=2026-10-01 12:58:26
+  id=10   phone=13990830747  nickname=测试用户A改           created=2026-10-01 12:59:07
+  id=11   phone=13890830747  nickname=接口测试用户B          created=2026-10-01 12:59:37
+  id=12   phone=13844475825  nickname=小孙               created=2026-10-01 17:19:45
+  id=13   phone=13814142525  nickname=小周               created=2026-10-01 17:20:57
+  id=23   phone=19900000001  nickname=sec_user_a       created=2026-10-01 18:13:44
+  id=24   phone=19900000002  nickname=sec_user_b       created=2026-10-01 18:13:44
+  id=25   phone=19900000003  nickname=sec_user_dup     created=2026-10-01 18:14:12
+  id=26   phone=13990849740  nickname=测试用户A改           created=2026-10-01 18:15:41
+  id=27   phone=13890849740  nickname=接口测试用户B          created=2026-10-01 18:16:14
+  id=28   phone=13990849876  nickname=测试用户A改           created=2026-10-01 18:17:56
+  id=29   phone=13890849876  nickname=接口测试用户B          created=2026-10-01 18:18:29
+
+== doctor_user ==
+  id=1    name=doctor001              phone=13800000001  audit=1 real=张明远 created=2026-10-01 12:51:53
+  id=2    name=doctor002              phone=13800000002  audit=1 real=李欣 created=2026-10-01 12:51:53
+  id=3    name=doctor003              phone=13800000003  audit=1 real=王海涛 created=2026-10-01 12:51:53
+  id=4    name=doc_test_1001125429    phone=13790830469  audit=1 real=接口测试医生 created=2026-10-01 12:54:36
+  id=5    name=doc_test_1001125516    phone=13790830516  audit=1 real=接口测试医生改 created=2026-10-01 12:55:22
+  id=6    name=doc_reject_1001125516  phone=13590830516  audit=2 real=待拒绝医生 created=2026-10-01 12:55:38
+  id=7    name=doc_other_1001125516   phone=13390830516  audit=1 real=另一名医生 created=2026-10-01 12:55:46
+  id=8    name=doc_test_1001125710    phone=13790830630  audit=1 real=接口测试医生改 created=2026-10-01 12:57:17
+  id=9    name=doc_reject_1001125710  phone=13590830630  audit=2 real=待拒绝医生 created=2026-10-01 12:57:33
+  id=10   name=doc_other_1001125710   phone=13390830630  audit=1 real=另一名医生 created=2026-10-01 12:57:42
+  id=11   name=doc_test_1001125756    phone=13790830676  audit=1 real=接口测试医生改 created=2026-10-01 12:58:03
+  id=12   name=doc_reject_1001125756  phone=13590830676  audit=2 real=待拒绝医生 created=2026-10-01 12:58:20
+  id=13   name=doc_other_1001125756   phone=13390830676  audit=1 real=另一名医生 created=2026-10-01 12:58:28
+  id=14   name=doc_test_1001125907    phone=13790830747  audit=1 real=接口测试医生改 created=2026-10-01 12:59:13
+  id=15   name=doc_reject_1001125907  phone=13590830747  audit=2 real=待拒绝医生 created=2026-10-01 12:59:31
+  id=16   name=doc_other_1001125907   phone=13390830747  audit=1 real=另一名医生 created=2026-10-01 12:59:39
+  id=17   name=001                    phone=14725836911  audit=1 real=小黑 created=2026-10-01 16:25:23
+  id=18   name=003                    phone=14736925847  audit=1 real=小文医生 created=2026-10-01 16:57:15
+  id=33   name=sec_doctor_a           phone=19900000101  audit=1 real=测试医生A created=2026-10-01 18:13:45
+  id=34   name=sec_doctor_b           phone=19900000102  audit=1 real=测试医生B created=2026-10-01 18:13:45
+  id=35   name=sec_audit_doctor_pending phone=19900000301  audit=2 real=待审核医生 created=2026-10-01 18:14:06
+  id=36   name=sec_audit_doctor_evil  phone=19900000302  audit=0 real=恶意医生 created=2026-10-01 18:14:07
+  id=37   name=sec_audit_doctor_ok    phone=19900000305  audit=1 real=可登录医生 created=2026-10-01 18:14:10
+  id=38   name=doc_test_1001181540    phone=13790849740  audit=1 real=接口测试医生改 created=2026-10-01 18:15:47
+  id=39   name=doc_reject_1001181540  phone=13590849740  audit=2 real=待拒绝医生 created=2026-10-01 18:16:06
+  id=40   name=doc_other_1001181540   phone=13390849740  audit=1 real=另一名医生 created=2026-10-01 18:16:16
+  id=41   name=doc_test_1001181756    phone=13790849876  audit=1 real=接口测试医生改 created=2026-10-01 18:18:03
+  id=42   name=doc_reject_1001181756  phone=13590849876  audit=2 real=待拒绝医生 created=2026-10-01 18:18:22
+  id=43   name=doc_other_1001181756   phone=13390849876  audit=1 real=另一名医生 created=2026-10-01 18:18:31
+
+== coach_user ==
+  id=1    name=coach001               phone=13900000001  audit=1 real=陈昊 created=2026-10-01 12:51:53
+  id=2    name=coach002               phone=13900000002  audit=1 real=刘雨欣 created=2026-10-01 12:51:53
+  id=3    name=coach003               phone=13900000003  audit=1 real=赵强 created=2026-10-01 12:51:53
+  id=4    name=coach_test_1001125516  phone=13690830516  audit=1 real=接口测试教练 created=2026-10-01 12:55:27
+  id=5    name=coach_reject_1001125516 phone=13490830516  audit=2 real=待拒绝教练 created=2026-10-01 12:55:39
+  id=6    name=coach_test_1001125710  phone=13690830630  audit=1 real=接口测试教练 created=2026-10-01 12:57:22
+  id=7    name=coach_reject_1001125710 phone=13490830630  audit=2 real=待拒绝教练 created=2026-10-01 12:57:35
+  id=8    name=coach_test_1001125756  phone=13690830676  audit=1 real=接口测试教练 created=2026-10-01 12:58:08
+  id=9    name=coach_reject_1001125756 phone=13490830676  audit=2 real=待拒绝教练 created=2026-10-01 12:58:21
+  id=10   name=coach_test_1001125907  phone=13690830747  audit=1 real=接口测试教练 created=2026-10-01 12:59:18
+  id=11   name=coach_reject_1001125907 phone=13490830747  audit=2 real=待拒绝教练 created=2026-10-01 12:59:32
+  id=12   name=002                    phone=13825832587  audit=1 real=小李教练 created=2026-10-01 16:39:23
+  id=24   name=sec_coach_a            phone=19900000201  audit=1 real=测试教练A created=2026-10-01 18:13:46
+  id=25   name=sec_coach_b            phone=19900000202  audit=1 real=测试教练B created=2026-10-01 18:13:46
+  id=26   name=sec_audit_coach_pending phone=19900000303  audit=2 real=待审核教练 created=2026-10-01 18:14:06
+  id=27   name=sec_audit_coach_ok     phone=19900000306  audit=1 real=可登录教练 created=2026-10-01 18:14:10
+  id=28   name=coach_test_1001181540  phone=13690849740  audit=1 real=接口测试教练 created=2026-10-01 18:15:53
+  id=29   name=coach_reject_1001181540 phone=13490849740  audit=2 real=待拒绝教练 created=2026-10-01 18:16:08
+  id=30   name=coach_test_1001181756  phone=13690849876  audit=1 real=接口测试教练 created=2026-10-01 18:18:09
+  id=31   name=coach_reject_1001181756 phone=13490849876  audit=2 real=待拒绝教练 created=2026-10-01 18:18:23
+
+== doctor_patient ==
+  doctor=1 -> user=1
+  doctor=1 -> user=2
+  doctor=2 -> user=13
+  doctor=5 -> user=4
+  doctor=8 -> user=6
+  doctor=11 -> user=8
+  doctor=14 -> user=10
+  doctor=33 -> user=23
+  doctor=34 -> user=24
+  doctor=38 -> user=26
+  doctor=41 -> user=28
+
+== coach_student ==
+  coach=1 -> user=1
+  coach=1 -> user=2
+  coach=1 -> user=13
+  coach=4 -> user=4
+  coach=6 -> user=6
+  coach=8 -> user=8
+  coach=10 -> user=10
+  coach=24 -> user=23
+  coach=25 -> user=24
+  coach=28 -> user=26
+  coach=30 -> user=28

@@ -1,0 +1,18 @@
+---- del batch n=8 ----
+  CHECK  backend/utils/__pycache__/audit_log.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/auth.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/db.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/helpers.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/response.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/security.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/upload.cpython-311.pyc 
+  OK  backend/utils/__pycache__/audit_log.cpython-311.pyc
+  OK  backend/utils/__pycache__/auth.cpython-311.pyc
+  OK  backend/utils/__pycache__/db.cpython-311.pyc
+  OK  backend/utils/__pycache__/helpers.cpython-311.pyc
+  OK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+  OK  backend/utils/__pycache__/response.cpython-311.pyc
+  OK  backend/utils/__pycache__/security.cpython-311.pyc
+  OK  backend/utils/__pycache__/upload.cpython-311.pyc
+>> DELETED=8 / 8

@@ -1,0 +1,107 @@
+{
+  "apply": true,
+  "files": [
+    {
+      "file": "management-web/.env.production",
+      "eol": "LF",
+      "changed_lines": 3,
+      "before_bytes": 177,
+      "after_bytes": 189,
+      "pairs": [
+        {
+          "old": "# 生产环境：固定后端地址（需求约定 API 基础地址）",
+          "new": "# 生产环境：同源部署，API 与静态资源使用相对路径（由同源 Web Server 反向代理转发到 Flask:8080）",
+          "hits": 1
+        },
+        {
+          "old": "VITE_API_BASE_URL=http://192.168.1.4:8080/api",
+          "new": "VITE_API_BASE_URL=/api",
+          "hits": 1
+        },
+        {
+          "old": "VITE_STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/",
+          "new": "VITE_STATIC_BASE_URL=/static/upload/",
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "file": "management-web/src/utils/config.js",
+      "eol": "LF",
+      "changed_lines": 2,
+      "before_bytes": 1681,
+      "after_bytes": 1635,
+      "pairs": [
+        {
+          "old": "import.meta.env.VITE_API_BASE_URL || 'http://192.168.1.4:8080/api'",
+          "new": "import.meta.env.VITE_API_BASE_URL || '/api'",
+          "hits": 1
+        },
+        {
+          "old": "import.meta.env.VITE_STATIC_BASE_URL || 'http://192.168.1.4:8080/static/upload/'",
+          "new": "import.meta.env.VITE_STATIC_BASE_URL || '/static/upload/'",
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "file": "backend/config.py",
+      "eol": "LF",
+      "changed_lines": 2,
+      "before_bytes": 2446,
+      "after_bytes": 2400,
+      "pairs": [
+        {
+          "old": "_get(\"API_BASE_URL\", \"http://192.168.1.4:8080/api\")",
+          "new": "_get(\"API_BASE_URL\", \"/api\")",
+          "hits": 1
+        },
+        {
+          "old": "_get(\"STATIC_BASE_URL\", \"http://192.168.1.4:8080/static/upload/\")",
+          "new": "_get(\"STATIC_BASE_URL\", \"/static/upload/\")",
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "file": "backend/.env",
+      "eol": "LF",
+      "changed_lines": 2,
+      "before_bytes": 996,
+      "after_bytes": 950,
+      "pairs": [
+        {
+          "old": "API_BASE_URL=http://192.168.1.4:8080/api",
+          "new": "API_BASE_URL=/api",
+          "hits": 1
+        },
+        {
+          "old": "STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/",
+          "new": "STATIC_BASE_URL=/static/upload/",
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "file": "backend/.env.example",
+      "eol": "LF",
+      "changed_lines": 2,
+      "before_bytes": 1121,
+      "after_bytes": 1075,
+      "pairs": [
+        {
+          "old": "API_BASE_URL=http://192.168.1.4:8080/api",
+          "new": "API_BASE_URL=/api",
+          "hits": 1
+        },
+        {
+          "old": "STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/",
+          "new": "STATIC_BASE_URL=/static/upload/",
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "problems": [],
+  "total_changed_lines": 11
+}

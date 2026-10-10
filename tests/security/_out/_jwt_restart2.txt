@@ -1,0 +1,7 @@
+OLD LISTENING PIDS = ['8984']
+  taskkill 8984 -> rc=0 �ɹ�: ����ֹ PID Ϊ 8984 �Ľ��̡�
+PORT 8080 FREE = True
+NEW FLASK PID = 14144
+HEALTH OK after 1.0s: 200 {"code":200,"data":{"database":"ok","service":"ok","version":"V3.2 FINAL"},"msg":"数据库连接正常"}
+
+LISTENING PIDS NOW = ['32156']

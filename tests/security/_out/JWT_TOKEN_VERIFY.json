@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "OLD_TOKEN_INVALIDATED": "4/4",
+    "NEW_TOKEN_VALIDATION": "4/4",
+    "CROSS_ROLE_ISOLATION": "12/12",
+    "ALL_PASS": true
+  },
+  "detail": {
+    "old_token_401": {
+      "user": 401,
+      "doctor": 401,
+      "coach": 401,
+      "admin": 401
+    },
+    "new_token_200": {
+      "user": 200,
+      "doctor": 200,
+      "coach": 200,
+      "admin": 200
+    },
+    "new_login_status": {
+      "user": 200,
+      "doctor": 200,
+      "coach": 200,
+      "admin": 200
+    },
+    "cross_role_401": {
+      "pass": 12,
+      "total": 12
+    },
+    "cross_role_detail": {
+      "user->doctor": 401,
+      "user->coach": 401,
+      "user->admin": 401,
+      "doctor->user": 401,
+      "doctor->coach": 401,
+      "doctor->admin": 401,
+      "coach->user": 401,
+      "coach->doctor": 401,
+      "coach->admin": 401,
+      "admin->user": 401,
+      "admin->doctor": 401,
+      "admin->coach": 401
+    }
+  }
+}

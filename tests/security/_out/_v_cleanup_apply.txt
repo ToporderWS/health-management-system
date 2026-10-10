@@ -1,0 +1,19 @@
+== 清理执行明细 ==
+    health_record: 6
+    sleep_record: 3
+    sport_record: 3
+    health_plan: 4
+    doctor_advice: 3
+    medical_notice: 3
+    medical_record: 3
+    sport_goal: 3
+    training_plan: 3
+    fitness_advice: 3
+    doctor_patient: 3
+    coach_student: 3
+    doctor_advice(by doctor_id): 0
+    medical_notice(by doctor_id): 0
+    medical_record(by doctor_id): 0
+    users: 5
+    doctor_user: 8
+    coach_user: 6

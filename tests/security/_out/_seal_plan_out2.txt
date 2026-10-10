@@ -1,0 +1,21 @@
+==============================================================================
+DRY-RUN 删除计划（只读）
+==============================================================================
+  doctor_patient     将删   0 行  ids=[]
+  coach_student      将删   0 行  ids=[]
+  doctor_advice      将删   0 行  ids=[]
+  medical_notice     将删   0 行  ids=[]
+  medical_record     将删   0 行  ids=[]
+  sport_goal         将删   0 行  ids=[]
+  training_plan      将删   0 行  ids=[]
+  fitness_advice     将删   0 行  ids=[]
+  health_record      将删   0 行  ids=[]
+  sleep_record       将删   0 行  ids=[]
+  sport_record       将删   0 行  ids=[]
+  health_plan        将删   0 行  ids=[]
+  doctor_user        将删   3 行  ids=[63, 64, 65]
+  coach_user         将删   2 行  ids=[46, 47]
+  users              将删   2 行  ids=[42, 43]
+------------------------------------------------------------------------------
+  合计 = 7 行
+  跳过(UNCONFIRMED) = 0

@@ -1,0 +1,6 @@
+---- del batch n=2 ----
+  CHECK  backend/__pycache__/app.cpython-311.pyc 
+  CHECK  backend/__pycache__/config.cpython-311.pyc 
+  OK  backend/__pycache__/app.cpython-311.pyc
+  OK  backend/__pycache__/config.cpython-311.pyc
+>> DELETED=2 / 2

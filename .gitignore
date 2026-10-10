@@ -1,0 +1,37 @@
+# ============================================================
+# 个人健康管理系统 V3.2 FINAL · 工程根 .gitignore
+# 原则：只忽略「环境密钥 / 依赖 / 构建产物 / 缓存 / 日志 / 临时验证产物」；
+#      .env.example、src、public、database、docs、tests 必须可入库。
+# ============================================================
+
+# ---- 环境与密钥（真实 .env 绝不入库，模板必须保留）----
+.env
+.env.*
+!.env.example
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# ---- Node / 前端构建 ----
+node_modules/
+dist/
+
+# ---- 小程序构建产物 ----
+unpackage/
+
+# ---- 日志 ----
+*.log
+
+# ---- 临时验证产物 ----
+# 注意：不收窄为 _out/，以免误伤 tests/security/_out/（正式验收证据，需可入库）
+_verify_out/
+*_verify_out/
+
+# ---- 编辑器 / 系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

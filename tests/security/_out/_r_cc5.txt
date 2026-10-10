@@ -1,0 +1,10 @@
+---- rmdir batch n=4 ----
+  CHECK  backend/routes/__pycache__ 
+  CHECK  backend/services/__pycache__ 
+  CHECK  backend/utils/__pycache__ 
+  CHECK  backend/__pycache__ 
+  OK  backend/routes/__pycache__
+  OK  backend/services/__pycache__
+  OK  backend/utils/__pycache__
+  OK  backend/__pycache__
+>> DELETED=4 / 4

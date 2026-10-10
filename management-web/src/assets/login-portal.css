@@ -1,0 +1,486 @@
+/* =========================================================
+   三个 PC 角色登录页 · 新版视觉（左插画 + 右登录卡片）
+   ---------------------------------------------------------
+   · 独立文件：与注册页共用的 login.css 完全隔离，注册页不受影响
+   · 类名统一 lp- 前缀，避免与既有 .login* 命名空间冲突
+   · 非 scoped 引入（需要覆盖 Element Plus 组件内部结构），
+     但所有规则均以 .lp / .lp--<role> 开头，作用域仅限三个登录页
+   · 不引入任何第三方资源 / 动画库；插画为本项目内静态 webp
+   ========================================================= */
+
+/* ---------------- 主题变量（三角色） ---------------- */
+.lp--admin {
+  --lp-a: #6d4ae0;
+  --lp-b: #7c5cfc;
+  --lp-c: #4967d8;
+  --lp-tint: #f4f1fe;
+  --lp-tint2: #eef1fc;
+  --lp-glow1: rgba(124, 92, 252, 0.2);
+  --lp-glow2: rgba(73, 103, 216, 0.16);
+  --lp-shadow: rgba(93, 66, 200, 0.3);
+  --lp-art: url('./images/login/admin-login-illustration.webp');
+}
+
+.lp--doctor {
+  --lp-a: #0fa98e;
+  --lp-b: #32cdb5;
+  --lp-c: #13bfa6;
+  --lp-tint: #eefaf7;
+  --lp-tint2: #ecf8f4;
+  --lp-glow1: rgba(50, 205, 181, 0.2);
+  --lp-glow2: rgba(15, 169, 142, 0.16);
+  --lp-shadow: rgba(15, 150, 128, 0.28);
+  --lp-art: url('./images/login/doctor-login-illustration.webp');
+}
+
+.lp--coach {
+  --lp-a: #1e6fff;
+  --lp-b: #4a96f8;
+  --lp-c: #2584ff;
+  --lp-tint: #eef5ff;
+  --lp-tint2: #edf3ff;
+  --lp-glow1: rgba(74, 150, 248, 0.22);
+  --lp-glow2: rgba(30, 111, 255, 0.16);
+  --lp-shadow: rgba(28, 96, 214, 0.28);
+  --lp-art: url('./images/login/coach-login-illustration.webp');
+}
+
+/* ---------------- 页面骨架 ---------------- */
+.lp {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  /* 只有一个在流内的子元素（.lp__inner）；必须用 1fr 单行，否则它会落进 auto 行、
+     高度塌成内容高，右侧登录卡片就无法垂直居中（实测缺陷）。 */
+  grid-template-rows: 1fr;
+  padding: clamp(20px, 2.6vh, 34px) clamp(22px, 3.4vw, 56px) clamp(22px, 3vh, 40px);
+  background: linear-gradient(135deg, var(--lp-tint) 0%, var(--lp-tint2) 100%);
+  overflow-x: clip;      /* 只裁横向：杜绝横向滚动条，同时保留纵向滚动能力 */
+  overflow-y: visible;
+  isolation: isolate;
+}
+
+/* 环境光：非常浅的两团角色色光晕，避免"整屏纯色" */
+.lp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 46% at 84% 12%, var(--lp-glow1) 0%, rgba(255, 255, 255, 0) 68%),
+    radial-gradient(38% 42% at 60% 96%, var(--lp-glow2) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* ---------------- 左侧插画（满幅、向右柔和淡出） ---------------- */
+.lp__art {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 78%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--lp-art);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* 左侧提亮：保证标题/功能项在任何插画上都清晰可读 */
+.lp__art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    96deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.66) 30%,
+    rgba(255, 255, 255, 0.1) 52%,
+    rgba(255, 255, 255, 0) 66%
+  );
+}
+
+/* ---------------- 内容容器 ---------------- */
+.lp__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 100%;
+}
+
+/* ---------------- 顶部品牌 ---------------- */
+.lp__brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.lp__brand-logo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 21px;
+  background: linear-gradient(135deg, var(--lp-a) 0%, var(--lp-b) 100%);
+  box-shadow: 0 8px 20px var(--lp-shadow);
+}
+
+.lp__brand-name {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #17233c;
+  letter-spacing: 0.2px;
+  line-height: 1.25;
+}
+
+.lp__brand-sub {
+  font-size: 11.5px;
+  color: #8794a8;
+  margin-top: 2px;
+  letter-spacing: 0.2px;
+}
+
+/* ---------------- 主区：左文案 + 右卡片 ---------------- */
+.lp__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: 1fr;      /* 单行撑满：align-items:center 才能让登录卡片真正垂直居中 */
+  align-items: center;
+  column-gap: clamp(20px, 3vw, 52px);
+  min-height: 0;
+  padding: clamp(12px, 2vh, 28px) 0;
+}
+
+.lp__copy {
+  min-width: 0;
+  max-width: 420px;
+}
+
+.lp__slogan {
+  margin: 0;
+  font-size: clamp(26px, 2.25vw, 38px);
+  font-weight: 800;
+  line-height: 1.34;
+  letter-spacing: 0.5px;
+  color: #16233d;
+}
+
+.lp__slogan span {
+  display: block;
+}
+
+/* 标题下的小色条（参考图中的短强调线） */
+.lp__slogan::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--lp-a) 0%, var(--lp-b) 100%);
+}
+
+.lp__features {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 1.9vw, 30px);
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.lp__feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: var(--lp-a);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 6px 16px rgba(24, 45, 82, 0.08);
+}
+
+.lp__feature-label {
+  font-size: 12.5px;
+  color: #4c5c74;
+  white-space: nowrap;
+}
+
+/* ---------------- 右侧登录卡片 ---------------- */
+.lp__card {
+  width: clamp(392px, 26vw, 440px);
+  padding: clamp(26px, 1.9vw, 32px) clamp(26px, 1.9vw, 32px) clamp(20px, 1.5vw, 24px);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 60px rgba(24, 45, 82, 0.14), 0 2px 8px rgba(24, 45, 82, 0.04);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  backdrop-filter: blur(16px) saturate(135%);
+  --el-input-height: 50px;
+}
+
+.lp__card-head {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.lp__card-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 23px;
+  background: linear-gradient(135deg, var(--lp-a) 0%, var(--lp-b) 100%);
+  box-shadow: 0 10px 22px var(--lp-shadow);
+}
+
+.lp__card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #17233c;
+  line-height: 1.25;
+}
+
+.lp__card-sub {
+  font-size: 11.5px;
+  color: #8794a8;
+  margin-top: 3px;
+  letter-spacing: 0.4px;
+}
+
+.lp__form .el-form-item {
+  margin-bottom: 16px;
+}
+
+/* 输入框：48~52px 高、大圆角、低饱和底 */
+.lp__form .el-input__wrapper {
+  height: 50px;
+  min-height: 50px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: rgba(246, 248, 252, 0.92);
+  box-shadow: 0 0 0 1px #e7ecf4 inset;
+  transition: box-shadow 0.18s ease;
+}
+
+.lp__form .el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px #dbe3ee inset;
+}
+
+.lp__form .el-input__wrapper.is-focus {
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--lp-a) inset, 0 0 0 3px var(--lp-glow2);
+}
+
+.lp__form .el-input__inner {
+  font-size: 14.5px;
+  color: #1f2d3d;
+}
+
+.lp__form .el-input__prefix-inner .el-icon,
+.lp__form .el-input__suffix-inner .el-icon {
+  font-size: 16px;
+  color: #93a1b5;
+}
+
+.lp__form .el-form-item__error {
+  padding-top: 3px;
+  font-size: 12px;
+}
+
+/* 主按钮：角色主题渐变 */
+.lp__btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 13px;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--lp-a) 0%, var(--lp-b) 100%);
+  box-shadow: 0 12px 26px var(--lp-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.lp__btn:hover,
+.lp__btn:focus {
+  color: #fff;
+  opacity: 0.94;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px var(--lp-shadow);
+}
+
+.lp__btn.is-loading {
+  letter-spacing: 5px;
+}
+
+.lp__btn .el-icon {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* 底部：注册入口 / 返回身份选择（沿用 Element Plus 链接按钮，保留键盘可达性） */
+.lp__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lp__foot .el-button.is-link {
+  height: auto;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lp__foot .el-button.is-link.lp__link--reg {
+  --el-button-text-color: var(--lp-a);
+  --el-button-hover-link-text-color: var(--lp-a);
+}
+
+.lp__foot .el-button.is-link.lp__link--back {
+  --el-button-text-color: var(--lp-c);
+  --el-button-hover-link-text-color: var(--lp-c);
+  font-weight: 500;
+  margin-left: auto;      /* 管理员页底部只有"返回身份选择"时仍靠右对齐 */
+}
+
+.lp__note {
+  margin-top: 10px;
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #8d9aad;
+}
+
+/* ---------------- 响应式 ---------------- */
+
+/* 1440 及以下：轻微收紧插画宽度与间距 */
+@media (max-width: 1440px) {
+  .lp__art {
+    width: 72%;
+  }
+
+  .lp__card {
+    width: clamp(380px, 28vw, 424px);
+  }
+
+  .lp__copy {
+    max-width: 360px;
+  }
+}
+
+/* 1366 及以下：仍保持左右结构，进一步压缩 */
+@media (max-width: 1366px) {
+  .lp__art {
+    width: 70%;
+  }
+
+  .lp__slogan {
+    font-size: clamp(24px, 2.1vw, 30px);
+  }
+
+  .lp__features {
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .lp__main {
+    column-gap: 22px;
+  }
+}
+
+/* 窄窗口：插画弱化，登录卡片居中 */
+@media (max-width: 1080px) {
+  .lp__art {
+    width: 100%;
+    opacity: 0.42;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .lp__main {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    row-gap: 22px;
+  }
+
+  .lp__copy {
+    max-width: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lp__slogan::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lp__features {
+    justify-content: center;
+  }
+
+  .lp__card {
+    width: min(440px, 100%);
+  }
+}
+
+/* 矮窗口：压缩纵向留白，保证卡片完整可见 */
+@media (max-height: 720px) {
+  .lp {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .lp__brand-logo {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .lp__card-head {
+    margin-bottom: 18px;
+  }
+
+  .lp__features {
+    margin-top: 18px;
+  }
+}
+
+/* 无障碍：尊重系统"减少动态效果" */
+@media (prefers-reduced-motion: reduce) {
+  .lp *,
+  .lp *::before,
+  .lp *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

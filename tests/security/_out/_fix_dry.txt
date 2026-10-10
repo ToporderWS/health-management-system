@@ -1,0 +1,54 @@
+================================================================
+MODE = DRY-RUN
+锚点校验：全部命中 (命中数 == 1)  OK
+----------------------------------------------------------------
+[DRYRUN] management-web/.env.production  (LF, 3 行)
+     - # 生产环境：固定后端地址（需求约定 API 基础地址）
+     + # 生产环境：同源部署，API 与静态资源使用相对路径（由同源 Web Server 反向代理转发到 Flask:8080）
+     - VITE_API_BASE_URL=http://192.168.1.4:8080/api
+     + VITE_API_BASE_URL=/api
+     - VITE_STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/
+     + VITE_STATIC_BASE_URL=/static/upload/
+[DRYRUN] management-web/src/utils/config.js  (LF, 2 行)
+     - import.meta.env.VITE_API_BASE_URL || 'http://192.168.1.4:8080/api'
+     + import.meta.env.VITE_API_BASE_URL || '/api'
+     - import.meta.env.VITE_STATIC_BASE_URL || 'http://192.168.1.4:8080/static/upload/'
+     + import.meta.env.VITE_STATIC_BASE_URL || '/static/upload/'
+[DRYRUN] backend/config.py  (LF, 2 行)
+     - _get("API_BASE_URL", "http://192.168.1.4:8080/api")
+     + _get("API_BASE_URL", "/api")
+     - _get("STATIC_BASE_URL", "http://192.168.1.4:8080/static/upload/")
+     + _get("STATIC_BASE_URL", "/static/upload/")
+[DRYRUN] backend/.env  (LF, 2 行)
+     - API_BASE_URL=http://192.168.1.4:8080/api
+     + API_BASE_URL=/api
+     - STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/
+     + STATIC_BASE_URL=/static/upload/
+[DRYRUN] backend/.env.example  (LF, 2 行)
+     - API_BASE_URL=http://192.168.1.4:8080/api
+     + API_BASE_URL=/api
+     - STATIC_BASE_URL=http://192.168.1.4:8080/static/upload/
+     + STATIC_BASE_URL=/static/upload/
+----------------------------------------------------------------
+受影响文件 = 5 ; 改动行数合计 = 11
+================================================================
+---- 改后预览: management-web/.env.production ----
+# 生产环境：同源部署，API 与静态资源使用相对路径（由同源 Web Server 反向代理转发到 Flask:8080）
+VITE_API_BASE_URL=/api
+VITE_STATIC_BASE_URL=/static/upload/
+
+---- 改后预览: management-web/src/utils/config.js ----
+/**
+ * 统一前端配置：全项目唯一 API 地址与静态资源地址来源。
+ * 禁止在各页面重复硬编码 IP。
+ */
+export const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || '/api'
+
+export const STATIC_BASE_URL =
+  import.meta.env.VITE_STATIC_BASE_URL || '/static/upload/'
+
+/** 三种 PC 角色 */
+export const ROLE = {
+
+报告已写入: C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\ADDR_FIX_REPORT.json

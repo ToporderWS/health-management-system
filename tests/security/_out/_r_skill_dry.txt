@@ -1,0 +1,9 @@
+==== skill 沉淀 (DRY-RUN) ====
+== ucharts-config-key-and-canvas-probe  (12342 bytes, LF)
+   edit1 命中=1  OK
+   edit2 命中=1  OK
+   -> [dry-run] 未落盘，预计 +3607 字节
+== hbuilderx-cli-build-and-verify  (8846 bytes, LF)
+   edit1 命中=1  OK
+   -> [dry-run] 未落盘，预计 +1190 字节
+汇总: ucharts=True  hbuilderx=True

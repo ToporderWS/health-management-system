@@ -1,0 +1,143 @@
+{
+  "_probe_click.py": {
+    "file": "_probe_click.py",
+    "sha256": "385088ec997646c8de25346349d0e14721699c1d0ed6ef858fffeb71df14d849",
+    "size": 12525,
+    "hits": [
+      {
+        "line": 45,
+        "text": "PW = '123456'"
+      }
+    ]
+  },
+  "_probe_login.py": {
+    "file": "_probe_login.py",
+    "sha256": "ff26a97678c224ca17949f34c217f254cd16902566ce1d1bf71b997e98f65a06",
+    "size": 2059,
+    "hits": [
+      {
+        "line": 26,
+        "text": "print('=== 后端连通性 / 三角色登录探测（密码统一 123456）===')"
+      },
+      {
+        "line": 28,
+        "text": "('管理员', '/admin/login', {'admin_name': 'admin', 'password': '123456'}),"
+      },
+      {
+        "line": 29,
+        "text": "('医生', '/doctor/login', {'doctor_name': 'doctor001', 'password': '123456'}),"
+      },
+      {
+        "line": 30,
+        "text": "('教练', '/coach/login', {'coach_name': 'coach001', 'password': '123456'}),"
+      },
+      {
+        "line": 44,
+        "text": "code, resp = post(path, {key: name, 'password': '123456'})"
+      }
+    ]
+  },
+  "_probe_login3.py": {
+    "file": "_probe_login3.py",
+    "sha256": "4e789f011f7c377f7bd6b10c3d98b564208e15f54ec6932bca4bd4e73b8af47e",
+    "size": 8104,
+    "hits": [
+      {
+        "line": 85,
+        "text": "fill(ws, 1, '123456')"
+      }
+    ]
+  },
+  "_shot_audit.py": {
+    "file": "_shot_audit.py",
+    "sha256": "cd51e927072c24212a397ac6cb576dec73ba5eed1bd7d7fbad49ee0234355747",
+    "size": 7606,
+    "hits": [
+      {
+        "line": 19,
+        "text": "ADMIN = ('admin', '123456')"
+      }
+    ]
+  },
+  "_verify_login.py": {
+    "file": "_verify_login.py",
+    "sha256": "c27f383c7de0a8d3af8b88978aa95324c8c033743de347e01e20a80b9cfb0aeb",
+    "size": 38991,
+    "hits": [
+      {
+        "line": 81,
+        "text": "PASSWORD = '123456'"
+      }
+    ]
+  },
+  "_probe3.log": {
+    "file": "_probe3.log",
+    "sha256": "edd89aa221158f503409546dc1bcd3773e8812d2506c02551a3fc2d506129849",
+    "size": 2542,
+    "hits": [
+      {
+        "line": 12,
+        "text": "[\"coach001\",\"123456\"]"
+      },
+      {
+        "line": 39,
+        "text": "点击前值 = [\"coach001\",\"123456\"]"
+      }
+    ]
+  },
+  "login_verify.log": {
+    "file": "login_verify.log",
+    "sha256": "5b3464f4030946c8f6ef1d1cd149941f6b781789f69da169ee22f407dc490ffc",
+    "size": 19027,
+    "hits": [
+      {
+        "line": 17,
+        "text": "PASS  管理员页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['admin', '123456'] rect0={'x': 1189.453125, 'y': 409.09375, 'w': 270, 'h': 38, 'tag': '"
+      },
+      {
+        "line": 33,
+        "text": "PASS  医生页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['doctor001', '123456'] rect0={'x': 1189.453125, 'y': 399.609375, 'w': 270, 'h': 38, 'tag"
+      },
+      {
+        "line": 49,
+        "text": "PASS  健身教练页 真实输入进入 v-model（账号 / 密码）  [机制=insertText/insertText]  |  vals=['coach001', '123456'] rect0={'x': 1189.453125, 'y': 399.609375, 'w': 270, 'h': 38, 'ta"
+      },
+      {
+        "line": 64,
+        "text": "[diag] 健身教练 第 1 次提交未跳转：点击到达按钮 0 次 / snap={\"path\":\"/coach/login\",\"vals\":[\"coach001\",\"123456\"],\"form\":{\"coach_name\":\"coach001\",\"password\":\"123456\"},\"errors\":[],\"i"
+      },
+      {
+        "line": 65,
+        "text": "[diag] 健身教练 第 2 次提交未跳转：点击到达按钮 0 次 / snap={\"path\":\"/coach/login\",\"vals\":[\"coach001\",\"123456\"],\"form\":{\"coach_name\":\"coach001\",\"password\":\"123456\"},\"errors\":[],\"i"
+      },
+      {
+        "line": 66,
+        "text": "FAIL  健身教练 ⑫⑬⑭ 登录成功并跳转 /coach/dashboard（接口 HTTP=[] / Token 已落库 / 第 2 次提交生效）  |  path=/coach/login token=False calls=[('doctor/dashboard', 200), ('doctor/patient"
+      },
+      {
+        "line": 68,
+        "text": "[diag] 医生 待审核第 1 次提交无响应：点击到达按钮 0 次 / snap={\"path\":\"/doctor/login\",\"vals\":[\"doctor003\",\"123456\"],\"form\":{\"doctor_name\":\"doctor003\",\"password\":\"123456\"},\"errors\":"
+      },
+      {
+        "line": 69,
+        "text": "[diag] 医生 待审核第 2 次提交无响应：点击到达按钮 0 次 / snap={\"path\":\"/doctor/login\",\"vals\":[\"doctor003\",\"123456\"],\"form\":{\"doctor_name\":\"doctor003\",\"password\":\"123456\"},\"errors\":"
+      },
+      {
+        "line": 70,
+        "text": "FAIL  医生 ⑮⑯ 待审核账号 doctor003 被拦截（接口 HTTP=[] / 停留登录页 / 无 Token / 提示含\"审核\" / 第 2 次提交生效）  |  msgs=[] state={\"path\": \"/doctor/login\", \"token\": false} snap={\"path\":\"/d"
+      },
+      {
+        "line": 71,
+        "text": "[diag] 健身教练 待审核第 1 次提交无响应：点击到达按钮 0 次 / snap={\"path\":\"/coach/login\",\"vals\":[\"coach003\",\"123456\"],\"form\":{\"coach_name\":\"coach003\",\"password\":\"123456\"},\"errors\":[]"
+      },
+      {
+        "line": 72,
+        "text": "[diag] 健身教练 待审核第 2 次提交无响应：点击到达按钮 0 次 / snap={\"path\":\"/coach/login\",\"vals\":[\"coach003\",\"123456\"],\"form\":{\"coach_name\":\"coach003\",\"password\":\"123456\"},\"errors\":[]"
+      },
+      {
+        "line": 73,
+        "text": "FAIL  健身教练 ⑮⑯ 待审核账号 coach003 被拦截（接口 HTTP=[] / 停留登录页 / 无 Token / 提示含\"审核\" / 第 2 次提交生效）  |  msgs=[] state={\"path\": \"/coach/login\", \"token\": false} snap={\"path\":\"/c"
+      }
+    ]
+  }
+}

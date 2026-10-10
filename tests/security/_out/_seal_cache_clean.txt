@@ -1,0 +1,190 @@
+---- del batch n=8 ----
+  CHECK  backend/utils/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/__init__.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/audit_log.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/audit_log.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/auth.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/auth.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/db.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/db.cpython-313.pyc 
+  OK  backend/utils/__pycache__/__init__.cpython-311.pyc
+  OK  backend/utils/__pycache__/__init__.cpython-313.pyc
+  OK  backend/utils/__pycache__/audit_log.cpython-311.pyc
+  OK  backend/utils/__pycache__/audit_log.cpython-313.pyc
+  OK  backend/utils/__pycache__/auth.cpython-311.pyc
+  OK  backend/utils/__pycache__/auth.cpython-313.pyc
+  OK  backend/utils/__pycache__/db.cpython-311.pyc
+  OK  backend/utils/__pycache__/db.cpython-313.pyc
+>> DELETED=8 / 8
+---- del batch n=8 ----
+  CHECK  backend/utils/__pycache__/helpers.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/helpers.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/jwt_utils.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/response.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/response.cpython-313.pyc 
+  CHECK  backend/utils/__pycache__/security.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/security.cpython-313.pyc 
+  OK  backend/utils/__pycache__/helpers.cpython-311.pyc
+  OK  backend/utils/__pycache__/helpers.cpython-313.pyc
+  OK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+  OK  backend/utils/__pycache__/jwt_utils.cpython-313.pyc
+  OK  backend/utils/__pycache__/response.cpython-311.pyc
+  OK  backend/utils/__pycache__/response.cpython-313.pyc
+  OK  backend/utils/__pycache__/security.cpython-311.pyc
+  OK  backend/utils/__pycache__/security.cpython-313.pyc
+>> DELETED=8 / 8
+---- del batch n=3 ----
+  CHECK  backend/utils/__pycache__/upload.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/upload.cpython-313.pyc 
+  CHECK  tests/__pycache__/api_test.cpython-311.pyc 
+  OK  backend/utils/__pycache__/upload.cpython-311.pyc
+  OK  backend/utils/__pycache__/upload.cpython-313.pyc
+  OK  tests/__pycache__/api_test.cpython-311.pyc
+>> DELETED=3 / 3
+---- rmdir batch n=2 ----
+  CHECK  backend/utils/__pycache__ 
+  CHECK  tests/__pycache__ 
+  OK  backend/utils/__pycache__
+  OK  tests/__pycache__
+>> DELETED=2 / 2
+---- del batch n=8 ----
+  CHECK  backend/routes/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/admin.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/article.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/coach.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/doctor.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/health.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/notice.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/user.cpython-311.pyc 
+  OK  backend/routes/__pycache__/__init__.cpython-311.pyc
+  OK  backend/routes/__pycache__/admin.cpython-311.pyc
+  OK  backend/routes/__pycache__/article.cpython-311.pyc
+  OK  backend/routes/__pycache__/coach.cpython-311.pyc
+  OK  backend/routes/__pycache__/doctor.cpython-311.pyc
+  OK  backend/routes/__pycache__/health.cpython-311.pyc
+  OK  backend/routes/__pycache__/notice.cpython-311.pyc
+  OK  backend/routes/__pycache__/user.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=8 ----
+  CHECK  backend/services/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/admin_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/coach_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/content_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/doctor_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/health_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/user_service.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/__init__.cpython-311.pyc 
+  OK  backend/services/__pycache__/__init__.cpython-311.pyc
+  OK  backend/services/__pycache__/admin_service.cpython-311.pyc
+  OK  backend/services/__pycache__/coach_service.cpython-311.pyc
+  OK  backend/services/__pycache__/content_service.cpython-311.pyc
+  OK  backend/services/__pycache__/doctor_service.cpython-311.pyc
+  OK  backend/services/__pycache__/health_service.cpython-311.pyc
+  OK  backend/services/__pycache__/user_service.cpython-311.pyc
+  OK  backend/utils/__pycache__/__init__.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=8 ----
+  CHECK  backend/utils/__pycache__/audit_log.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/auth.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/db.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/helpers.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/response.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/security.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/upload.cpython-311.pyc 
+  OK  backend/utils/__pycache__/audit_log.cpython-311.pyc
+  OK  backend/utils/__pycache__/auth.cpython-311.pyc
+  OK  backend/utils/__pycache__/db.cpython-311.pyc
+  OK  backend/utils/__pycache__/helpers.cpython-311.pyc
+  OK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+  OK  backend/utils/__pycache__/response.cpython-311.pyc
+  OK  backend/utils/__pycache__/security.cpython-311.pyc
+  OK  backend/utils/__pycache__/upload.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=2 ----
+  CHECK  backend/__pycache__/app.cpython-311.pyc 
+  CHECK  backend/__pycache__/config.cpython-311.pyc 
+  OK  backend/__pycache__/app.cpython-311.pyc
+  OK  backend/__pycache__/config.cpython-311.pyc
+>> DELETED=2 / 2
+---- rmdir batch n=4 ----
+  CHECK  backend/routes/__pycache__ 
+  CHECK  backend/services/__pycache__ 
+  CHECK  backend/utils/__pycache__ 
+  CHECK  backend/__pycache__ 
+  OK  backend/routes/__pycache__
+  OK  backend/services/__pycache__
+  OK  backend/utils/__pycache__
+  OK  backend/__pycache__
+>> DELETED=4 / 4
+---- del batch n=8 ----
+  CHECK  backend/routes/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/admin.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/article.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/coach.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/doctor.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/health.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/notice.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/user.cpython-311.pyc 
+  OK  backend/routes/__pycache__/__init__.cpython-311.pyc
+  OK  backend/routes/__pycache__/admin.cpython-311.pyc
+  OK  backend/routes/__pycache__/article.cpython-311.pyc
+  OK  backend/routes/__pycache__/coach.cpython-311.pyc
+  OK  backend/routes/__pycache__/doctor.cpython-311.pyc
+  OK  backend/routes/__pycache__/health.cpython-311.pyc
+  OK  backend/routes/__pycache__/notice.cpython-311.pyc
+  OK  backend/routes/__pycache__/user.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=8 ----
+  CHECK  backend/services/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/admin_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/coach_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/content_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/doctor_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/health_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/user_service.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/__init__.cpython-311.pyc 
+  OK  backend/services/__pycache__/__init__.cpython-311.pyc
+  OK  backend/services/__pycache__/admin_service.cpython-311.pyc
+  OK  backend/services/__pycache__/coach_service.cpython-311.pyc
+  OK  backend/services/__pycache__/content_service.cpython-311.pyc
+  OK  backend/services/__pycache__/doctor_service.cpython-311.pyc
+  OK  backend/services/__pycache__/health_service.cpython-311.pyc
+  OK  backend/services/__pycache__/user_service.cpython-311.pyc
+  OK  backend/utils/__pycache__/__init__.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=8 ----
+  CHECK  backend/utils/__pycache__/audit_log.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/auth.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/db.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/helpers.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/response.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/security.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/upload.cpython-311.pyc 
+  OK  backend/utils/__pycache__/audit_log.cpython-311.pyc
+  OK  backend/utils/__pycache__/auth.cpython-311.pyc
+  OK  backend/utils/__pycache__/db.cpython-311.pyc
+  OK  backend/utils/__pycache__/helpers.cpython-311.pyc
+  OK  backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+  OK  backend/utils/__pycache__/response.cpython-311.pyc
+  OK  backend/utils/__pycache__/security.cpython-311.pyc
+  OK  backend/utils/__pycache__/upload.cpython-311.pyc
+>> DELETED=8 / 8
+---- del batch n=2 ----
+  CHECK  backend/__pycache__/app.cpython-311.pyc 
+  CHECK  backend/__pycache__/config.cpython-311.pyc 
+  OK  backend/__pycache__/app.cpython-311.pyc
+  OK  backend/__pycache__/config.cpython-311.pyc
+>> DELETED=2 / 2
+---- rmdir batch n=4 ----
+  CHECK  backend/routes/__pycache__ 
+  CHECK  backend/services/__pycache__ 
+  CHECK  backend/utils/__pycache__ 
+  CHECK  backend/__pycache__ 
+  OK  backend/routes/__pycache__
+  OK  backend/services/__pycache__
+  OK  backend/utils/__pycache__
+  OK  backend/__pycache__
+>> DELETED=4 / 4

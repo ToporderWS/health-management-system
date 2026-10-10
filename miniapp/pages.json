@@ -1,0 +1,171 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-charts$": "@/components/u-charts/u-charts.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "个人健康管理",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/health-entry/index",
+      "style": {
+        "navigationBarTitleText": "健康录入",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/report/index",
+      "style": {
+        "navigationBarTitleText": "数据报告",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/article/index",
+      "style": {
+        "navigationBarTitleText": "健康科普",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/article-detail/index",
+      "style": {
+        "navigationBarTitleText": "文章详情",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/plan/index",
+      "style": {
+        "navigationBarTitleText": "健康计划",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/doctor-advice/index",
+      "style": {
+        "navigationBarTitleText": "医生建议",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/medical-notice/index",
+      "style": {
+        "navigationBarTitleText": "体检通知",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/medical-record/index",
+      "style": {
+        "navigationBarTitleText": "医疗记录",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/sport-goal/index",
+      "style": {
+        "navigationBarTitleText": "运动目标",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/training-plan/index",
+      "style": {
+        "navigationBarTitleText": "训练计划",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/fitness-advice/index",
+      "style": {
+        "navigationBarTitleText": "健身建议",
+        "navigationBarBackgroundColor": "#2E7D32",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "个人健康管理系统",
+    "navigationBarBackgroundColor": "#2E7D32",
+    "backgroundColor": "#F4FAF5",
+    "backgroundColorTop": "#F4FAF5",
+    "backgroundColorBottom": "#F4FAF5"
+  },
+  "tabBar": {
+    "color": "#9AA8B5",
+    "selectedColor": "#2E7D32",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/health-entry/index",
+        "text": "健康录入",
+        "iconPath": "static/tabbar/entry.png",
+        "selectedIconPath": "static/tabbar/entry-active.png"
+      },
+      {
+        "pagePath": "pages/report/index",
+        "text": "数据报告",
+        "iconPath": "static/tabbar/report.png",
+        "selectedIconPath": "static/tabbar/report-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/profile.png",
+        "selectedIconPath": "static/tabbar/profile-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+==============================================================================
+最终封板 · 补充只读侦察 2
+==============================================================================
+
+## health_article/notice -> health_article 共 4 行 (列:id,title,is_show,created_at)
+   全列: id,title,cover_img,content,author,is_show,publish_time,created_at
+    id=1 | title=每天喝多少水才健康？ | is_show=1 | created_at=2026-10-01 12:51:53
+    id=2 | title=如何科学安排一周运动计划 | is_show=1 | created_at=2026-10-01 12:51:53
+    id=3 | title=优质睡眠的 7 个小习惯 | is_show=1 | created_at=2026-10-01 12:51:53
+    id=4 | title=读懂体检报告里的血压数值 | is_show=1 | created_at=2026-10-01 12:51:53
+
+## health_article/notice -> notice 共 3 行 (列:id,title,is_show,created_at)
+   全列: id,title,content,publish_time,is_show,created_at
+    id=1 | title=系统上线公告 | is_show=1 | created_at=2026-10-01 12:51:53
+    id=2 | title=健康数据记录提醒 | is_show=1 | created_at=2026-10-01 12:51:53
+    id=3 | title=关于医疗建议的说明 | is_show=1 | created_at=2026-10-01 12:51:53
+
+## 各表含 *_id 的列
+   admin_operation_log  admin_id,target_id
+   coach_student        coach_id,user_id
+   doctor_advice        doctor_id,user_id
+   doctor_patient       doctor_id,user_id
+   fitness_advice       coach_id,user_id
+   health_plan          user_id
+   health_record        user_id
+   medical_notice       doctor_id,user_id
+   medical_record       doctor_id,user_id
+   sleep_record         user_id
+   sport_goal           coach_id,user_id
+   sport_record         user_id
+   training_plan        coach_id,user_id
+
+## 测试实体被引用统计
+   测试 users ids   = [3, 4, 5, 6, 7, 8, 9, 10, 11]
+   测试 doctor ids  = [7, 10, 13, 16, 6, 9, 12, 15, 4, 5, 8, 11, 14]
+   测试 coach ids   = [5, 7, 9, 11, 4, 6, 8, 10]
+   admin_operation_log  target_id~users=98; target_id~doctor_user=124; target_id~coach_user=96
+   coach_student        coach_id~users=4; coach_id~doctor_user=4; coach_id~coach_user=4; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   doctor_advice        doctor_id~users=3; doctor_id~doctor_user=4; doctor_id~coach_user=3; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   doctor_patient       doctor_id~users=3; doctor_id~doctor_user=4; doctor_id~coach_user=3; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   fitness_advice       coach_id~users=4; coach_id~doctor_user=4; coach_id~coach_user=4; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   health_plan          user_id~users=5; user_id~doctor_user=5; user_id~coach_user=4
+   health_record        user_id~users=5; user_id~doctor_user=5; user_id~coach_user=4
+   medical_notice       doctor_id~users=3; doctor_id~doctor_user=4; doctor_id~coach_user=3; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   medical_record       doctor_id~users=3; doctor_id~doctor_user=4; doctor_id~coach_user=3; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   sleep_record         user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+   sport_goal           coach_id~users=4; coach_id~doctor_user=4; coach_id~coach_user=4; user_id~users=4; user_id~doctor_user=4; user_id~coach_user=4
+   sport_record         user_id~users=5; user_id~doctor_user=5; user_id~coach_user=4
+   training_plan        coach_id~users=4; coach_id~doctor_user=4; coach_id~coach_user=4; user_id~users=4; user_id~doctor_user=5; user_id~coach_user=4
+
+## admin_operation_log 列: id,admin_id,operation_type,operation_content,target_type,target_id,created_at
+   总数 = 303
+   target_id 分布前 20: 8=18, 5=13, 6=13, 10=13, 11=13, 28=12, 38=12, 4=10, 44=10, 12=9, 41=9, 7=8, 9=8, 14=8, 20=8, 33=7, 30=7, 13=6, 17=6, 24=6
+
+## 孤儿检测（只读）
+   孤儿 doctor_patient = 0 ()
+   孤儿 coach_student = 0 ()

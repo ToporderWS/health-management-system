@@ -1,0 +1,11 @@
+ANCHOR .env  JWT_SECRET= lines = 1
+OLD_JWT_SECRET_LENGTH = 60
+ANCHOR .env.example  JWT_SECRET= lines = 1
+JWT_SECRET_ROTATED = YES
+JWT_SECRET_LENGTH = 86
+JWT_SECRET_SOURCE = cryptographically_secure_random
+ENV_SECRET_MATCHES_GENERATED = True
+.env.example_JWT_SECRET = CHANGE_ME_TO_A_STRONG_RANDOM_SECRET
+.env.example_CONTAINS_REAL_SECRET = False
+REAL_SECRET_IN_EXAMPLE = 0
+EOL .env = '\n'  .env.example = '\n'

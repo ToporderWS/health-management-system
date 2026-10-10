@@ -1,0 +1,95 @@
+{
+ "doctor_patient": [],
+ "coach_student": [],
+ "doctor_advice": [],
+ "medical_notice": [],
+ "medical_record": [],
+ "sport_goal": [],
+ "training_plan": [],
+ "fitness_advice": [],
+ "health_record": [],
+ "sleep_record": [],
+ "sport_record": [],
+ "health_plan": [],
+ "doctor_user": [
+  {
+   "id": 63,
+   "doctor_name": "doc_test_1001201710",
+   "real_name": "接口测试医生改",
+   "gender": "男",
+   "phone": "13790857030",
+   "specialty": "心血管内科",
+   "avatar": "default_doctor.jpg",
+   "audit_status": 1,
+   "created_at": "2026-10-01 20:17:17"
+  },
+  {
+   "id": 64,
+   "doctor_name": "doc_reject_1001201710",
+   "real_name": "待拒绝医生",
+   "gender": "男",
+   "phone": "13590857030",
+   "specialty": "外科",
+   "avatar": "default_doctor.jpg",
+   "audit_status": 2,
+   "created_at": "2026-10-01 20:17:33"
+  },
+  {
+   "id": 65,
+   "doctor_name": "doc_other_1001201710",
+   "real_name": "另一名医生",
+   "gender": "男",
+   "phone": "13390857030",
+   "specialty": "骨科",
+   "avatar": "default_doctor.jpg",
+   "audit_status": 1,
+   "created_at": "2026-10-01 20:17:42"
+  }
+ ],
+ "coach_user": [
+  {
+   "id": 46,
+   "coach_name": "coach_test_1001201710",
+   "real_name": "接口测试教练",
+   "gender": "女",
+   "phone": "13690857030",
+   "specialty": "体态矫正与力量训练",
+   "avatar": "default_coach.jpg",
+   "audit_status": 1,
+   "created_at": "2026-10-01 20:17:22"
+  },
+  {
+   "id": 47,
+   "coach_name": "coach_reject_1001201710",
+   "real_name": "待拒绝教练",
+   "gender": "女",
+   "phone": "13490857030",
+   "specialty": "瑜伽",
+   "avatar": "default_coach.jpg",
+   "audit_status": 2,
+   "created_at": "2026-10-01 20:17:35"
+  }
+ ],
+ "users": [
+  {
+   "id": 42,
+   "phone": "13990857030",
+   "nickname": "测试用户A改",
+   "avatar": "default_health.jpg",
+   "gender": "女",
+   "age": 30,
+   "height": "168.0",
+   "created_at": "2026-10-01 20:17:11"
+  },
+  {
+   "id": 43,
+   "phone": "13890857030",
+   "nickname": "接口测试用户B",
+   "avatar": "default_health.jpg",
+   "gender": null,
+   "age": null,
+   "height": null,
+   "created_at": "2026-10-01 20:17:40"
+  }
+ ]
+}

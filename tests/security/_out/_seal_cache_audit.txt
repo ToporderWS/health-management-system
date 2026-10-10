@@ -1,0 +1,277 @@
+=== A. 缓存目录清单 ===
+   backend/utils/__pycache__                      files=18   pyc=18   non_pyc=0
+   tests/__pycache__                              files=1    pyc=1    non_pyc=0
+   tests/manual-probes/_verify_out                files=49   pyc=0    non_pyc=49
+   tests/security/_out                            files=128  pyc=0    non_pyc=128
+   cache_dirs_total = 4
+
+=== B. 散落缓存/临时文件候选 ===
+   [LOG  ] backend/server.log                                           350548 B
+   [LOG  ] backend/server.log                                           350548 B
+   [PYC  ] backend/utils/__pycache__/__init__.cpython-311.pyc           336 B
+   [PYC  ] backend/utils/__pycache__/__init__.cpython-311.pyc           336 B
+   [PYC  ] backend/utils/__pycache__/__init__.cpython-313.pyc           325 B
+   [PYC  ] backend/utils/__pycache__/__init__.cpython-313.pyc           325 B
+   [PYC  ] backend/utils/__pycache__/audit_log.cpython-311.pyc          2111 B
+   [PYC  ] backend/utils/__pycache__/audit_log.cpython-311.pyc          2111 B
+   [PYC  ] backend/utils/__pycache__/audit_log.cpython-313.pyc          1874 B
+   [PYC  ] backend/utils/__pycache__/audit_log.cpython-313.pyc          1874 B
+   [PYC  ] backend/utils/__pycache__/auth.cpython-311.pyc               6495 B
+   [PYC  ] backend/utils/__pycache__/auth.cpython-311.pyc               6495 B
+   [PYC  ] backend/utils/__pycache__/auth.cpython-313.pyc               5670 B
+   [PYC  ] backend/utils/__pycache__/auth.cpython-313.pyc               5670 B
+   [PYC  ] backend/utils/__pycache__/db.cpython-311.pyc                 5824 B
+   [PYC  ] backend/utils/__pycache__/db.cpython-311.pyc                 5824 B
+   [PYC  ] backend/utils/__pycache__/db.cpython-313.pyc                 4883 B
+   [PYC  ] backend/utils/__pycache__/db.cpython-313.pyc                 4883 B
+   [PYC  ] backend/utils/__pycache__/helpers.cpython-311.pyc            8935 B
+   [PYC  ] backend/utils/__pycache__/helpers.cpython-311.pyc            8935 B
+   [PYC  ] backend/utils/__pycache__/helpers.cpython-313.pyc            8293 B
+   [PYC  ] backend/utils/__pycache__/helpers.cpython-313.pyc            8293 B
+   [PYC  ] backend/utils/__pycache__/jwt_utils.cpython-311.pyc          3231 B
+   [PYC  ] backend/utils/__pycache__/jwt_utils.cpython-311.pyc          3231 B
+   [PYC  ] backend/utils/__pycache__/jwt_utils.cpython-313.pyc          2967 B
+   [PYC  ] backend/utils/__pycache__/jwt_utils.cpython-313.pyc          2967 B
+   [PYC  ] backend/utils/__pycache__/response.cpython-311.pyc           1996 B
+   [PYC  ] backend/utils/__pycache__/response.cpython-311.pyc           1996 B
+   [PYC  ] backend/utils/__pycache__/response.cpython-313.pyc           1818 B
+   [PYC  ] backend/utils/__pycache__/response.cpython-313.pyc           1818 B
+   [PYC  ] backend/utils/__pycache__/security.cpython-311.pyc           1609 B
+   [PYC  ] backend/utils/__pycache__/security.cpython-311.pyc           1609 B
+   [PYC  ] backend/utils/__pycache__/security.cpython-313.pyc           1437 B
+   [PYC  ] backend/utils/__pycache__/security.cpython-313.pyc           1437 B
+   [PYC  ] backend/utils/__pycache__/upload.cpython-311.pyc             3554 B
+   [PYC  ] backend/utils/__pycache__/upload.cpython-311.pyc             3554 B
+   [PYC  ] backend/utils/__pycache__/upload.cpython-313.pyc             3329 B
+   [PYC  ] backend/utils/__pycache__/upload.cpython-313.pyc             3329 B
+   [PYC  ] tests/__pycache__/api_test.cpython-311.pyc                   98623 B
+   [PYC  ] tests/__pycache__/api_test.cpython-311.pyc                   98623 B
+   [LOG  ] tests/manual-probes/_build2.log                              988 B
+   [LOG  ] tests/manual-probes/_build2.log                              988 B
+   [OTHER] tests/manual-probes/_diag_fps.py                             5932 B
+   [OTHER] tests/manual-probes/_diag_fps.py                             5932 B
+   [OTHER] tests/manual-probes/_diag_overflow.py                        5749 B
+   [OTHER] tests/manual-probes/_diag_overflow.py                        5749 B
+   [OTHER] tests/manual-probes/_diag_perf.py                            7217 B
+   [OTHER] tests/manual-probes/_diag_perf.py                            7217 B
+   [OTHER] tests/manual-probes/_diag_perf2.py                           5397 B
+   [OTHER] tests/manual-probes/_diag_perf2.py                           5397 B
+   [LOG  ] tests/manual-probes/_measure.log                             672 B
+   [LOG  ] tests/manual-probes/_measure.log                             672 B
+   [LOG  ] tests/manual-probes/_mem.log                                 414 B
+   [LOG  ] tests/manual-probes/_mem.log                                 414 B
+   [OTHER] tests/manual-probes/_patch_anim.py                           10488 B
+   [OTHER] tests/manual-probes/_patch_anim.py                           10488 B
+   [OTHER] tests/manual-probes/_patch_verify2.py                        6472 B
+   [OTHER] tests/manual-probes/_patch_verify2.py                        6472 B
+   [LOG  ] tests/manual-probes/_probe2.log                              3331 B
+   [LOG  ] tests/manual-probes/_probe2.log                              3331 B
+   [LOG  ] tests/manual-probes/_probe3.log                              2542 B
+   [LOG  ] tests/manual-probes/_probe3.log                              2542 B
+   [OTHER] tests/manual-probes/_probe_click.py                          12525 B
+   [OTHER] tests/manual-probes/_probe_click.py                          12525 B
+   [OTHER] tests/manual-probes/_probe_login.py                          2059 B
+   [OTHER] tests/manual-probes/_probe_login.py                          2059 B
+   [OTHER] tests/manual-probes/_probe_login2.py                         4286 B
+   [OTHER] tests/manual-probes/_probe_login2.py                         4286 B
+   [OTHER] tests/manual-probes/_probe_login3.py                         8104 B
+   [OTHER] tests/manual-probes/_probe_login3.py                         8104 B
+   [OTHER] tests/manual-probes/_shot_audit.py                           7606 B
+   [OTHER] tests/manual-probes/_shot_audit.py                           7606 B
+   [LOG  ] tests/manual-probes/_shot_login.log                          503 B
+   [LOG  ] tests/manual-probes/_shot_login.log                          503 B
+   [OTHER] tests/manual-probes/_shot_login.py                           2819 B
+   [OTHER] tests/manual-probes/_shot_login.py                           2819 B
+   [OTHER] tests/manual-probes/_tune_anim.py                            6777 B
+   [OTHER] tests/manual-probes/_tune_anim.py                            6777 B
+   [OTHER] tests/manual-probes/_verify_anim.py                          41642 B
+   [OTHER] tests/manual-probes/_verify_anim.py                          41642 B
+   [OTHER] tests/manual-probes/_verify_login.py                         38991 B
+   [OTHER] tests/manual-probes/_verify_login.py                         38991 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run.log                 9379 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run.log                 9379 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run2.log                9357 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run2.log                9357 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run3.log                9558 B
+   [LOG  ] tests/manual-probes/_verify_out/anim_run3.log                9558 B
+   [LOG  ] tests/manual-probes/_verify_out/build_runner.log             469 B
+   [LOG  ] tests/manual-probes/_verify_out/build_runner.log             469 B
+   [LOG  ] tests/manual-probes/_verify_out/dev-server.log               161 B
+   [LOG  ] tests/manual-probes/_verify_out/dev-server.log               161 B
+   [LOG  ] tests/manual-probes/_verify_out/diag.log                     4641 B
+   [LOG  ] tests/manual-probes/_verify_out/diag.log                     4641 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_fps_gpu.log             710 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_fps_gpu.log             710 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_fps_nogpu.log           726 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_fps_nogpu.log           726 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_perf.log                1309 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_perf.log                1309 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_perf2.log               1456 B
+   [LOG  ] tests/manual-probes/_verify_out/diag_perf2.log               1456 B
+   [LOG  ] tests/manual-probes/_verify_out/npm_build.log                9333 B
+   [LOG  ] tests/manual-probes/_verify_out/npm_build.log                9333 B
+   [LOG  ] tests/manual-probes/_verify_out/run2.log                     4034 B
+   [LOG  ] tests/manual-probes/_verify_out/run2.log                     4034 B
+   [OTHER] tests/manual-probes/_verify_portal.py                        24656 B
+   [OTHER] tests/manual-probes/_verify_portal.py                        24656 B
+   [LOG  ] tests/manual-probes/anim_run4.log                            9411 B
+   [LOG  ] tests/manual-probes/anim_run4.log                            9411 B
+   [LOG  ] tests/manual-probes/login_verify.log                         19027 B
+   [LOG  ] tests/manual-probes/login_verify.log                         19027 B
+   [LOG  ] tests/security/_out/_run.log                                 24910 B
+   [LOG  ] tests/security/_out/_run.log                                 24910 B
+   [LOG  ] tests/security/_out/_setup.log                               1739 B
+   [LOG  ] tests/security/_out/_setup.log                               1739 B
+   [OTHER] tests/security/_out/_verify_before.txt                       2144 B
+   [OTHER] tests/security/_out/_verify_before.txt                       2144 B
+   [OTHER] tests/security/_patch_addr_fix.py                            6005 B
+   [OTHER] tests/security/_patch_addr_fix.py                            6005 B
+   [OTHER] tests/security/_patch_memory.py                              3473 B
+   [OTHER] tests/security/_patch_memory.py                              3473 B
+   [OTHER] tests/security/_patch_report.py                              2069 B
+   [OTHER] tests/security/_patch_report.py                              2069 B
+   [OTHER] tests/security/_patch_report_v2.py                           18544 B
+   [OTHER] tests/security/_patch_report_v2.py                           18544 B
+   [OTHER] tests/security/_patch_report_v3.py                           9156 B
+   [OTHER] tests/security/_patch_report_v3.py                           9156 B
+   [OTHER] tests/security/_patch_webcheck.py                            2897 B
+   [OTHER] tests/security/_patch_webcheck.py                            2897 B
+   by_kind = {'LOG': 46, 'PYC': 38, 'OTHER': 46}
+
+=== C. 禁列校验（任何命中即需保留） ===
+   product_src_hits = 0 
+   FINAL_PROJECT_SEAL_REPORT    hits=0 
+   .env.example                 hits=0 
+   .env                         hits=0 
+
+=== D. 各候选是否可证明为缓存/临时 ===
+   LOG_RUNTIME    backend/server.log
+   LOG_RUNTIME    backend/server.log
+   CACHE_OK       backend/utils/__pycache__/__init__.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/__init__.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/__init__.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/__init__.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/audit_log.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/audit_log.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/audit_log.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/audit_log.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/auth.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/auth.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/auth.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/auth.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/db.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/db.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/db.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/db.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/helpers.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/helpers.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/helpers.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/helpers.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/jwt_utils.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/jwt_utils.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/jwt_utils.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/response.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/response.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/response.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/response.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/security.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/security.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/security.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/security.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/upload.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/upload.cpython-311.pyc
+   CACHE_OK       backend/utils/__pycache__/upload.cpython-313.pyc
+   CACHE_OK       backend/utils/__pycache__/upload.cpython-313.pyc
+   CACHE_OK       tests/__pycache__/api_test.cpython-311.pyc
+   CACHE_OK       tests/__pycache__/api_test.cpython-311.pyc
+   LOG_RUNTIME    tests/manual-probes/_build2.log
+   LOG_RUNTIME    tests/manual-probes/_build2.log
+   NEEDS_REVIEW   tests/manual-probes/_diag_fps.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_fps.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_overflow.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_overflow.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_perf.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_perf.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_perf2.py
+   NEEDS_REVIEW   tests/manual-probes/_diag_perf2.py
+   LOG_RUNTIME    tests/manual-probes/_measure.log
+   LOG_RUNTIME    tests/manual-probes/_measure.log
+   LOG_RUNTIME    tests/manual-probes/_mem.log
+   LOG_RUNTIME    tests/manual-probes/_mem.log
+   NEEDS_REVIEW   tests/manual-probes/_patch_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_patch_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_patch_verify2.py
+   NEEDS_REVIEW   tests/manual-probes/_patch_verify2.py
+   LOG_RUNTIME    tests/manual-probes/_probe2.log
+   LOG_RUNTIME    tests/manual-probes/_probe2.log
+   LOG_RUNTIME    tests/manual-probes/_probe3.log
+   LOG_RUNTIME    tests/manual-probes/_probe3.log
+   NEEDS_REVIEW   tests/manual-probes/_probe_click.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_click.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login2.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login2.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login3.py
+   NEEDS_REVIEW   tests/manual-probes/_probe_login3.py
+   NEEDS_REVIEW   tests/manual-probes/_shot_audit.py
+   NEEDS_REVIEW   tests/manual-probes/_shot_audit.py
+   LOG_RUNTIME    tests/manual-probes/_shot_login.log
+   LOG_RUNTIME    tests/manual-probes/_shot_login.log
+   NEEDS_REVIEW   tests/manual-probes/_shot_login.py
+   NEEDS_REVIEW   tests/manual-probes/_shot_login.py
+   NEEDS_REVIEW   tests/manual-probes/_tune_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_tune_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_verify_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_verify_anim.py
+   NEEDS_REVIEW   tests/manual-probes/_verify_login.py
+   NEEDS_REVIEW   tests/manual-probes/_verify_login.py
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run2.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run2.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run3.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/anim_run3.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/build_runner.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/build_runner.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/dev-server.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/dev-server.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_fps_gpu.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_fps_gpu.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_fps_nogpu.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_fps_nogpu.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_perf.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_perf.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_perf2.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/diag_perf2.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/npm_build.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/npm_build.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/run2.log
+   LOG_RUNTIME    tests/manual-probes/_verify_out/run2.log
+   NEEDS_REVIEW   tests/manual-probes/_verify_portal.py
+   NEEDS_REVIEW   tests/manual-probes/_verify_portal.py
+   LOG_RUNTIME    tests/manual-probes/anim_run4.log
+   LOG_RUNTIME    tests/manual-probes/anim_run4.log
+   LOG_RUNTIME    tests/manual-probes/login_verify.log
+   LOG_RUNTIME    tests/manual-probes/login_verify.log
+   LOG_RUNTIME    tests/security/_out/_run.log
+   LOG_RUNTIME    tests/security/_out/_run.log
+   LOG_RUNTIME    tests/security/_out/_setup.log
+   LOG_RUNTIME    tests/security/_out/_setup.log
+   NEEDS_REVIEW   tests/security/_out/_verify_before.txt
+   NEEDS_REVIEW   tests/security/_out/_verify_before.txt
+   NEEDS_REVIEW   tests/security/_patch_addr_fix.py
+   NEEDS_REVIEW   tests/security/_patch_addr_fix.py
+   NEEDS_REVIEW   tests/security/_patch_memory.py
+   NEEDS_REVIEW   tests/security/_patch_memory.py
+   NEEDS_REVIEW   tests/security/_patch_report.py
+   NEEDS_REVIEW   tests/security/_patch_report.py
+   NEEDS_REVIEW   tests/security/_patch_report_v2.py
+   NEEDS_REVIEW   tests/security/_patch_report_v2.py
+   NEEDS_REVIEW   tests/security/_patch_report_v3.py
+   NEEDS_REVIEW   tests/security/_patch_report_v3.py
+   NEEDS_REVIEW   tests/security/_patch_webcheck.py
+   NEEDS_REVIEW   tests/security/_patch_webcheck.py

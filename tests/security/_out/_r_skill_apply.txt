@@ -1,0 +1,9 @@
+==== skill 沉淀 (APPLY) ====
+== ucharts-config-key-and-canvas-probe  (12342 bytes, LF)
+   edit1 命中=1  OK
+   edit2 命中=1  OK
+   -> 已落盘，新字节数 15949 (+3607)
+== hbuilderx-cli-build-and-verify  (8846 bytes, LF)
+   edit1 命中=1  OK
+   -> 已落盘，新字节数 10036 (+1190)
+汇总: ucharts=True  hbuilderx=True

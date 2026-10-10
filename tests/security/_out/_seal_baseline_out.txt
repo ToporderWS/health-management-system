@@ -1,0 +1,13 @@
+== 保护基线 ==
+  表数 = 19  列数 = 139
+  结构指纹 = 817cc3fbb064ae6a7b534815d82294bc791432ddb35b4b448c4b49e9f733af83
+  受保护 users = [1, 2, 12, 13]
+  小周↔医生绑定 = [{'doctor_id': 2, 'user_id': 13}]
+  小周↔教练绑定 = [{'coach_id': 1, 'user_id': 13}]
+  小周业务 = {'health_record': 1, 'sleep_record': 1, 'sport_record': 1, 'health_plan': 1, 'doctor_advice': 1, 'medical_notice': 1, 'medical_record': 1, 'sport_goal': 0, 'training_plan': 1, 'fitness_advice': 1}
+
+== 残留判定 ==
+  CONFIRMED users   = [3, 4, 5, 6, 7, 8, 9, 10, 11]
+  CONFIRMED doctor  = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  CONFIRMED coach   = [4, 5, 6, 7, 8, 9, 10, 11]
+  UNCONFIRMED       = {"users": [], "doctor_user": [{"id": 17, "name": "001"}, {"id": 18, "name": "003"}], "coach_user": [{"id": 12, "name": "002"}]}

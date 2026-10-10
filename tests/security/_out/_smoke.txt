@@ -1,0 +1,16 @@
+[PASS] 后端 /api/health 存活且数据库 ok
+[PASS] 管理员可登录
+[PASS] 管理员读取 用户列表
+[PASS] 管理员读取 医生列表
+[PASS] 管理员读取 教练列表
+[PASS] 管理员读取 审核概览
+[PASS] 管理员读取 操作日志
+[PASS] 管理员读取 仪表盘
+[PASS] doctor002 存在
+[PASS] coach001 存在
+[PASS] 小周(user13) 存在
+[PASS] 小周 - doctor002 绑定仍在
+[PASS] 小周 - coach001 绑定仍在
+[PASS] sec_user_a 已不存在（登录应失败）
+[PASS] 匿名访问 /admin/user/list 被拒
+---- 冒烟：15/15 PASS

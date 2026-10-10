@@ -1,0 +1,108 @@
+{
+  "ts": "2026-10-01 19:57:55",
+  "counts": {
+    "users": 13,
+    "doctor_user": 18,
+    "coach_user": 12,
+    "doctor_patient": 7,
+    "coach_student": 7,
+    "health_record": 10,
+    "sleep_record": 7,
+    "sport_record": 12,
+    "health_plan": 8,
+    "doctor_advice": 6,
+    "medical_notice": 6,
+    "medical_record": 6,
+    "sport_goal": 5,
+    "training_plan": 6,
+    "fitness_advice": 6,
+    "admin_operation_log": 264
+  },
+  "protected": {
+    "users": [
+      {
+        "id": 1,
+        "phone": "13800138001",
+        "nickname": "小林同学"
+      },
+      {
+        "id": 2,
+        "phone": "13800138002",
+        "nickname": "阿may"
+      },
+      {
+        "id": 12,
+        "phone": "13844475825",
+        "nickname": "小孙"
+      },
+      {
+        "id": 13,
+        "phone": "13814142525",
+        "nickname": "小周"
+      }
+    ],
+    "doctors": [
+      {
+        "id": 1,
+        "doctor_name": "doctor001",
+        "audit_status": 1
+      },
+      {
+        "id": 2,
+        "doctor_name": "doctor002",
+        "audit_status": 1
+      },
+      {
+        "id": 3,
+        "doctor_name": "doctor003",
+        "audit_status": 1
+      }
+    ],
+    "coaches": [
+      {
+        "id": 1,
+        "coach_name": "coach001",
+        "audit_status": 1
+      },
+      {
+        "id": 2,
+        "coach_name": "coach002",
+        "audit_status": 1
+      },
+      {
+        "id": 3,
+        "coach_name": "coach003",
+        "audit_status": 1
+      }
+    ],
+    "xiaozhou_doctors": [
+      {
+        "doctor_id": 2,
+        "user_id": 13
+      }
+    ],
+    "xiaozhou_coaches": [
+      {
+        "coach_id": 1,
+        "user_id": 13
+      }
+    ],
+    "xiaozhou_biz": {
+      "health_record": 1,
+      "sleep_record": 1,
+      "sport_record": 1,
+      "health_plan": 1,
+      "doctor_advice": 1,
+      "medical_notice": 1,
+      "medical_record": 1,
+      "sport_goal": 0,
+      "training_plan": 1,
+      "fitness_advice": 1
+    }
+  },
+  "residual": {
+    "sec_users": 0,
+    "sec_doctors": 0,
+    "sec_coaches": 0
+  }
+}

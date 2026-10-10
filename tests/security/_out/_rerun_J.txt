@@ -1,0 +1,10 @@
+
+======== 专项 J ========
+[PASS] J-01 全部请求未出现 HTTP 500                          http=None code=None 
+[PASS] J-02 无连接层异常（后端进程全程存活）                          http=None code=None 
+[PASS] J-03 所有响应均为统一 {code,msg,data} 契约（无 HTML 错误页）   http=None code=None 
+[PASS] J-04 全部响应无敏感信息泄露（traceback/SQL/哈希/密钥；登录下发 token 除外） http=None code=None 
+[PASS] J-05 经历全部异常请求后后端仍存活                            http=200  code=200  数据库连接正常
+[PASS] J-06 /api/health 报告数据库连通                       http=200  code=200  数据库连接正常
+[PASS] J-07 不存在接口返回统一契约而非 HTML 404                    http=400  code=400  接口不存在：/api/no_such_api_sec_test
+---- J: 7/7 PASS, 0 FAIL (0s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_J.json

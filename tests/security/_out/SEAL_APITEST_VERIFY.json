@@ -1,0 +1,173 @@
+{
+ "before": {
+  "users": 4,
+  "doctor_user": 5,
+  "coach_user": 4,
+  "doctor_patient": 3,
+  "coach_student": 3,
+  "health_record": 5,
+  "sleep_record": 3,
+  "sport_record": 7,
+  "health_plan": 3,
+  "doctor_advice": 2,
+  "medical_notice": 2,
+  "medical_record": 2,
+  "sport_goal": 1,
+  "training_plan": 2,
+  "fitness_advice": 2,
+  "admin_operation_log": 324,
+  "_protected": {
+   "users": [
+    {
+     "id": 1,
+     "nickname": "小林同学",
+     "phone": "13800138001"
+    },
+    {
+     "id": 2,
+     "nickname": "阿may",
+     "phone": "13800138002"
+    },
+    {
+     "id": 12,
+     "nickname": "小孙",
+     "phone": "13844475825"
+    },
+    {
+     "id": 13,
+     "nickname": "小周",
+     "phone": "13814142525"
+    }
+   ],
+   "dp_13": [
+    {
+     "doctor_id": 2,
+     "user_id": 13
+    }
+   ],
+   "cs_13": [
+    {
+     "coach_id": 1,
+     "user_id": 13
+    }
+   ],
+   "biz13": {
+    "health_record": [
+     10
+    ],
+    "sleep_record": [
+     7
+    ],
+    "sport_record": [
+     12
+    ],
+    "health_plan": [
+     8
+    ],
+    "doctor_advice": [
+     6
+    ],
+    "medical_notice": [
+     6
+    ],
+    "medical_record": [
+     6
+    ],
+    "sport_goal": [],
+    "training_plan": [
+     6
+    ],
+    "fitness_advice": [
+     6
+    ]
+   }
+  }
+ },
+ "after": {
+  "users": 4,
+  "doctor_user": 5,
+  "coach_user": 4,
+  "doctor_patient": 3,
+  "coach_student": 3,
+  "health_record": 5,
+  "sleep_record": 3,
+  "sport_record": 7,
+  "health_plan": 3,
+  "doctor_advice": 2,
+  "medical_notice": 2,
+  "medical_record": 2,
+  "sport_goal": 1,
+  "training_plan": 2,
+  "fitness_advice": 2,
+  "admin_operation_log": 345,
+  "_protected": {
+   "users": [
+    {
+     "id": 1,
+     "nickname": "小林同学",
+     "phone": "13800138001"
+    },
+    {
+     "id": 2,
+     "nickname": "阿may",
+     "phone": "13800138002"
+    },
+    {
+     "id": 12,
+     "nickname": "小孙",
+     "phone": "13844475825"
+    },
+    {
+     "id": 13,
+     "nickname": "小周",
+     "phone": "13814142525"
+    }
+   ],
+   "dp_13": [
+    {
+     "doctor_id": 2,
+     "user_id": 13
+    }
+   ],
+   "cs_13": [
+    {
+     "coach_id": 1,
+     "user_id": 13
+    }
+   ],
+   "biz13": {
+    "health_record": [
+     10
+    ],
+    "sleep_record": [
+     7
+    ],
+    "sport_record": [
+     12
+    ],
+    "health_plan": [
+     8
+    ],
+    "doctor_advice": [
+     6
+    ],
+    "medical_notice": [
+     6
+    ],
+    "medical_record": [
+     6
+    ],
+    "sport_goal": [],
+    "training_plan": [
+     6
+    ],
+    "fitness_advice": [
+     6
+    ]
+   }
+  }
+ },
+ "business_restored": true,
+ "protected_intact": true,
+ "exit_code": 0
+}

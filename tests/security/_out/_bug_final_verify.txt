@@ -1,0 +1,21 @@
+USER13 = {"id": "13", "phone": "13814142525", "password_hash": "scrypt:32768:8:1$PtvT2WCQSG4JXgVm$f64aa016a2d31ebbb8fd32b0a07e8731552d713ef38b2b55b94156df23f69ea38d96e6b9e663ca2e8c3c0e3a776f973e0438b8bc147a3ad02daf3e123dc2a527", "nickname": "小周", "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg", "gender": "男", "age": "15", "height": "175.0", "created_at": "2026-10-01 17:20:57"}
+USERS_COUNT = 4
+BIND_doctor_patient_13 = [{"id": "11", "doctor_id": "2", "user_id": "13", "created_at": "2026-10-01 17:29:39"}]
+BIND_coach_student_13 = [{"id": "11", "coach_id": "1", "user_id": "13", "created_at": "2026-10-01 17:29:59"}]
+BIZ_health_record_13 = 1
+BIZ_diet_record_13 = N/A((1146, "Table 'health_management.diet_re)
+BIZ_exercise_record_13 = N/A((1146, "Table 'health_management.exercis)
+BIZ_weight_record_13 = N/A((1146, "Table 'health_management.weight_)
+BIZ_body_data_13 = N/A((1146, "Table 'health_management.body_da)
+BIZ_health_goal_13 = N/A((1146, "Table 'health_management.health_)
+BIZ_reminder_13 = N/A((1146, "Table 'health_management.reminde)
+BIZ_consultation_13 = N/A((1146, "Table 'health_management.consult)
+BIZ_message_13 = N/A((1146, "Table 'health_management.message)
+BIZ_article_collect_13 = N/A((1146, "Table 'health_management.article)
+SCHEMA_TABLES = 19 COLUMNS = 139
+TABLE_LIST = ["admin_operation_log", "admin_user", "coach_student", "coach_user", "doctor_advice", "doctor_patient", "doctor_user", "fitness_advice", "health_article", "health_plan", "health_record", "medical_notice", "medical_record", "notice", "sleep_record", "sport_goal", "sport_record", "training_plan", "users"]
+DEFAULT_AVATAR_USERS = 3
+DISTINCT_AVATARS = ["default_health.jpg", "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg"]
+AVATAR_FILE = EXISTS size=40129 jpeg=True
+HTTP[127.0.0.1] = status=200 ct=image/jpeg bytes=40129
+HTTP[192.168.2.219] = status=200 ct=image/jpeg bytes=40129

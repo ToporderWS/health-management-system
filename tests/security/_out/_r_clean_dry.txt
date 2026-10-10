@@ -1,0 +1,71 @@
+################ 收尾清理 (DRY-RUN) ################
+
+########## 阶段 1：sec_ 前缀实体 ##########
+  目标实体: users=[63, 64, 65] doctors=[94, 95, 93, 91, 92] coaches=[69, 68, 66, 67]
+  [dry-run] DELETE FROM health_record WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM sleep_record WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM sport_record WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM health_plan WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM doctor_advice WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM medical_notice WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM medical_record WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM sport_goal WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM training_plan WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM fitness_advice WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM doctor_patient WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM coach_student WHERE user_id IN (%s,%s,%s)
+  [dry-run] DELETE FROM doctor_advice WHERE doctor_id IN (%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_notice WHERE doctor_id IN (%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_record WHERE doctor_id IN (%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_patient WHERE doctor_id IN (%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_user WHERE id IN (%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM sport_goal WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM training_plan WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM fitness_advice WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM coach_student WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM coach_user WHERE id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM users WHERE id IN (%s,%s,%s)
+
+########## 阶段 2：api_test.py 本轮残留 ##########
+  目标: users=[26, 27, 28, 29] doctors=[38, 39, 40, 41, 42, 43] coaches=[28, 29, 30, 31]
+  守卫通过（id 白名单 + 手机号前缀 + 命名关键字 全部匹配）
+  [dry-run] DELETE FROM health_record WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM sleep_record WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM sport_record WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM health_plan WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_advice WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_notice WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_record WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM sport_goal WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM training_plan WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM fitness_advice WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_patient WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM coach_student WHERE user_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_advice WHERE doctor_id IN (%s,%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_notice WHERE doctor_id IN (%s,%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM medical_record WHERE doctor_id IN (%s,%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_patient WHERE doctor_id IN (%s,%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM doctor_user WHERE id IN (%s,%s,%s,%s,%s,%s)
+  [dry-run] DELETE FROM sport_goal WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM training_plan WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM fitness_advice WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM coach_student WHERE coach_id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM coach_user WHERE id IN (%s,%s,%s,%s)
+  [dry-run] DELETE FROM users WHERE id IN (%s,%s,%s,%s)
+
+########## 清理后剩余实体 ##########
+  users      : 7
+  doctor_user: 10
+  coach_user : 8
+  受保护实体抽查:
+    users id=1 -> 小林同学
+    users id=2 -> 阿may
+    users id=12 -> 小孙
+    users id=13 -> 小周
+    doctor id=1 -> doctor001
+    doctor id=2 -> doctor002
+    doctor id=3 -> doctor003
+    coach id=1 -> coach001
+    coach id=2 -> coach002
+    coach id=3 -> coach003
+  小周(user 13) 绑定: doctor_patient=[{'doctor_id': 2}] coach_student=[{'coach_id': 1}]

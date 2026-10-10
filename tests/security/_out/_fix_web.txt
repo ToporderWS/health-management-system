@@ -1,0 +1,47 @@
+==============================================================================
+PC 管理端静态检查  WEB = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\management-web
+==============================================================================
+[PASS] 技术栈依赖齐备（Vue3/Vite/ElementPlus/VueRouter/Axios/ECharts）
+[PASS] node_modules 已安装
+[PASS] vite build 产物 dist/ 存在
+[PASS] dist/index.html 存在
+[PASS] dist/assets 含 48 个 JS 与 16 个 CSS 产物
+[PASS] 三种角色的页面均被独立打包为路由 chunk
+[PASS] 医生 端 10 条路由全部定义
+[PASS] 教练 端 9 条路由全部定义
+[PASS] 管理员 端 13 条路由全部定义
+[PASS] 全部路由懒加载视图文件均存在
+[PASS] 存在全局前置守卫 beforeEach
+[PASS] 守卫校验角色自己的 Token（isLogin(role)）
+[PASS] 角色不匹配/未登录 → 跳转该角色登录页
+[PASS] 后端 401 → 清除对应角色 Token 并跳回其登录页
+[PASS] 已登录访问登录页 → 直接进入该角色工作台
+[PASS] 管理员左侧导航固定 12 个一级模块
+[PASS] 12 个一级模块名称与顺序与需求一致
+[PASS] 三种角色各自拥有独立 Shell（布局/菜单/主题）
+[PASS] 医生 / 教练 / 管理员 菜单集合互不相同
+[FAIL] utils/config.js 读取 VITE_API_BASE_URL 并以 8080 地址兜底  => 
+[FAIL] .env.production 固定 API 基础地址为 http://192.168.1.4:8080/api  => # 生产环境：同源部署，API 与静态资源使用相对路径（由同源 Web Server 反向代理转发到 Flask:8080）
+VITE_API_BASE_URL=/api
+VITE_STATIC_BASE_URL=/static/uploa
+[PASS] .env.development 走代理且代理目标为 8080
+[PASS] vite 代理 /api 与 /static 到后端 8080
+[PASS] Axios 的 baseURL 取自 utils/config.js（未在页面中硬编码）
+[PASS] 除 utils/config.js 外无硬编码 IP
+[PASS] 无 TODO / 省略 / 未实现标记
+[PASS] PC 端无 5000/5001 端口
+[PASS] PC 端无 Mock 假数据标识
+[PASS] Axios 统一封装：baseURL 来自 utils/config.js（唯一来源）
+[PASS] Axios 请求拦截器自动携带角色 Token
+[PASS] Axios 响应拦截器按角色处理 401
+[PASS] 统一解析 {code,msg,data} 契约
+[PASS] 三角色各自独立的请求实例（Token 不串用）
+
+==============================================================================
+PC 端静态检查汇总：共 33 项，PASS 31 项，FAIL 2 项
+==============================================================================
+FAIL utils/config.js 读取 VITE_API_BASE_URL 并以 8080 地址兜底 => 
+FAIL .env.production 固定 API 基础地址为 http://192.168.1.4:8080/api => # 生产环境：同源部署，API 与静态资源使用相对路径（由同源 Web Server 反向代理转发到 Flask:8080）
+VITE_API_BASE_URL=/api
+VITE_STATIC_BASE_URL=/static/uploa
+明细已写入： C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\web_check_result.json

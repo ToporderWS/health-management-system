@@ -1,0 +1,6 @@
+OLD LISTENING PIDS = []
+PORT 8080 FREE = True
+NEW FLASK PID = 40892
+HEALTH OK after 0.5s: 200 {"code":200,"data":{"database":"ok","service":"ok","version":"V3.2 FINAL"},"msg":"数据库连接正常"}
+
+LISTENING PIDS NOW = []

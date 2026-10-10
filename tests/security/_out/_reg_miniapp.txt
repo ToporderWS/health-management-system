@@ -1,0 +1,32 @@
+==============================================================================
+小程序端静态检查  APP = C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\miniapp
+==============================================================================
+[PASS] pages.json 存在
+[PASS] pages.json 可解析且含 pages
+[PASS] pages.json 注册的 15 个页面均存在真实 .vue 文件
+[PASS] 需求要求的 15 个页面全部已注册
+[PASS] TabBar 固定为 首页/健康录入/数据报告/我的
+[PASS] TabBar 8 个图标文件齐备
+[PASS] uCharts 封装组件存在
+[PASS] uCharts 官方库存在
+[PASS] uCharts 库为 ESM 默认导出
+[PASS] 数据报告页使用 <u-charts> 组件
+[PASS] 数据报告读取 5 类后端真实字段
+[PASS] 全部 @/ 别名 import 均可解析
+[FAIL] API 基础地址在 common/config.js 中定义  => 
+[PASS] 除 config.js 外无任何硬编码 IP 地址
+[PASS] 所有 navigateTo/switchTab 目标均已注册
+[PASS] TabBar 页面未被错误地使用 navigateTo 打开
+[PASS] 无 TODO / 省略 / 未实现标记
+[PASS] 业务页面无 Mock 假数据标识
+[PASS] 小程序端无 5000/5001 端口
+[PASS] 全部页面 .vue 含 template / script setup / scoped 样式（App.vue 按根组件规范校验）
+[PASS] 请求层统一携带 Authorization: Bearer
+[PASS] 请求层统一处理 401 → 清除登录态并跳登录
+[PASS] 小程序 API 层覆盖需求要求的 16 个接口
+
+==============================================================================
+小程序静态检查汇总：共 23 项，PASS 22 项，FAIL 1 项
+==============================================================================
+FAIL API 基础地址在 common/config.js 中定义 => 
+明细已写入： C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\miniapp_check_result.json

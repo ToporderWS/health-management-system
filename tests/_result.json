@@ -1,0 +1,4803 @@
+{
+  "total": 199,
+  "pass": 199,
+  "fail": 0,
+  "results": [
+    {
+      "group": "普通用户",
+      "name": "注册",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 66
+        },
+        "msg": "注册成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "重复手机号注册被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "该手机号已注册"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "登录",
+      "expect": "code=200 且返回 token",
+      "actual": {
+        "code": 200,
+        "data": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOjAsInRva2VuX3R5cGUiOiJ1c2VyX3Rva2VuIiwiaWF0IjoxNzkwOTIxNjUzLCJleHAiOjE3OTExODA4NTN9._IgJtskZL3ghQR-lhD-mwzB5YXxpZF-sULZgH61vl3Q",
+          "user_info": {
+            "age": 28,
+            "avatar": "default_health.jpg",
+            "created_at": "2026-10-02 14:14:13",
+            "gender": "男",
+            "height": 175.5,
+            "id": 66,
+            "nickname": "接口测试用户A",
+            "phone": "13990921652"
+          }
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "错误密码登录被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "手机号或密码错误"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查询个人资料",
+      "expect": "code=200 且手机号一致",
+      "actual": {
+        "code": 200,
+        "data": {
+          "age": 28,
+          "avatar": "default_health.jpg",
+          "created_at": "2026-10-02 14:14:13",
+          "gender": "男",
+          "height": 175.5,
+          "id": 66,
+          "nickname": "接口测试用户A",
+          "phone": "13990921652"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "修改资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "age": 30,
+          "avatar": "default_health.jpg",
+          "created_at": "2026-10-02 14:14:13",
+          "gender": "女",
+          "height": 168.0,
+          "id": 66,
+          "nickname": "测试用户A改",
+          "phone": "13990921652"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "资料真实写入数据库",
+      "expect": "数据库昵称=测试用户A改",
+      "actual": "测试用户A改",
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康指标录入",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 68
+        },
+        "msg": "健康指标记录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康指标真实落库",
+      "expect": "记录存在且归属本人",
+      "actual": "1",
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康指标列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "blood_pressure_high": 128,
+              "blood_pressure_low": 82,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-02 14:14:14",
+              "heart_rate": 76,
+              "id": 68,
+              "record_date": "2026-10-02",
+              "user_id": 66,
+              "weight": 65.5
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "睡眠录入",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 37,
+          "sleep_duration": 480
+        },
+        "msg": "睡眠记录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "睡眠时长后端自动计算",
+      "expect": "480 分钟",
+      "actual": "480",
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "非法睡眠质量被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "睡眠质量只能选择：很好 / 一般 / 较差"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "睡眠列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:14",
+              "id": 37,
+              "sleep_date": "2026-10-02",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-02 07:00:00",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 23:00:00",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "运动录入",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 42
+        },
+        "msg": "运动记录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "运动列表",
+      "expect": "code=200",
+      "actual": "-",
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康计划创建",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 48
+        },
+        "msg": "健康计划创建成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康计划状态更新",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "plan_status": 1
+        },
+        "msg": "计划状态更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "计划状态真实落库",
+      "expect": "plan_status=1",
+      "actual": "1",
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康计划列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "数据报告统计",
+      "expect": "code=200 且含体重/血压/睡眠趋势与今日概览",
+      "actual": [
+        "blood_pressure_trend",
+        "days",
+        "overview",
+        "plan_list",
+        "sleep_quality",
+        "sleep_trend",
+        "sport_by_type",
+        "sport_daily",
+        "summary",
+        "weight_trend"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康科普列表（免登录）",
+      "expect": "code=200 且只返回 is_show=1",
+      "actual": 4,
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "健康科普详情",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "author": "健康编辑部",
+          "content": "血压通常以「收缩压/舒张压」表示，单位为 mmHg。一般成年人在安静状态下，收缩压低于 120、舒张压低于 80 属于理想范围。单次测量偏高并不等于异常，建议在平静状态下多次测量并咨询专业医疗人员。",
+          "cover_img": "default_health.jpg",
+          "created_at": "2026-10-01 12:51:53",
+          "id": 4,
+          "is_show": 1,
+          "publish_time": "2026-10-01 12:51:53",
+          "title": "读懂体检报告里的血压数值"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "系统公告列表（免登录）",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "content": "本系统提供的健康建议均由医生人工填写，系统不会自动诊断疾病或推荐药物。如身体持续异常，请及时前往正规医疗机构就诊。",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 3,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "关于医疗建议的说明"
+            },
+            {
+              "content": "建议每日固定时间记录体重、血压等健康指标，持续记录可获得更准确的趋势分析结果。",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "健康数据记录提醒"
+            },
+            {
+              "content": "个人健康管理系统 V3.2 正式上线，欢迎使用健康数据记录、趋势分析、医生建议与教练训练计划等功能。",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "系统上线公告"
+            }
+          ],
+          "page": 1,
+          "page_size": 5,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人医生建议",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人体检通知",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人医疗记录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人运动目标",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人训练计划",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "查看本人健身建议",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "修改密码",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "密码修改成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "新密码可登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOjAsInRva2VuX3R5cGUiOiJ1c2VyX3Rva2VuIiwiaWF0IjoxNzkwOTIxNjU3LCJleHAiOjE3OTExODA4NTd9.GpVQBi_ryhZIH5g5K8jh5QzBvEh-Et8e3bCw8DmcVvU",
+          "user_info": {
+            "age": 30,
+            "avatar": "default_health.jpg",
+            "created_at": "2026-10-02 14:14:13",
+            "gender": "女",
+            "height": 168.0,
+            "id": 66,
+            "nickname": "测试用户A改",
+            "phone": "13990921652"
+          }
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "普通用户",
+      "name": "退出登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "已退出登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "注册申请提交",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "audit_status": 0,
+          "id": 96
+        },
+        "msg": "注册申请已提交，请等待管理员审核。"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生·安全 I",
+      "name": "恶意提交 audit_status=1 被强制为 0",
+      "expect": "数据库 audit_status=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "医生·安全 I",
+      "name": "恶意提交 id 被忽略（自增 ID 生效）",
+      "expect": "id != 999999",
+      "actual": "96",
+      "status": "PASS"
+    },
+    {
+      "group": "医生·越权 G",
+      "name": "待审核医生登录被拒且无 Token",
+      "expect": "code=400 且 data 中无 token",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "账号正在审核中，请耐心等待"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "管理员审核通过",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "审核通过"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "审核通过后登录",
+      "expect": "code=200 且返回 doctor_token",
+      "actual": {
+        "code": 200,
+        "data": {
+          "doctor_info": {
+            "audit_status": 1,
+            "audit_status_text": "审核通过",
+            "avatar": "default_doctor.jpg",
+            "created_at": "2026-10-02 14:14:18",
+            "doctor_name": "doc_test_1002141412",
+            "gender": "男",
+            "id": 96,
+            "phone": "13790921652",
+            "real_name": "接口测试医生",
+            "specialty": "内科"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTYsInJvbGUiOjEsInRva2VuX3R5cGUiOiJkb2N0b3JfdG9rZW4iLCJpYXQiOjE3OTA5MjE2NjAsImV4cCI6MTc5MTE4MDg2MH0.hBGqT-DcqVEi0pfPdczmxfDX2ObLnPPU9POBo_o_on0"
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "查询本人资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "audit_status": 1,
+          "audit_status_text": "审核通过",
+          "avatar": "default_doctor.jpg",
+          "created_at": "2026-10-02 14:14:18",
+          "doctor_name": "doc_test_1002141412",
+          "gender": "男",
+          "id": 96,
+          "phone": "13790921652",
+          "real_name": "接口测试医生",
+          "specialty": "内科"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "工作台 Dashboard 统计",
+      "expect": "code=200 且 stats 含患者数/今日记录/需关注指标/已发建议",
+      "actual": [
+        "advice_count",
+        "attention_count",
+        "notice_count",
+        "patient_count",
+        "record_count",
+        "today_record_count"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "工作台 Dashboard 图表",
+      "expect": "含录入趋势/血压趋势/患者记录统计",
+      "actual": [
+        "bp_trend",
+        "patient_record_stats",
+        "record_trend",
+        "stats"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "医生·越权 B",
+      "name": "读取未绑定患者健康数据被拒",
+      "expect": "code=401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该患者数据（未建立医患关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生·越权 B",
+      "name": "读取未绑定患者详情被拒",
+      "expect": "code=401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该患者数据（未建立医患关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "管理员绑定医患关系",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "医患关系绑定成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生·越权 M",
+      "name": "重复绑定医患关系被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "该医患关系已存在，请勿重复绑定"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "患者列表（仅本人患者）",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "gender": "女",
+              "height": 168.0,
+              "id": 66,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "relation_time": "2026-10-02 14:14:20"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "绑定后可读患者健康数据",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "blood_pressure_high": 128,
+              "blood_pressure_low": 82,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-02 14:14:14",
+              "heart_rate": 76,
+              "id": 68,
+              "record_date": "2026-10-02",
+              "user_id": 66,
+              "weight": 65.5
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "读取患者睡眠",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:14",
+              "id": 37,
+              "sleep_date": "2026-10-02",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-02 07:00:00",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 23:00:00",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "读取患者运动",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "calorie": 380,
+              "created_at": "2026-10-02 14:14:15",
+              "id": 42,
+              "remark": "接口测试运动记录",
+              "sport_date": "2026-10-02",
+              "sport_duration": 45,
+              "sport_type": "跑步",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "读取患者健康计划",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "读取患者健康趋势",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "blood_pressure_trend": [
+            {
+              "date": "2026-10-02",
+              "high": 128,
+              "low": 82
+            }
+          ],
+          "days": 30,
+          "plan_list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            }
+          ],
+          "sleep_quality": [
+            {
+              "name": "很好",
+              "value": 1
+            }
+          ],
+          "sleep_trend": [
+            {
+              "date": "2026-10-02",
+              "duration": 480
+            }
+          ],
+          "sport_by_type": [
+            {
+              "calorie": 380,
+              "name": "跑步",
+              "value": 45
+            }
+          ],
+          "sport_daily": [
+            {
+              "date": "2026-10-02",
+              "duration": 45
+            }
+          ],
+          "summary": {
+            "avg_sleep_minutes": 480,
+            "avg_weight": 65.5,
+            "record_count": 1,
+            "total_calorie": 380,
+            "total_sport_minutes": 45
+          },
+          "weight_trend": [
+            {
+              "date": "2026-10-02",
+              "weight": 65.5
+            }
+          ]
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "保存健康建议",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 36
+        },
+        "msg": "健康建议已发送"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "健康建议列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "advice_content": "接口测试：建议规律作息，控制盐分摄入。",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "保存体检通知",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 36
+        },
+        "msg": "体检通知已发送"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "体检通知列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "check_date": "2026-10-02 09:00:00",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "id": 36,
+              "nickname": "测试用户A改",
+              "notice_content": "建议进行一次常规体检。",
+              "notice_title": "接口测试体检通知",
+              "phone": "13990921652",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "保存医疗记录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 36
+        },
+        "msg": "医疗记录已保存"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "医疗记录列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "record_content": "健康管理档案记录。",
+              "record_date": "2026-10-02 00:00:00",
+              "record_title": "接口测试医疗记录",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "修改密码",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "密码修改成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "新密码登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "doctor_info": {
+            "audit_status": 1,
+            "audit_status_text": "审核通过",
+            "avatar": "default_doctor.jpg",
+            "created_at": "2026-10-02 14:14:18",
+            "doctor_name": "doc_test_1002141412",
+            "gender": "男",
+            "id": 96,
+            "phone": "13790921652",
+            "real_name": "接口测试医生",
+            "specialty": "内科"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTYsInJvbGUiOjEsInRva2VuX3R5cGUiOiJkb2N0b3JfdG9rZW4iLCJpYXQiOjE3OTA5MjE2NjMsImV4cCI6MTc5MTE4MDg2M30.eb9X7mbBWlJr8F2XQsopTmVJXVKOv69xdaEjBvJ-Iq4"
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "医生",
+      "name": "退出登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "已退出登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "注册申请提交",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "audit_status": 0,
+          "id": 70
+        },
+        "msg": "注册申请已提交，请等待管理员审核。"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练·安全 J",
+      "name": "恶意提交 audit_status=1 被强制为 0",
+      "expect": "数据库 audit_status=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "教练·安全 J",
+      "name": "恶意提交 id 被忽略",
+      "expect": "id != 888888",
+      "actual": "70",
+      "status": "PASS"
+    },
+    {
+      "group": "教练·越权 H",
+      "name": "待审核教练登录被拒且无 Token",
+      "expect": "code=400 且 data 中无 token",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "账号正在审核中，请耐心等待"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "管理员审核通过",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "审核通过"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "审核通过后登录",
+      "expect": "code=200 且返回 coach_token",
+      "actual": {
+        "code": 200,
+        "data": {
+          "coach_info": {
+            "audit_status": 1,
+            "audit_status_text": "审核通过",
+            "avatar": "default_coach.jpg",
+            "coach_name": "coach_test_1002141412",
+            "created_at": "2026-10-02 14:14:24",
+            "gender": "女",
+            "id": 70,
+            "phone": "13690921652",
+            "real_name": "接口测试教练",
+            "specialty": "力量训练"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInJvbGUiOjIsInRva2VuX3R5cGUiOiJjb2FjaF90b2tlbiIsImlhdCI6MTc5MDkyMTY2NSwiZXhwIjoxNzkxMTgwODY1fQ.PEtfJo-Pi8u9RRIfDe2pXVktS3bNSzLqMhJew2pOANU"
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "查询本人资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "audit_status": 1,
+          "audit_status_text": "审核通过",
+          "avatar": "default_coach.jpg",
+          "coach_name": "coach_test_1002141412",
+          "created_at": "2026-10-02 14:14:24",
+          "gender": "女",
+          "id": 70,
+          "phone": "13690921652",
+          "real_name": "接口测试教练",
+          "specialty": "力量训练"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "工作台 Dashboard 统计",
+      "expect": "code=200 且 stats 含学员数/今日运动人数/本月时长/进行中计划",
+      "actual": [
+        "advice_count",
+        "goal_count",
+        "month_duration",
+        "running_plan",
+        "student_count",
+        "today_sport_user"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "工作台 Dashboard 图表",
+      "expect": "含最近7天运动时长/运动类型分布/学员运动趋势",
+      "actual": [
+        "duration_trend",
+        "stats",
+        "student_trend",
+        "type_distribution"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "教练·越权 C",
+      "name": "读取未绑定学员运动数据被拒",
+      "expect": "code=401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该学员数据（未建立教练学员关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "管理员绑定教练学员关系",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "教练学员关系绑定成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练·越权 N",
+      "name": "重复绑定教练学员关系被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "该教练学员关系已存在，请勿重复绑定"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "学员列表（仅本人学员）",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "gender": "女",
+              "height": 168.0,
+              "id": 66,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "relation_time": "2026-10-02 14:14:25",
+              "today_calorie": 380,
+              "today_duration": 45
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "绑定后可读学员运动数据",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "calorie": 380,
+              "created_at": "2026-10-02 14:14:15",
+              "id": 42,
+              "remark": "接口测试运动记录",
+              "sport_date": "2026-10-02",
+              "sport_duration": 45,
+              "sport_type": "跑步",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "学员运动统计",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "blood_pressure_trend": [
+            {
+              "date": "2026-10-02",
+              "high": 128,
+              "low": 82
+            }
+          ],
+          "days": 30,
+          "plan_list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            }
+          ],
+          "sleep_quality": [
+            {
+              "name": "很好",
+              "value": 1
+            }
+          ],
+          "sleep_trend": [
+            {
+              "date": "2026-10-02",
+              "duration": 480
+            }
+          ],
+          "sport_by_type": [
+            {
+              "calorie": 380,
+              "name": "跑步",
+              "value": 45
+            }
+          ],
+          "sport_daily": [
+            {
+              "date": "2026-10-02",
+              "duration": 45
+            }
+          ],
+          "summary": {
+            "avg_sleep_minutes": 480,
+            "avg_weight": 65.5,
+            "record_count": 1,
+            "total_calorie": 380,
+            "total_sport_minutes": 45
+          },
+          "weight_trend": [
+            {
+              "date": "2026-10-02",
+              "weight": 65.5
+            }
+          ]
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "创建运动目标",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 35
+        },
+        "msg": "运动目标创建成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "运动目标列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "coach_id": 70,
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02",
+              "goal_content": "每周跑步 3 次，每次 5 公里。",
+              "goal_status": 0,
+              "goal_status_text": "进行中",
+              "goal_title": "接口测试运动目标",
+              "id": 35,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "start_date": "2026-10-02",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "更新运动目标状态",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "goal_status": 1
+        },
+        "msg": "目标状态更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "创建训练计划",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 36
+        },
+        "msg": "训练计划创建成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "训练计划列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "coach_id": 70,
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "plan_content": "周一、周三、周五力量训练 60 分钟。",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "接口测试训练计划",
+              "start_date": "2026-10-02",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "更新训练计划状态",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "plan_status": 1
+        },
+        "msg": "计划状态更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "创建健身建议",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 36
+        },
+        "msg": "健身建议已发送"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "健身建议列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "advice_content": "接口测试：注意训练前热身，避免运动损伤。",
+              "coach_id": 70,
+              "created_at": "2026-10-02 14:14:26",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "修改密码",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "密码修改成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "教练",
+      "name": "退出登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "已退出登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员",
+      "name": "登录",
+      "expect": "code=200 且返回 admin_token",
+      "actual": {
+        "code": 200,
+        "data": {
+          "admin_info": {
+            "admin_name": "admin",
+            "avatar": "default_admin.jpg",
+            "created_at": "2026-10-01 12:51:53",
+            "id": 1,
+            "real_name": "系统管理员"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MywidG9rZW5fdHlwZSI6ImFkbWluX3Rva2VuIiwiaWF0IjoxNzkwOTIxNjY4LCJleHAiOjE3OTExODA4Njh9.ikDKVgutA-58XMFiMnU4dFPhUZNMSw4f93CHxZPf_kk"
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员",
+      "name": "错误密码登录被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "账号或密码错误"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员",
+      "name": "查询本人资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "admin_name": "admin",
+          "avatar": "default_admin.jpg",
+          "created_at": "2026-10-01 12:51:53",
+          "id": 1,
+          "real_name": "系统管理员"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 01 系统首页",
+      "name": "10 项统计卡全部为真实 SQL",
+      "expect": "10 个字段齐备",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 01 系统首页",
+      "name": "7 张图表数据齐备",
+      "expect": "含用户趋势/健康录入趋势/睡眠/运动/计划分布/30天运动趋势",
+      "actual": [
+        "health_trend",
+        "latest_logs",
+        "latest_users",
+        "pending_coaches",
+        "pending_doctors",
+        "plan_distribution",
+        "sleep_distribution",
+        "sport_30_trend",
+        "sport_distribution",
+        "stats",
+        "user_trend"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 01 系统首页",
+      "name": "快捷待办数据（待审核/最新注册/最近操作）",
+      "expect": "含 pending_doctors / pending_coaches / latest_users / latest_logs",
+      "actual": [
+        "health_trend",
+        "latest_logs",
+        "latest_users",
+        "pending_coaches",
+        "pending_doctors",
+        "plan_distribution",
+        "sleep_distribution",
+        "sport_30_trend",
+        "sport_distribution",
+        "stats",
+        "user_trend"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户列表分页",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-02 14:14:13",
+              "doctor_count": 1,
+              "gender": "女",
+              "height": 168.0,
+              "id": 66,
+              "nickname": "测试用户A改",
+              "phone": "13990921652"
+            },
+            {
+              "age": 15,
+              "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 17:20:57",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 13,
+              "nickname": "小周",
+              "phone": "13814142525"
+            },
+            {
+              "age": 15,
+              "avatar": "default_health.jpg",
+              "coach_count": 0,
+              "created_at": "2026-10-01 17:19:45",
+              "doctor_count": 0,
+              "gender": "男",
+              "height": 175.0,
+              "id": 12,
+              "nickname": "小孙",
+              "phone": "13844475825"
+            },
+            {
+              "age": 24,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_count": 1,
+              "gender": "女",
+              "height": 163.0,
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002"
+            },
+            {
+              "age": 26,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 5
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "手机号搜索",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-02 14:14:13",
+              "doctor_count": 1,
+              "gender": "女",
+              "height": 168.0,
+              "id": 66,
+              "nickname": "测试用户A改",
+              "phone": "13990921652"
+            },
+            {
+              "age": 15,
+              "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 17:20:57",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 13,
+              "nickname": "小周",
+              "phone": "13814142525"
+            },
+            {
+              "age": 15,
+              "avatar": "default_health.jpg",
+              "coach_count": 0,
+              "created_at": "2026-10-01 17:19:45",
+              "doctor_count": 0,
+              "gender": "男",
+              "height": 175.0,
+              "id": 12,
+              "nickname": "小孙",
+              "phone": "13844475825"
+            },
+            {
+              "age": 24,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_count": 1,
+              "gender": "女",
+              "height": 163.0,
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002"
+            },
+            {
+              "age": 26,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 5
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "性别筛选",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 15,
+              "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 17:20:57",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 13,
+              "nickname": "小周",
+              "phone": "13814142525"
+            },
+            {
+              "age": 15,
+              "avatar": "default_health.jpg",
+              "coach_count": 0,
+              "created_at": "2026-10-01 17:19:45",
+              "doctor_count": 0,
+              "gender": "男",
+              "height": 175.0,
+              "id": 12,
+              "nickname": "小孙",
+              "phone": "13844475825"
+            },
+            {
+              "age": 26,
+              "avatar": "default_health.jpg",
+              "coach_count": 1,
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_count": 1,
+              "gender": "男",
+              "height": 175.0,
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户详情（完整健康档案）",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "age": 30,
+          "avatar": "default_health.jpg",
+          "coaches": [
+            {
+              "coach_name": "coach_test_1002141412",
+              "id": 70,
+              "phone": "13690921652",
+              "real_name": "接口测试教练",
+              "specialty": "力量训练"
+            }
+          ],
+          "counts": {
+            "health_plan": 1,
+            "health_record": 1,
+            "sleep_record": 1,
+            "sport_record": 1
+          },
+          "created_at": "2026-10-02 14:14:13",
+          "doctors": [
+            {
+              "doctor_name": "doc_test_1002141412",
+              "id": 96,
+              "phone": "13790921652",
+              "real_name": "接口测试医生",
+              "specialty": "内科"
+            }
+          ],
+          "gender": "女",
+          "height": 168.0,
+          "id": 66,
+          "nickname": "测试用户A改",
+          "phone": "13990921652"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 健康指标",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "blood_pressure_high": 128,
+              "blood_pressure_low": 82,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-02 14:14:14",
+              "heart_rate": 76,
+              "id": 68,
+              "record_date": "2026-10-02",
+              "user_id": 66,
+              "weight": 65.5
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 睡眠",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:14",
+              "id": 37,
+              "sleep_date": "2026-10-02",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-02 07:00:00",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 23:00:00",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 运动",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "calorie": 380,
+              "created_at": "2026-10-02 14:14:15",
+              "id": 42,
+              "remark": "接口测试运动记录",
+              "sport_date": "2026-10-02",
+              "sport_duration": 45,
+              "sport_type": "跑步",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 健康计划",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 1
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 医生服务",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "advice": [
+            {
+              "advice_content": "接口测试：建议规律作息，控制盐分摄入。",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_avatar": "default_doctor.jpg",
+              "doctor_name": "接口测试医生",
+              "id": 36,
+              "specialty": "内科"
+            }
+          ],
+          "doctors": [
+            {
+              "doctor_name": "doc_test_1002141412",
+              "id": 96,
+              "phone": "13790921652",
+              "real_name": "接口测试医生",
+              "specialty": "内科"
+            }
+          ],
+          "medical_notice": [
+            {
+              "check_date": "2026-10-02 09:00:00",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_name": "接口测试医生",
+              "id": 36,
+              "notice_content": "建议进行一次常规体检。",
+              "notice_title": "接口测试体检通知",
+              "specialty": "内科"
+            }
+          ],
+          "medical_record": [
+            {
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_name": "接口测试医生",
+              "id": 36,
+              "record_content": "健康管理档案记录。",
+              "record_date": "2026-10-02 00:00:00",
+              "record_title": "接口测试医疗记录",
+              "specialty": "内科"
+            }
+          ]
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 02 用户管理",
+      "name": "用户档案 Tab - 健身服务",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "coaches": [
+            {
+              "coach_name": "coach_test_1002141412",
+              "id": 70,
+              "phone": "13690921652",
+              "real_name": "接口测试教练",
+              "specialty": "力量训练"
+            }
+          ],
+          "fitness_advice": [
+            {
+              "advice_content": "接口测试：注意训练前热身，避免运动损伤。",
+              "coach_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "id": 36,
+              "specialty": "力量训练"
+            }
+          ],
+          "sport_goal": [
+            {
+              "coach_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02 00:00:00",
+              "goal_content": "每周跑步 3 次，每次 5 公里。",
+              "goal_status": 1,
+              "goal_title": "接口测试运动目标",
+              "id": 35,
+              "specialty": "力量训练",
+              "start_date": "2026-10-02 00:00:00"
+            }
+          ],
+          "training_plan": [
+            {
+              "coach_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02 00:00:00",
+              "id": 36,
+              "plan_content": "周一、周三、周五力量训练 60 分钟。",
+              "plan_status": 1,
+              "plan_title": "接口测试训练计划",
+              "specialty": "力量训练",
+              "start_date": "2026-10-02 00:00:00"
+            }
+          ]
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "医生列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-02 14:14:18",
+              "doctor_name": "doc_test_1002141412",
+              "gender": "男",
+              "id": 96,
+              "patient_count": 1,
+              "phone": "13790921652",
+              "real_name": "接口测试医生",
+              "specialty": "内科"
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-01 16:57:15",
+              "doctor_name": "003",
+              "gender": "女",
+              "id": 18,
+              "patient_count": 0,
+              "phone": "14736925847",
+              "real_name": "小文医生",
+              "specialty": "妇科"
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-01 16:25:23",
+              "doctor_name": "001",
+              "gender": "男",
+              "id": 17,
+              "patient_count": 0,
+              "phone": "14725836911",
+              "real_name": "小黑",
+              "specialty": "全科"
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_name": "doctor003",
+              "gender": "男",
+              "id": 3,
+              "patient_count": 0,
+              "phone": "13800000003",
+              "real_name": "王海涛",
+              "specialty": "全科"
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_name": "doctor002",
+              "gender": "女",
+              "id": 2,
+              "patient_count": 1,
+              "phone": "13800000002",
+              "real_name": "李欣",
+              "specialty": "内分泌科"
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_doctor.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_name": "doctor001",
+              "gender": "男",
+              "id": 1,
+              "patient_count": 2,
+              "phone": "13800000001",
+              "real_name": "张明远",
+              "specialty": "心内科"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 6
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "账号查询",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "审核状态筛选",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "医生详情含负责患者列表与业务统计",
+      "expect": "含 patients / business(建议/通知/记录数)",
+      "actual": [
+        "audit_status",
+        "audit_status_text",
+        "avatar",
+        "business",
+        "created_at",
+        "doctor_name",
+        "gender",
+        "id",
+        "patient_count",
+        "patients",
+        "phone",
+        "real_name",
+        "specialty"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "医生详情不外泄密码哈希",
+      "expect": "无 password_hash 字段",
+      "actual": [
+        "audit_status",
+        "audit_status_text",
+        "avatar",
+        "business",
+        "created_at",
+        "doctor_name",
+        "gender",
+        "id",
+        "patient_count",
+        "patients",
+        "phone",
+        "real_name",
+        "specialty"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "编辑医生基础资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "医生资料更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "重置医生密码",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "密码重置成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 03 医生管理",
+      "name": "重置后新密码可登录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "doctor_info": {
+            "audit_status": 1,
+            "audit_status_text": "审核通过",
+            "avatar": "default_doctor.jpg",
+            "created_at": "2026-10-02 14:14:18",
+            "doctor_name": "doc_test_1002141412",
+            "gender": "男",
+            "id": 96,
+            "phone": "13790921652",
+            "real_name": "接口测试医生改",
+            "specialty": "心血管内科"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTYsInJvbGUiOjEsInRva2VuX3R5cGUiOiJkb2N0b3JfdG9rZW4iLCJpYXQiOjE3OTA5MjE2NzMsImV4cCI6MTc5MTE4MDg3M30.Q-3_vNUlNTj-I7N3pDiVXuj6LSViDBbhtQyaBsv0CB4"
+        },
+        "msg": "登录成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 04 教练管理",
+      "name": "教练列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_coach.jpg",
+              "coach_name": "coach_test_1002141412",
+              "created_at": "2026-10-02 14:14:24",
+              "gender": "女",
+              "id": 70,
+              "phone": "13690921652",
+              "real_name": "接口测试教练",
+              "specialty": "力量训练",
+              "student_count": 1
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_coach.jpg",
+              "coach_name": "002",
+              "created_at": "2026-10-01 16:39:23",
+              "gender": "女",
+              "id": 12,
+              "phone": "13825832587",
+              "real_name": "小李教练",
+              "specialty": "瑜伽",
+              "student_count": 0
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_coach.jpg",
+              "coach_name": "coach003",
+              "created_at": "2026-10-01 12:51:53",
+              "gender": "男",
+              "id": 3,
+              "phone": "13900000003",
+              "real_name": "赵强",
+              "specialty": "体能训练",
+              "student_count": 0
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_coach.jpg",
+              "coach_name": "coach002",
+              "created_at": "2026-10-01 12:51:53",
+              "gender": "女",
+              "id": 2,
+              "phone": "13900000002",
+              "real_name": "刘雨欣",
+              "specialty": "普拉提",
+              "student_count": 0
+            },
+            {
+              "audit_status": 1,
+              "audit_status_text": "审核通过",
+              "avatar": "default_coach.jpg",
+              "coach_name": "coach001",
+              "created_at": "2026-10-01 12:51:53",
+              "gender": "男",
+              "id": 1,
+              "phone": "13900000001",
+              "real_name": "陈昊",
+              "specialty": "力量训练",
+              "student_count": 3
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 5
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 04 教练管理",
+      "name": "教练详情含负责学员数与业务统计",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "audit_status": 1,
+          "audit_status_text": "审核通过",
+          "avatar": "default_coach.jpg",
+          "business": {
+            "advice_count": 1,
+            "goal_count": 1,
+            "plan_count": 1
+          },
+          "coach_name": "coach_test_1002141412",
+          "created_at": "2026-10-02 14:14:24",
+          "gender": "女",
+          "id": 70,
+          "phone": "13690921652",
+          "real_name": "接口测试教练",
+          "specialty": "力量训练",
+          "student_count": 1,
+          "students": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "gender": "女",
+              "id": 66,
+              "nickname": "测试用户A改",
+              "phone": "13990921652"
+            }
+          ]
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 04 教练管理",
+      "name": "编辑教练基础资料",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "教练资料更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 04 教练管理",
+      "name": "重置教练密码",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "密码重置成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 05 审核中心",
+      "name": "审核概览（待审核医生/教练/今日已审/累计）",
+      "expect": "4 项概览齐备",
+      "actual": [
+        "pending_coach",
+        "pending_doctor",
+        "today_audited",
+        "total_apply"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 05 审核中心",
+      "name": "医生审核拒绝",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "审核已拒绝"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 05 · 越权 K",
+      "name": "审核拒绝账号登录被拒",
+      "expect": "code=400",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "账号审核未通过，请联系管理员"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 05 审核中心",
+      "name": "教练审核拒绝",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "审核已拒绝"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 05 审核中心",
+      "name": "审核记录",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 14:14:37",
+              "id": 493,
+              "operation_content": "教练审核拒绝：教练[coach_reject_1002141412]（待拒绝教练）",
+              "operation_type": "教练审核拒绝",
+              "target_id": 71,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 14:14:35",
+              "id": 492,
+              "operation_content": "医生审核拒绝：医生[doc_reject_1002141412]（待拒绝医生）",
+              "operation_type": "医生审核拒绝",
+              "target_id": 97,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 14:14:24",
+              "id": 486,
+              "operation_content": "教练审核通过：教练[coach_test_1002141412]（接口测试教练）",
+              "operation_type": "教练审核通过",
+              "target_id": 70,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 14:14:19",
+              "id": 484,
+              "operation_content": "医生审核通过：医生[doc_test_1002141412]（接口测试医生）",
+              "operation_type": "医生审核通过",
+              "target_id": 96,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:42",
+              "id": 477,
+              "operation_content": "教练审核通过：教练[sec_audit_coach_ok]（可登录教练）",
+              "operation_type": "教练审核通过",
+              "target_id": 69,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:42",
+              "id": 476,
+              "operation_content": "医生审核通过：医生[sec_audit_doctor_ok]（可登录医生）",
+              "operation_type": "医生审核通过",
+              "target_id": 95,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:39",
+              "id": 475,
+              "operation_content": "教练审核拒绝：教练[sec_audit_coach_pending]（待审核教练）",
+              "operation_type": "教练审核拒绝",
+              "target_id": 68,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:39",
+              "id": 474,
+              "operation_content": "医生审核拒绝：医生[sec_audit_doctor_pending]（待审核医生）",
+              "operation_type": "医生审核拒绝",
+              "target_id": 93,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:23",
+              "id": 469,
+              "operation_content": "教练审核通过：教练[sec_coach_b]（测试教练B）",
+              "operation_type": "教练审核通过",
+              "target_id": 67,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "created_at": "2026-10-02 13:32:23",
+              "id": 468,
+              "operation_content": "教练审核通过：教练[sec_coach_a]（测试教练A）",
+              "operation_type": "教练审核通过",
+              "target_id": 66,
+              "target_type": "coach"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 16,
+          "total": 155
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 06 关系管理",
+      "name": "医患关系列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "created_at": "2026-10-02 14:14:20",
+              "doctor_id": 96,
+              "doctor_name": "doc_test_1002141412",
+              "doctor_real_name": "接口测试医生改",
+              "gender": "女",
+              "id": 60,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "specialty": "心血管内科",
+              "user_id": 66
+            },
+            {
+              "age": 15,
+              "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg",
+              "created_at": "2026-10-01 17:29:39",
+              "doctor_id": 2,
+              "doctor_name": "doctor002",
+              "doctor_real_name": "李欣",
+              "gender": "男",
+              "id": 11,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "specialty": "内分泌科",
+              "user_id": 13
+            },
+            {
+              "age": 24,
+              "avatar": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_id": 1,
+              "doctor_name": "doctor001",
+              "doctor_real_name": "张明远",
+              "gender": "女",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "specialty": "心内科",
+              "user_id": 2
+            },
+            {
+              "age": 26,
+              "avatar": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_id": 1,
+              "doctor_name": "doctor001",
+              "doctor_real_name": "张明远",
+              "gender": "男",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "specialty": "心内科",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 06 关系管理",
+      "name": "教练学员关系列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "age": 30,
+              "avatar": "default_health.jpg",
+              "coach_id": 70,
+              "coach_name": "coach_test_1002141412",
+              "coach_real_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:25",
+              "gender": "女",
+              "id": 60,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "specialty": "体态矫正与力量训练",
+              "user_id": 66
+            },
+            {
+              "age": 15,
+              "avatar": "9f2f80d5f40d4628b2a3e505f94f1a1d.jpg",
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 17:29:59",
+              "gender": "男",
+              "id": 11,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "specialty": "力量训练",
+              "user_id": 13
+            },
+            {
+              "age": 24,
+              "avatar": "default_health.jpg",
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 12:51:53",
+              "gender": "女",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "specialty": "力量训练",
+              "user_id": 2
+            },
+            {
+              "age": 26,
+              "avatar": "default_health.jpg",
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 12:51:53",
+              "gender": "男",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "specialty": "力量训练",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 06 关系管理",
+      "name": "下拉数据源 - 用户",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [
+          {
+            "id": 66,
+            "nickname": "测试用户A改",
+            "phone": "13990921652"
+          },
+          {
+            "id": 13,
+            "nickname": "小周",
+            "phone": "13814142525"
+          },
+          {
+            "id": 12,
+            "nickname": "小孙",
+            "phone": "13844475825"
+          },
+          {
+            "id": 2,
+            "nickname": "阿may",
+            "phone": "13800138002"
+          },
+          {
+            "id": 1,
+            "nickname": "小林同学",
+            "phone": "13800138001"
+          }
+        ],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 06 关系管理",
+      "name": "下拉数据源 - 医生",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [
+          {
+            "doctor_name": "doctor001",
+            "id": 1,
+            "real_name": "张明远",
+            "specialty": "心内科"
+          },
+          {
+            "doctor_name": "doctor002",
+            "id": 2,
+            "real_name": "李欣",
+            "specialty": "内分泌科"
+          },
+          {
+            "doctor_name": "doctor003",
+            "id": 3,
+            "real_name": "王海涛",
+            "specialty": "全科"
+          },
+          {
+            "doctor_name": "001",
+            "id": 17,
+            "real_name": "小黑",
+            "specialty": "全科"
+          },
+          {
+            "doctor_name": "003",
+            "id": 18,
+            "real_name": "小文医生",
+            "specialty": "妇科"
+          },
+          {
+            "doctor_name": "doc_test_1002141412",
+            "id": 96,
+            "real_name": "接口测试医生改",
+            "specialty": "心血管内科"
+          }
+        ],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 06 关系管理",
+      "name": "下拉数据源 - 教练",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [
+          {
+            "coach_name": "coach001",
+            "id": 1,
+            "real_name": "陈昊",
+            "specialty": "力量训练"
+          },
+          {
+            "coach_name": "coach002",
+            "id": 2,
+            "real_name": "刘雨欣",
+            "specialty": "普拉提"
+          },
+          {
+            "coach_name": "coach003",
+            "id": 3,
+            "real_name": "赵强",
+            "specialty": "体能训练"
+          },
+          {
+            "coach_name": "002",
+            "id": 12,
+            "real_name": "小李教练",
+            "specialty": "瑜伽"
+          },
+          {
+            "coach_name": "coach_test_1002141412",
+            "id": 70,
+            "real_name": "接口测试教练",
+            "specialty": "体态矫正与力量训练"
+          }
+        ],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "顶部统计 + 统计分析",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "charts": {
+            "month_duration": [
+              {
+                "name": "2026-09",
+                "value": 170
+              },
+              {
+                "name": "2026-10",
+                "value": 195
+              }
+            ],
+            "record_trend": [
+              {
+                "date": "2026-09-26",
+                "value": 0
+              },
+              {
+                "date": "2026-09-27",
+                "value": 0
+              },
+              {
+                "date": "2026-09-28",
+                "value": 1
+              },
+              {
+                "date": "2026-09-29",
+                "value": 1
+              },
+              {
+                "date": "2026-09-30",
+                "value": 0
+              },
+              {
+                "date": "2026-10-01",
+                "value": 3
+              },
+              {
+                "date": "2026-10-02",
+                "value": 1
+              }
+            ],
+            "sleep_distribution": [
+              {
+                "name": "很好",
+                "value": 2
+              },
+              {
+                "name": "一般",
+                "value": 2
+              }
+            ],
+            "sport_distribution": [
+              {
+                "name": "跑步",
+                "value": 115
+              },
+              {
+                "name": "骑行",
+                "value": 60
+              },
+              {
+                "name": "力量训练",
+                "value": 50
+              },
+              {
+                "name": "球类",
+                "value": 50
+              },
+              {
+                "name": "瑜伽",
+                "value": 45
+              },
+              {
+                "name": "游泳",
+                "value": 45
+              }
+            ]
+          },
+          "health_total": 6,
+          "sleep_total": 4,
+          "sport_total": 8,
+          "today_total": 3,
+          "week_ago": "2026-09-26"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "健康指标列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "blood_pressure_high": 128,
+              "blood_pressure_low": 82,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-02 14:14:14",
+              "heart_rate": 76,
+              "id": 68,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "record_date": "2026-10-02",
+              "user_id": 66,
+              "weight": 65.5
+            },
+            {
+              "blood_pressure_high": 120,
+              "blood_pressure_low": 80,
+              "blood_sugar": 5.2,
+              "created_at": "2026-10-01 17:23:34",
+              "heart_rate": 72,
+              "id": 10,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "record_date": "2026-10-01",
+              "user_id": 13,
+              "weight": 65.0
+            },
+            {
+              "blood_pressure_high": 110,
+              "blood_pressure_low": 70,
+              "blood_sugar": 4.9,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 78,
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "record_date": "2026-10-01",
+              "user_id": 2,
+              "weight": 55.2
+            },
+            {
+              "blood_pressure_high": 118,
+              "blood_pressure_low": 76,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 72,
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "record_date": "2026-10-01",
+              "user_id": 1,
+              "weight": 68.5
+            },
+            {
+              "blood_pressure_high": 122,
+              "blood_pressure_low": 80,
+              "blood_sugar": 5.6,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 75,
+              "id": 3,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "record_date": "2026-09-29",
+              "user_id": 1,
+              "weight": 69.0
+            },
+            {
+              "blood_pressure_high": 112,
+              "blood_pressure_low": 72,
+              "blood_sugar": 5.0,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 76,
+              "id": 4,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "record_date": "2026-09-28",
+              "user_id": 2,
+              "weight": 55.6
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 6
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "健康指标日期筛选",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "blood_pressure_high": 128,
+              "blood_pressure_low": 82,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-02 14:14:14",
+              "heart_rate": 76,
+              "id": 68,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "record_date": "2026-10-02",
+              "user_id": 66,
+              "weight": 65.5
+            },
+            {
+              "blood_pressure_high": 120,
+              "blood_pressure_low": 80,
+              "blood_sugar": 5.2,
+              "created_at": "2026-10-01 17:23:34",
+              "heart_rate": 72,
+              "id": 10,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "record_date": "2026-10-01",
+              "user_id": 13,
+              "weight": 65.0
+            },
+            {
+              "blood_pressure_high": 110,
+              "blood_pressure_low": 70,
+              "blood_sugar": 4.9,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 78,
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "record_date": "2026-10-01",
+              "user_id": 2,
+              "weight": 55.2
+            },
+            {
+              "blood_pressure_high": 118,
+              "blood_pressure_low": 76,
+              "blood_sugar": 5.4,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 72,
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "record_date": "2026-10-01",
+              "user_id": 1,
+              "weight": 68.5
+            },
+            {
+              "blood_pressure_high": 122,
+              "blood_pressure_low": 80,
+              "blood_sugar": 5.6,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 75,
+              "id": 3,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "record_date": "2026-09-29",
+              "user_id": 1,
+              "weight": 69.0
+            },
+            {
+              "blood_pressure_high": 112,
+              "blood_pressure_low": 72,
+              "blood_sugar": 5.0,
+              "created_at": "2026-10-01 12:51:53",
+              "heart_rate": 76,
+              "id": 4,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "record_date": "2026-09-28",
+              "user_id": 2,
+              "weight": 55.6
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 6
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "睡眠数据列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:14",
+              "id": 37,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "sleep_date": "2026-10-02",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-02 07:00:00",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 23:00:00",
+              "user_id": 66
+            },
+            {
+              "created_at": "2026-10-01 17:24:21",
+              "id": 7,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 1101,
+              "sleep_end": "2026-10-01 17:21:00",
+              "sleep_quality": "一般",
+              "sleep_start": "2026-09-30 23:00:00",
+              "user_id": 13
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 420,
+              "sleep_end": "2026-10-01 12:51:53",
+              "sleep_quality": "一般",
+              "sleep_start": "2026-10-01 05:51:53",
+              "user_id": 2
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-01 12:51:53",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 04:51:53",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "睡眠数据日期筛选",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:14",
+              "id": 37,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "sleep_date": "2026-10-02",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-02 07:00:00",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 23:00:00",
+              "user_id": 66
+            },
+            {
+              "created_at": "2026-10-01 17:24:21",
+              "id": 7,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 1101,
+              "sleep_end": "2026-10-01 17:21:00",
+              "sleep_quality": "一般",
+              "sleep_start": "2026-09-30 23:00:00",
+              "user_id": 13
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 420,
+              "sleep_end": "2026-10-01 12:51:53",
+              "sleep_quality": "一般",
+              "sleep_start": "2026-10-01 05:51:53",
+              "user_id": 2
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "sleep_date": "2026-10-01",
+              "sleep_duration": 480,
+              "sleep_end": "2026-10-01 12:51:53",
+              "sleep_quality": "很好",
+              "sleep_start": "2026-10-01 04:51:53",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "运动数据列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "calorie": 380,
+              "created_at": "2026-10-02 14:14:15",
+              "id": 42,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "remark": "接口测试运动记录",
+              "sport_date": "2026-10-02",
+              "sport_duration": 45,
+              "sport_type": "跑步",
+              "user_id": 66
+            },
+            {
+              "calorie": 320,
+              "created_at": "2026-10-01 17:25:07",
+              "id": 12,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "remark": null,
+              "sport_date": "2026-10-01",
+              "sport_duration": 50,
+              "sport_type": "球类",
+              "user_id": 13
+            },
+            {
+              "calorie": 410,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "通勤骑行",
+              "sport_date": "2026-10-01",
+              "sport_duration": 60,
+              "sport_type": "骑行",
+              "user_id": 2
+            },
+            {
+              "calorie": 320,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "晨跑",
+              "sport_date": "2026-10-01",
+              "sport_duration": 40,
+              "sport_type": "跑步",
+              "user_id": 1
+            },
+            {
+              "calorie": 160,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 4,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "睡前放松",
+              "sport_date": "2026-09-30",
+              "sport_duration": 45,
+              "sport_type": "瑜伽",
+              "user_id": 2
+            },
+            {
+              "calorie": 280,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 3,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "上肢训练",
+              "sport_date": "2026-09-30",
+              "sport_duration": 50,
+              "sport_type": "力量训练",
+              "user_id": 1
+            },
+            {
+              "calorie": 380,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 5,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "自由泳",
+              "sport_date": "2026-09-29",
+              "sport_duration": 45,
+              "sport_type": "游泳",
+              "user_id": 1
+            },
+            {
+              "calorie": 240,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 6,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "慢跑",
+              "sport_date": "2026-09-28",
+              "sport_duration": 30,
+              "sport_type": "跑步",
+              "user_id": 2
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 8
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 健康数据中心",
+      "name": "运动数据日期筛选",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "calorie": 380,
+              "created_at": "2026-10-02 14:14:15",
+              "id": 42,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "remark": "接口测试运动记录",
+              "sport_date": "2026-10-02",
+              "sport_duration": 45,
+              "sport_type": "跑步",
+              "user_id": 66
+            },
+            {
+              "calorie": 320,
+              "created_at": "2026-10-01 17:25:07",
+              "id": 12,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "remark": null,
+              "sport_date": "2026-10-01",
+              "sport_duration": 50,
+              "sport_type": "球类",
+              "user_id": 13
+            },
+            {
+              "calorie": 410,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "通勤骑行",
+              "sport_date": "2026-10-01",
+              "sport_duration": 60,
+              "sport_type": "骑行",
+              "user_id": 2
+            },
+            {
+              "calorie": 320,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "晨跑",
+              "sport_date": "2026-10-01",
+              "sport_duration": 40,
+              "sport_type": "跑步",
+              "user_id": 1
+            },
+            {
+              "calorie": 160,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 4,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "睡前放松",
+              "sport_date": "2026-09-30",
+              "sport_duration": 45,
+              "sport_type": "瑜伽",
+              "user_id": 2
+            },
+            {
+              "calorie": 280,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 3,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "上肢训练",
+              "sport_date": "2026-09-30",
+              "sport_duration": 50,
+              "sport_type": "力量训练",
+              "user_id": 1
+            },
+            {
+              "calorie": 380,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 5,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "remark": "自由泳",
+              "sport_date": "2026-09-29",
+              "sport_duration": 45,
+              "sport_type": "游泳",
+              "user_id": 1
+            },
+            {
+              "calorie": 240,
+              "created_at": "2026-10-01 12:51:53",
+              "id": 6,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "remark": "慢跑",
+              "sport_date": "2026-09-28",
+              "sport_duration": 30,
+              "sport_type": "跑步",
+              "user_id": 2
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 8
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "健康指标CSV 导出",
+      "expect": "返回 CSV 且含表头与数据行",
+      "actual": "lines=7 ctype=text/csv; charset=utf-8; charset=utf-8",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "健康指标CSV 遵守筛选条件",
+      "expect": "空区间导出仅剩表头",
+      "actual": "lines=1",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "睡眠CSV 导出",
+      "expect": "返回 CSV 且含表头与数据行",
+      "actual": "lines=5 ctype=text/csv; charset=utf-8; charset=utf-8",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "睡眠CSV 遵守筛选条件",
+      "expect": "空区间导出仅剩表头",
+      "actual": "lines=1",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "运动CSV 导出",
+      "expect": "返回 CSV 且含表头与数据行",
+      "actual": "lines=9 ctype=text/csv; charset=utf-8; charset=utf-8",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 07 CSV 导出",
+      "name": "运动CSV 遵守筛选条件",
+      "expect": "空区间导出仅剩表头",
+      "actual": "lines=1",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 08 健康计划管理",
+      "name": "计划列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-02 14:14:15",
+              "id": 48,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "plan_content": "每日跑步 30 分钟，控制饮食。",
+              "plan_end": "2026-10-02",
+              "plan_start": "2026-10-02",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试减脂计划",
+              "user_id": 66
+            },
+            {
+              "created_at": "2026-10-01 17:26:51",
+              "id": 8,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "plan_content": "每日运动",
+              "plan_end": "2026-10-07",
+              "plan_start": "2026-10-01",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "每日减脂计划",
+              "user_id": 13
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "nickname": "阿may",
+              "phone": "13800138002",
+              "plan_content": "23:30 前入睡，7:00 起床，坚持 21 天养成作息习惯。",
+              "plan_end": "2026-10-22",
+              "plan_start": "2026-10-01",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "早睡早起计划",
+              "user_id": 2
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "plan_content": "坚持每日步行 8000 步以上，配合睡前拉伸 10 分钟。",
+              "plan_end": "2026-10-31",
+              "plan_start": "2026-10-01",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "每日 8000 步挑战",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 08 健康计划管理",
+      "name": "计划统计（总数/进行中/已完成/已放弃）",
+      "expect": "4 项统计齐备",
+      "actual": [
+        "abandoned",
+        "finished",
+        "running",
+        "total"
+      ],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 08 健康计划管理",
+      "name": "状态筛选",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "健康建议监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "advice_content": "接口测试：建议规律作息，控制盐分摄入。",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "doctor_name": "doc_test_1002141412",
+              "doctor_real_name": "接口测试医生改",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "specialty": "心血管内科",
+              "user_id": 66
+            },
+            {
+              "advice_content": "多运动 多喝水",
+              "created_at": "2026-10-01 17:39:28",
+              "doctor_id": 2,
+              "doctor_name": "doctor002",
+              "doctor_real_name": "李欣",
+              "id": 6,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "specialty": "内分泌科",
+              "user_id": 13
+            },
+            {
+              "advice_content": "近期血压平稳，建议保持低盐饮食，每日食盐摄入控制在 5g 以内，并保持每周 3 次以上有氧运动。",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_id": 1,
+              "doctor_name": "doctor001",
+              "doctor_real_name": "张明远",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "specialty": "心内科",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "健康建议关键词筛选",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "体检通知监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "check_date": "2026-10-02 09:00:00",
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "doctor_name": "doc_test_1002141412",
+              "doctor_real_name": "接口测试医生改",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "notice_content": "建议进行一次常规体检。",
+              "notice_title": "接口测试体检通知",
+              "phone": "13990921652",
+              "user_id": 66
+            },
+            {
+              "check_date": "2026-10-02 00:00:00",
+              "created_at": "2026-10-01 17:47:07",
+              "doctor_id": 2,
+              "doctor_name": "doctor002",
+              "doctor_real_name": "李欣",
+              "id": 6,
+              "nickname": "小周",
+              "notice_content": "准时来",
+              "notice_title": "体检通知",
+              "phone": "13814142525",
+              "user_id": 13
+            },
+            {
+              "check_date": "2026-10-08 12:51:53",
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_id": 1,
+              "doctor_name": "doctor001",
+              "doctor_real_name": "张明远",
+              "id": 1,
+              "nickname": "小林同学",
+              "notice_content": "建议进行一次血脂四项 + 心电图检查，检查当日请空腹前往。",
+              "notice_title": "年度心血管专项体检通知",
+              "phone": "13800138001",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "体检通知关键词筛选",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "医疗记录监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "created_at": "2026-10-01 17:47:32",
+              "doctor_id": 2,
+              "doctor_name": "doctor002",
+              "doctor_real_name": "李欣",
+              "id": 6,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "record_content": "无",
+              "record_date": "2026-10-03",
+              "record_title": "常规记录",
+              "user_id": 13
+            },
+            {
+              "created_at": "2026-10-02 14:14:21",
+              "doctor_id": 96,
+              "doctor_name": "doc_test_1002141412",
+              "doctor_real_name": "接口测试医生改",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "record_content": "健康管理档案记录。",
+              "record_date": "2026-10-02",
+              "record_title": "接口测试医疗记录",
+              "user_id": 66
+            },
+            {
+              "created_at": "2026-10-01 12:51:53",
+              "doctor_id": 1,
+              "doctor_name": "doctor001",
+              "doctor_real_name": "张明远",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "record_content": "患者自述近期睡眠质量良好，无胸闷心悸。血压 118/76 mmHg，心率 72 次/分。建议继续保持当前运动与饮食方案，3 个月后复诊。",
+              "record_date": "2026-10-01",
+              "record_title": "常规随访记录",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 09 医生业务监管",
+      "name": "医疗记录关键词筛选",
+      "expect": "code=200",
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 10 健身业务监管",
+      "name": "运动目标监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "coach_id": 70,
+              "coach_name": "coach_test_1002141412",
+              "coach_real_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02",
+              "goal_content": "每周跑步 3 次，每次 5 公里。",
+              "goal_status": 1,
+              "goal_status_text": "已完成",
+              "goal_title": "接口测试运动目标",
+              "id": 35,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "start_date": "2026-10-02",
+              "user_id": 66
+            },
+            {
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 12:51:53",
+              "end_date": "2026-12-30",
+              "goal_content": "每周有氧 3 次 + 力量 2 次，控制每日热量缺口 300~500 kcal。",
+              "goal_status": 0,
+              "goal_status_text": "进行中",
+              "goal_title": "3 个月减脂 5kg",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "start_date": "2026-10-01",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 2
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 10 健身业务监管",
+      "name": "训练计划监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "coach_id": 70,
+              "coach_name": "coach_test_1002141412",
+              "coach_real_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "end_date": "2026-10-02",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "plan_content": "周一、周三、周五力量训练 60 分钟。",
+              "plan_status": 1,
+              "plan_status_text": "已完成",
+              "plan_title": "接口测试训练计划",
+              "start_date": "2026-10-02",
+              "user_id": 66
+            },
+            {
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 17:43:13",
+              "end_date": "2026-10-07",
+              "id": 6,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "plan_content": "当日安排",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "8周训练计划",
+              "start_date": "2026-10-01",
+              "user_id": 13
+            },
+            {
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 12:51:53",
+              "end_date": "2026-11-26",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "plan_content": "周一/周四：上肢推拉；周二/周五：下肢；周三/周六：核心与有氧。每个训练日 60 分钟。",
+              "plan_status": 0,
+              "plan_status_text": "进行中",
+              "plan_title": "8 周力量提升计划",
+              "start_date": "2026-10-01",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 10 健身业务监管",
+      "name": "健身建议监管列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "advice_content": "接口测试：注意训练前热身，避免运动损伤。",
+              "coach_id": 70,
+              "coach_name": "coach_test_1002141412",
+              "coach_real_name": "接口测试教练",
+              "created_at": "2026-10-02 14:14:26",
+              "id": 36,
+              "nickname": "测试用户A改",
+              "phone": "13990921652",
+              "user_id": 66
+            },
+            {
+              "advice_content": "多做力量训练",
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 17:44:37",
+              "id": 6,
+              "nickname": "小周",
+              "phone": "13814142525",
+              "user_id": 13
+            },
+            {
+              "advice_content": "跑步时注意保持 170~180 步/分钟的步频，落地时前脚掌先着地，可有效降低膝关节压力。",
+              "coach_id": 1,
+              "coach_name": "coach001",
+              "coach_real_name": "陈昊",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "nickname": "小林同学",
+              "phone": "13800138001",
+              "user_id": 1
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 3
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章列表",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "author": "健康编辑部",
+              "content": "血压通常以「收缩压/舒张压」表示，单位为 mmHg。一般成年人在安静状态下，收缩压低于 120、舒张压低于 80 属于理想范围。单次测量偏高并不等于异常，建议在平静状态下多次测量并咨询专业医疗人员。",
+              "cover_img": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 4,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "读懂体检报告里的血压数值"
+            },
+            {
+              "author": "健康编辑部",
+              "content": "1) 固定作息时间；2) 睡前 1 小时远离电子屏幕；3) 卧室温度保持在 18~22 摄氏度；4) 避免午后摄入咖啡因；5) 睡前避免大量进食；6) 适度日间运动；7) 保持卧室安静黑暗。",
+              "cover_img": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 3,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "优质睡眠的 7 个小习惯"
+            },
+            {
+              "author": "健康编辑部",
+              "content": "建议每周进行 150 分钟中等强度有氧运动，并搭配 2~3 次力量训练。有氧运动可选择快走、慢跑、游泳、骑行；力量训练可从自重训练开始逐步过渡到器械训练。注意运动前热身与运动后拉伸。",
+              "cover_img": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 2,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "如何科学安排一周运动计划"
+            },
+            {
+              "author": "健康编辑部",
+              "content": "成年人每日饮水量建议在 1500~1700 毫升之间，具体需根据气温、运动量与个人体质调整。建议少量多次饮用，避免一次性大量饮水。运动后可适当补充含电解质的饮品。",
+              "cover_img": "default_health.jpg",
+              "created_at": "2026-10-01 12:51:53",
+              "id": 1,
+              "is_show": 1,
+              "publish_time": "2026-10-01 12:51:53",
+              "title": "每天喝多少水才健康？"
+            }
+          ],
+          "page": 1,
+          "page_size": 10,
+          "pages": 1,
+          "total": 4
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章新增",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 20
+        },
+        "msg": "文章新增成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章详情",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "author": "测试作者",
+          "content": "这是接口联调测试创建的文章正文。",
+          "cover_img": null,
+          "created_at": "2026-10-02 14:14:39",
+          "id": 20,
+          "is_show": 1,
+          "publish_time": "2026-10-02 14:14:40",
+          "title": "接口测试科普文章"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章编辑（含隐藏）",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 20
+        },
+        "msg": "文章更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "隐藏文章小程序端不可见",
+      "expect": "小程序端查不到该文章",
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章删除",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "文章删除成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "文章删除真实落库",
+      "expect": "数据库记录数=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "公告新增",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 19
+        },
+        "msg": "公告新增成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "公告详情",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "content": "这是接口联调测试创建的公告内容。",
+          "created_at": "2026-10-02 14:14:40",
+          "id": 19,
+          "is_show": 1,
+          "publish_time": "2026-10-02 14:14:40",
+          "title": "接口测试公告"
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "公告编辑",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {
+          "id": 19
+        },
+        "msg": "公告更新成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 11 内容运营",
+      "name": "公告删除",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "公告删除成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 12 系统管理",
+      "name": "操作日志列表",
+      "expect": "code=200 且 total>=1",
+      "actual": {
+        "code": 200,
+        "data": {
+          "list": [
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:40",
+              "id": 499,
+              "operation_content": "删除公告：接口测试公告（已编辑）",
+              "operation_type": "公告删除",
+              "target_id": 19,
+              "target_type": "notice"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:40",
+              "id": 498,
+              "operation_content": "编辑：接口测试公告（已编辑）",
+              "operation_type": "公告编辑",
+              "target_id": 19,
+              "target_type": "notice"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:40",
+              "id": 497,
+              "operation_content": "新增：接口测试公告",
+              "operation_type": "公告新增",
+              "target_id": 19,
+              "target_type": "notice"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:39",
+              "id": 496,
+              "operation_content": "删除文章：接口测试科普文章（已编辑）",
+              "operation_type": "文章删除",
+              "target_id": 20,
+              "target_type": "health_article"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:39",
+              "id": 495,
+              "operation_content": "编辑：接口测试科普文章（已编辑）",
+              "operation_type": "文章编辑",
+              "target_id": 20,
+              "target_type": "health_article"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:39",
+              "id": 494,
+              "operation_content": "新增：接口测试科普文章",
+              "operation_type": "文章新增",
+              "target_id": 20,
+              "target_type": "health_article"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:37",
+              "id": 493,
+              "operation_content": "教练审核拒绝：教练[coach_reject_1002141412]（待拒绝教练）",
+              "operation_type": "教练审核拒绝",
+              "target_id": 71,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:35",
+              "id": 492,
+              "operation_content": "医生审核拒绝：医生[doc_reject_1002141412]（待拒绝医生）",
+              "operation_type": "医生审核拒绝",
+              "target_id": 97,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:34",
+              "id": 491,
+              "operation_content": "重置教练[coach_test_1002141412]登录密码",
+              "operation_type": "教练密码重置",
+              "target_id": 70,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:34",
+              "id": 490,
+              "operation_content": "修改教练[coach_test_1002141412]资料：专业方向=体态矫正与力量训练",
+              "operation_type": "教练资料修改",
+              "target_id": 70,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:33",
+              "id": 489,
+              "operation_content": "重置医生[doc_test_1002141412]登录密码",
+              "operation_type": "医生密码重置",
+              "target_id": 96,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:32",
+              "id": 488,
+              "operation_content": "修改医生[doc_test_1002141412]资料：姓名=接口测试医生改，专业方向=心血管内科",
+              "operation_type": "医生资料修改",
+              "target_id": 96,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:25",
+              "id": 487,
+              "operation_content": "绑定教练学员关系：教练[coach_test_1002141412] <-> 学员[测试用户A改]",
+              "operation_type": "教练学员绑定",
+              "target_id": 70,
+              "target_type": "coach_student"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:24",
+              "id": 486,
+              "operation_content": "教练审核通过：教练[coach_test_1002141412]（接口测试教练）",
+              "operation_type": "教练审核通过",
+              "target_id": 70,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:20",
+              "id": 485,
+              "operation_content": "绑定医患关系：医生[doc_test_1002141412] <-> 患者[测试用户A改]",
+              "operation_type": "医患绑定",
+              "target_id": 96,
+              "target_type": "doctor_patient"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 14:14:19",
+              "id": 484,
+              "operation_content": "医生审核通过：医生[doc_test_1002141412]（接口测试医生）",
+              "operation_type": "医生审核通过",
+              "target_id": 96,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 13:32:55",
+              "id": 483,
+              "operation_content": "重置教练[sec_coach_b]登录密码",
+              "operation_type": "教练密码重置",
+              "target_id": 67,
+              "target_type": "coach"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 13:32:54",
+              "id": 482,
+              "operation_content": "重置医生[sec_doctor_b]登录密码",
+              "operation_type": "医生密码重置",
+              "target_id": 92,
+              "target_type": "doctor"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 13:32:53",
+              "id": 481,
+              "operation_content": "绑定教练学员关系：教练[sec_coach_a] <-> 学员[sec_user_a]",
+              "operation_type": "教练学员绑定",
+              "target_id": 66,
+              "target_type": "coach_student"
+            },
+            {
+              "admin_id": 1,
+              "admin_name": "admin",
+              "admin_real_name": "系统管理员",
+              "created_at": "2026-10-02 13:32:53",
+              "id": 480,
+              "operation_content": "解除教练学员关系：教练[sec_coach_a] <-> 学员[sec_user_a]",
+              "operation_type": "教练学员解绑",
+              "target_id": 66,
+              "target_type": "coach_student"
+            }
+          ],
+          "page": 1,
+          "page_size": 20,
+          "pages": 25,
+          "total": 499
+        },
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 12 · 安全",
+      "name": "操作日志不含密码/Token/密钥等敏感信息",
+      "expect": "无敏感字段",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 12 系统管理",
+      "name": "操作类型枚举",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": [
+          "公告删除",
+          "公告新增",
+          "公告编辑",
+          "医患绑定",
+          "医患解绑",
+          "医生审核拒绝",
+          "医生审核通过",
+          "医生密码重置",
+          "医生资料修改",
+          "教练学员绑定",
+          "教练学员解绑",
+          "教练审核拒绝",
+          "教练审核通过",
+          "教练密码重置",
+          "教练资料修改",
+          "文章删除",
+          "文章新增",
+          "文章编辑"
+        ],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 12 系统管理",
+      "name": "系统信息只含非敏感信息",
+      "expect": "code=200 且无敏感字段",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "管理员 12 · 日志完整性",
+      "name": "关键操作日志类型齐全",
+      "expect": "全部 16 类均有记录",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "越权 A",
+      "name": "用户 A 用 user_token 读取用户 B 数据",
+      "expect": "被拒（401/400）",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 A",
+      "name": "用户接口仅返回本人数据（user_id 取自 Token）",
+      "expect": "code=200 且接口不接受客户端指定 user_id",
+      "actual": {
+        "code": 200,
+        "data": [
+          {
+            "advice_content": "接口测试：建议规律作息，控制盐分摄入。",
+            "created_at": "2026-10-02 14:14:21",
+            "doctor_avatar": "default_doctor.jpg",
+            "doctor_name": "接口测试医生改",
+            "id": 36,
+            "specialty": "心血管内科"
+          }
+        ],
+        "msg": "操作成功"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 D",
+      "name": "doctor_token 访问 /admin/dashboard",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 E",
+      "name": "coach_token 访问医生接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 F",
+      "name": "user_token 访问管理员接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "doctor_token 访问普通用户接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "coach_token 访问普通用户接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "doctor_token 访问教练接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "admin_token 访问医生接口",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "admin_token 冒充普通用户提交私人健康记录",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该接口（Token 类型不匹配）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 L",
+      "name": "非法 Token",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "登录状态已失效，请重新登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 L",
+      "name": "未携带 Token",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "未登录，请先登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 L",
+      "name": "过期 Token",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "登录状态已失效，请重新登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "医生向非本人患者写入健康建议",
+      "expect": "被拒",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "该用户不是您的负责患者，无权发送建议"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 附加",
+      "name": "教练向非本人学员写入健身建议",
+      "expect": "被拒",
+      "actual": {
+        "code": 400,
+        "data": {},
+        "msg": "该用户不是您的负责学员，无权发送建议"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 O",
+      "name": "管理员解除医患关系",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "医患关系已解除"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 O",
+      "name": "解除医患关系后医生继续读取患者",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该患者数据（未建立医患关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 P",
+      "name": "管理员解除教练学员关系",
+      "expect": "code=200",
+      "actual": {
+        "code": 200,
+        "data": {},
+        "msg": "教练学员关系已解除"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 P",
+      "name": "解除教练学员关系后继续读取学员",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该学员数据（未建立教练学员关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "越权 B",
+      "name": "另一名医生（无关系）读取该患者",
+      "expect": "401",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "无权访问该患者数据（未建立医患关系）"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "全项目无 5000/5001 端口",
+      "expect": "无任何命中",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "产品源码中无 123456 明文密码（扫描 108 个文件）",
+      "expect": "无命中",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "初始化 SQL 的 password_hash 全部为哈希值",
+      "expect": "SQL 中 password_hash 后接 pbkdf2/scrypt 哈希",
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "管理员密码为 Werkzeug 哈希存储",
+      "expect": "非明文且哈希前缀合法",
+      "actual": "pbkdf2:sha256:600000$cyFtvYVYb5aX8kAw$90",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "医生密码为 Werkzeug 哈希存储",
+      "expect": "非明文且哈希前缀合法",
+      "actual": "pbkdf2:sha256:600000$KSdn81BChwtGxVix$cf",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "教练密码为 Werkzeug 哈希存储",
+      "expect": "非明文且哈希前缀合法",
+      "actual": "scrypt:32768:8:1$nPeg3GlsBmhfK7Ko$89f781",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "users.avatar 只存文件名（无完整 URL）",
+      "expect": "计数=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "health_article.cover_img 只存文件名",
+      "expect": "计数=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "doctor_user.avatar 只存文件名",
+      "expect": "计数=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "coach_user.avatar 只存文件名",
+      "expect": "计数=0",
+      "actual": "0",
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "四类默认头像文件齐备",
+      "expect": "全部存在",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "静态资源目录可访问",
+      "expect": "HTTP 200",
+      "actual": 200,
+      "status": "PASS"
+    },
+    {
+      "group": "安全",
+      "name": "非法扩展名（.php）上传被拒",
+      "expect": "code=401（未登录）或 400（扩展名不合法）",
+      "actual": {
+        "code": 401,
+        "data": {},
+        "msg": "未登录，请先登录"
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "清理",
+      "name": "本轮测试数据精确清理（TEMP_TEST_DATA_RESIDUE = 0）",
+      "expect": "清理成功且残留为 0",
+      "actual": "deleted=19，dropped(非本轮用户,未删)=0，residue=0",
+      "status": "PASS"
+    }
+  ]
+}

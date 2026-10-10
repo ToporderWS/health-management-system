@@ -1,0 +1,27 @@
+{
+  "dist": "C:\\Users\\Toporder-WS\\Desktop\\项目\\个人健康管理系统小程序\\health-management-system\\management-web\\dist",
+  "files_scanned": 65,
+  "lan_ip": {
+    "192.168.1.4": [],
+    "192.168.2.219": [],
+    "192.168.": []
+  },
+  "port": {
+    ":8080": [],
+    ":5000": [],
+    ":5001": []
+  },
+  "rel_api": [
+    {
+      "file": "assets/index-DM2kF3rt.js",
+      "count": 1
+    }
+  ],
+  "rel_static": [
+    {
+      "file": "assets/index-DM2kF3rt.js",
+      "count": 1
+    }
+  ],
+  "api_abs_url": []
+}

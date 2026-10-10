@@ -1,0 +1,23 @@
+== 清理执行明细 ==
+   coach_student(by user_id)    1
+   coach_user                   2
+   doctor_advice(by doctor_id)  0
+   doctor_advice(by user_id)    1
+   doctor_patient(by user_id)   1
+   doctor_user                  3
+   fitness_advice(by coach_id)  0
+   fitness_advice(by user_id)   1
+   health_plan(by user_id)      1
+   health_record(by user_id)    1
+   medical_notice(by doctor_id) 0
+   medical_notice(by user_id)   1
+   medical_record(by doctor_id) 0
+   medical_record(by user_id)   1
+   sleep_record(by user_id)     1
+   sport_goal(by coach_id)      0
+   sport_goal(by user_id)       1
+   sport_record(by user_id)     1
+   training_plan(by coach_id)   0
+   training_plan(by user_id)    1
+   users                        2
+   合计删除行数                       19

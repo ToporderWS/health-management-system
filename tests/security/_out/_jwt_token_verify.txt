@@ -1,0 +1,26 @@
+== A) 旧 Token（旧 Secret 签发）应全部 401 ==
+   OLD user    -> /user/info               http=401 code=401 OK
+   OLD doctor  -> /doctor/patient/list     http=401 code=401 OK
+   OLD coach   -> /coach/student/list      http=401 code=401 OK
+   OLD admin   -> /admin/user/list         http=401 code=401 OK
+== B) 重新登录新 Token 应 200 ==
+   NEW user    login=200 -> /user/info               http=200 OK
+   NEW doctor  login=200 -> /doctor/patient/list     http=200 OK
+   NEW coach   login=200 -> /coach/student/list      http=200 OK
+   NEW admin   login=200 -> /admin/user/list         http=200 OK
+== C) 跨角色隔离（新 Token 调他人角色接口）应 401 ==
+   跨角色 12/12 返回 401
+
+OLD_TOKEN_INVALIDATED = 4/4
+NEW_TOKEN_VALIDATION = 4/4
+CROSS_ROLE_ISOLATION = 12/12
+ALL_PASS = True
+
+OLD_USER_TOKEN = 401
+OLD_DOCTOR_TOKEN = 401
+OLD_COACH_TOKEN = 401
+OLD_ADMIN_TOKEN = 401
+NEW_USER_TOKEN = 200
+NEW_DOCTOR_TOKEN = 200
+NEW_COACH_TOKEN = 200
+NEW_ADMIN_TOKEN = 200

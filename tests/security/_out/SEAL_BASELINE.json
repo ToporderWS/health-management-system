@@ -1,0 +1,208 @@
+{
+ "ts": "2026-10-01 20:18:31",
+ "tables": [
+  "admin_operation_log",
+  "admin_user",
+  "coach_student",
+  "coach_user",
+  "doctor_advice",
+  "doctor_patient",
+  "doctor_user",
+  "fitness_advice",
+  "health_article",
+  "health_plan",
+  "health_record",
+  "medical_notice",
+  "medical_record",
+  "notice",
+  "sleep_record",
+  "sport_goal",
+  "sport_record",
+  "training_plan",
+  "users"
+ ],
+ "table_count": 19,
+ "schema_fingerprint": "817cc3fbb064ae6a7b534815d82294bc791432ddb35b4b448c4b49e9f733af83",
+ "schema_columns": 139,
+ "counts": {
+  "admin_operation_log": 324,
+  "admin_user": 1,
+  "coach_student": 3,
+  "coach_user": 6,
+  "doctor_advice": 2,
+  "doctor_patient": 3,
+  "doctor_user": 8,
+  "fitness_advice": 2,
+  "health_article": 4,
+  "health_plan": 3,
+  "health_record": 5,
+  "medical_notice": 2,
+  "medical_record": 2,
+  "notice": 3,
+  "sleep_record": 3,
+  "sport_goal": 1,
+  "sport_record": 7,
+  "training_plan": 2,
+  "users": 6
+ },
+ "protected": {
+  "users": [
+   {
+    "id": 1,
+    "nickname": "小林同学",
+    "phone": "13800138001",
+    "gender": "男",
+    "age": 26
+   },
+   {
+    "id": 2,
+    "nickname": "阿may",
+    "phone": "13800138002",
+    "gender": "女",
+    "age": 24
+   },
+   {
+    "id": 12,
+    "nickname": "小孙",
+    "phone": "13844475825",
+    "gender": "男",
+    "age": 15
+   },
+   {
+    "id": 13,
+    "nickname": "小周",
+    "phone": "13814142525",
+    "gender": "男",
+    "age": 15
+   }
+  ],
+  "doctors": [
+   {
+    "id": 1,
+    "doctor_name": "doctor001",
+    "real_name": "张明远",
+    "audit_status": 1
+   },
+   {
+    "id": 2,
+    "doctor_name": "doctor002",
+    "real_name": "李欣",
+    "audit_status": 1
+   },
+   {
+    "id": 3,
+    "doctor_name": "doctor003",
+    "real_name": "王海涛",
+    "audit_status": 1
+   }
+  ],
+  "coaches": [
+   {
+    "id": 1,
+    "coach_name": "coach001",
+    "real_name": "陈昊",
+    "audit_status": 1
+   },
+   {
+    "id": 2,
+    "coach_name": "coach002",
+    "real_name": "刘雨欣",
+    "audit_status": 1
+   },
+   {
+    "id": 3,
+    "coach_name": "coach003",
+    "real_name": "赵强",
+    "audit_status": 1
+   }
+  ],
+  "xiaozhou_doctors": [
+   {
+    "doctor_id": 2,
+    "user_id": 13
+   }
+  ],
+  "xiaozhou_coaches": [
+   {
+    "coach_id": 1,
+    "user_id": 13
+   }
+  ],
+  "xiaozhou_biz": {
+   "health_record": 1,
+   "sleep_record": 1,
+   "sport_record": 1,
+   "health_plan": 1,
+   "doctor_advice": 1,
+   "medical_notice": 1,
+   "medical_record": 1,
+   "sport_goal": 0,
+   "training_plan": 1,
+   "fitness_advice": 1
+  },
+  "xiaozhou_biz_ids": {
+   "health_record": [
+    10
+   ],
+   "sleep_record": [
+    7
+   ],
+   "sport_record": [
+    12
+   ],
+   "health_plan": [
+    8
+   ],
+   "doctor_advice": [
+    6
+   ],
+   "medical_notice": [
+    6
+   ],
+   "medical_record": [
+    6
+   ],
+   "sport_goal": [],
+   "training_plan": [
+    6
+   ],
+   "fitness_advice": [
+    6
+   ]
+  }
+ },
+ "whitelist": {
+  "users": [
+   42,
+   43
+  ],
+  "doctor_user": [
+   63,
+   64,
+   65
+  ],
+  "coach_user": [
+   46,
+   47
+  ]
+ },
+ "unconfirmed_retained": {
+  "users": [],
+  "doctor_user": [
+   {
+    "id": 17,
+    "name": "001"
+   },
+   {
+    "id": 18,
+    "name": "003"
+   }
+  ],
+  "coach_user": [
+   {
+    "id": 12,
+    "name": "002"
+   }
+  ]
+ }
+}

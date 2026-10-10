@@ -1,0 +1,5 @@
+OK       backend/__pycache__                      files=5
+OK       backend/routes/__pycache__               files=16
+TOTAL_SCANNED_DIRS=2  ABORT=False
+DELETED  backend/__pycache__                      existed_after=False
+DELETED  backend/routes/__pycache__               existed_after=False

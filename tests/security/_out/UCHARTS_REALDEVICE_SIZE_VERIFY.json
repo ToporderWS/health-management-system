@@ -1,0 +1,147 @@
+{
+  "total": 28,
+  "pass": 28,
+  "fail": 0,
+  "results": [
+    {
+      "name": "复现-旧配置 ring 圆心越界（画布 312×182）",
+      "ok": true,
+      "detail": "center=(468,230) r=188 maxAbs=656"
+    },
+    {
+      "name": "复现-旧配置字号被放大到 DPR 倍（maxFont > 20）",
+      "ok": true,
+      "detail": "maxFont=36"
+    },
+    {
+      "name": "修复-体重趋势(line/1点) 可见绘制坐标不越界",
+      "ok": true,
+      "detail": "maxAbs=300 bound=312x182 texts=7"
+    },
+    {
+      "name": "修复-字号为 CSS px（maxFont 11~14）",
+      "ok": true,
+      "detail": "maxFont=12"
+    },
+    {
+      "name": "修复-ring 圆心在画布内且半径合理",
+      "ok": true,
+      "detail": "center=(156,77) r=63 bound=312x201"
+    },
+    {
+      "name": "修复-单分类 ring(球类=50) 画满 2π",
+      "ok": true,
+      "detail": "sweep=6.2832"
+    },
+    {
+      "name": "修复-单分类 ring(一般=1) 画满 2π",
+      "ok": true,
+      "detail": "sweep=6.2832"
+    },
+    {
+      "name": "不抛错且已绘制-体重趋势 line 1 点",
+      "ok": true,
+      "detail": "texts=7 arcs=1"
+    },
+    {
+      "name": "不抛错且已绘制-体重趋势 line 2 点",
+      "ok": true,
+      "detail": "texts=8 arcs=2"
+    },
+    {
+      "name": "不抛错且已绘制-血压趋势 line 1 点双序列",
+      "ok": true,
+      "detail": "texts=8 arcs=2"
+    },
+    {
+      "name": "不抛错且已绘制-运动时长 column 1 点",
+      "ok": true,
+      "detail": "texts=7 arcs=4"
+    },
+    {
+      "name": "不抛错且已绘制-运动时长 column 3 点",
+      "ok": true,
+      "detail": "texts=9 arcs=12"
+    },
+    {
+      "name": "不抛错且已绘制-运动类型 ring 1 分类",
+      "ok": true,
+      "detail": "texts=1 arcs=3"
+    },
+    {
+      "name": "不抛错且已绘制-运动类型 ring 3 分类",
+      "ok": true,
+      "detail": "texts=3 arcs=7"
+    },
+    {
+      "name": "不抛错且已绘制-睡眠质量 ring 1 分类",
+      "ok": true,
+      "detail": "texts=1 arcs=3"
+    },
+    {
+      "name": "不抛错且已绘制-睡眠时长 area 1 点",
+      "ok": true,
+      "detail": "texts=7 arcs=1"
+    },
+    {
+      "name": "哨兵-旧结构数值数组仍报 formatter 错误",
+      "ok": true,
+      "detail": "EXCEPTION: Cannot create property 'formatter' on number '50'"
+    },
+    {
+      "name": "修复-updateData 增量刷新 ring 不抛错",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "源码-u-charts.vue 不再把 width/height 乘 pixelRatio",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-u-charts.vue pixelRatio 固定为 1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-u-charts.vue 使用实测尺寸/upx2px 换算（不把 rpx 当 px）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-u-charts.vue 显式给出 extra.ring 配置",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-u-charts.js 未被修改（第三方库零改动）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-report 页保留对象数组 ring 结构",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-report 页 ring 已加 value>0 守卫",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-report 页线图已过滤空值（0/1/2+ 分支）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-report 页单序列图例关闭",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "源码-report 页 ring 卡片高度已下调至 420rpx",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

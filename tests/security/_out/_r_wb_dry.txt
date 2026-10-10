@@ -1,0 +1,8 @@
+==== BUGFIX-02 回写封板报告 (DRY-RUN) ====
+目标文件 : C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\docs\FINAL_PROJECT_SEAL_REPORT.md
+原字节数 : 19982   行尾: LF
+锚点命中 : 1  （要求恰为 1）
+已存在 §十四: False
+新增字节 : +5060
+
+[dry-run] 未落盘。加 --apply 执行。

@@ -1,0 +1,18 @@
+---- del batch n=8 ----
+  CHECK  backend/routes/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/admin.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/article.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/coach.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/doctor.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/health.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/notice.cpython-311.pyc 
+  CHECK  backend/routes/__pycache__/user.cpython-311.pyc 
+  OK  backend/routes/__pycache__/__init__.cpython-311.pyc
+  OK  backend/routes/__pycache__/admin.cpython-311.pyc
+  OK  backend/routes/__pycache__/article.cpython-311.pyc
+  OK  backend/routes/__pycache__/coach.cpython-311.pyc
+  OK  backend/routes/__pycache__/doctor.cpython-311.pyc
+  OK  backend/routes/__pycache__/health.cpython-311.pyc
+  OK  backend/routes/__pycache__/notice.cpython-311.pyc
+  OK  backend/routes/__pycache__/user.cpython-311.pyc
+>> DELETED=8 / 8

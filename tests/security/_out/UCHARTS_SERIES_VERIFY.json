@@ -1,0 +1,91 @@
+{
+  "total": 12,
+  "pass": 12,
+  "fail": 0,
+  "results": [
+    {
+      "name": "旧结构 ring: series=[{name,data:[50]}]（应报 formatter 错误）",
+      "expectThrow": true,
+      "threw": true,
+      "ok": true,
+      "msg": "Cannot create property 'formatter' on number '50'"
+    },
+    {
+      "name": "旧结构 ring: series=[{name,data:[1]}]（应报 formatter 错误）",
+      "expectThrow": true,
+      "threw": true,
+      "ok": true,
+      "msg": "Cannot create property 'formatter' on number '1'"
+    },
+    {
+      "name": "新结构 ring 运动类型分布（真实数据 50）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "新结构 ring 睡眠质量占比（真实数据 1）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "新结构 ring 多分片（3 段）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "新结构 ring 全 0 值（count=0 分支）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "新结构 pie 单分片",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "line（体重趋势）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "line（血压双系列）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "column（运动时长按天）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "area（睡眠时长趋势）",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    },
+    {
+      "name": "updateData 增量刷新 ring",
+      "expectThrow": false,
+      "threw": false,
+      "ok": true,
+      "msg": ""
+    }
+  ]
+}

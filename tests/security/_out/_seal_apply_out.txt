@@ -1,0 +1,18 @@
+BACKUP rows: {'doctor_patient': 4, 'coach_student': 4, 'doctor_advice': 4, 'medical_notice': 4, 'medical_record': 4, 'sport_goal': 4, 'training_plan': 4, 'fitness_advice': 4, 'health_record': 5, 'sleep_record': 4, 'sport_record': 5, 'health_plan': 5, 'doctor_user': 13, 'coach_user': 8, 'users': 9}
+PROTECTED_ASSERTION = OK（计划内 0 行触碰受保护实体）
+   DELETED doctor_patient     4
+   DELETED coach_student      4
+   DELETED doctor_advice      4
+   DELETED medical_notice     4
+   DELETED medical_record     4
+   DELETED sport_goal         4
+   DELETED training_plan      4
+   DELETED fitness_advice     4
+   DELETED health_record      5
+   DELETED sleep_record       4
+   DELETED sport_record       5
+   DELETED health_plan        5
+   DELETED doctor_user        13
+   DELETED coach_user         8
+   DELETED users              9
+TOTAL DELETED = 81

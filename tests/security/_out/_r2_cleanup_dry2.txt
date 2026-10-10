@@ -1,0 +1,39 @@
+{
+  "users": [
+    35,
+    36
+  ],
+  "doctors": [
+    52,
+    53,
+    54
+  ],
+  "coaches": [
+    38,
+    39
+  ],
+  "child_rows": {
+    "health_record(by user_id)": 1,
+    "sleep_record(by user_id)": 1,
+    "sport_record(by user_id)": 1,
+    "health_plan(by user_id)": 1,
+    "doctor_advice(by user_id)": 1,
+    "medical_notice(by user_id)": 1,
+    "medical_record(by user_id)": 1,
+    "sport_goal(by user_id)": 1,
+    "training_plan(by user_id)": 1,
+    "fitness_advice(by user_id)": 1,
+    "doctor_patient(by user_id)": 1,
+    "coach_student(by user_id)": 1,
+    "doctor_advice(by doctor_id)": 1,
+    "medical_notice(by doctor_id)": 1,
+    "medical_record(by doctor_id)": 1,
+    "sport_goal(by coach_id)": 1,
+    "training_plan(by coach_id)": 1,
+    "fitness_advice(by coach_id)": 1
+  },
+  "problems": [],
+  "safe": true
+}
+
+SAFE = True

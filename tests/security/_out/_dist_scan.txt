@@ -1,0 +1,21 @@
+==================================================================
+dist 文件扫描数（非二进制）= 65
+------------------------------------------------------------------
+[LAN IP 残留]
+   192.168.1.4      = 0 处 []
+   192.168.2.219    = 0 处 []
+   192.168.         = 0 处 []
+[端口残留]
+   :8080    = 0 处 []
+   :5000    = 0 处 []
+   :5001    = 0 处 []
+[相对路径注入]
+   "/api"           命中文件: [{'file': 'assets/index-DM2kF3rt.js', 'count': 1}]
+   "/static/upload/" 命中文件: [{'file': 'assets/index-DM2kF3rt.js', 'count': 1}]
+[绝对 http(s)://.../api 残留]
+   无
+==================================================================
+---- 相对路径上下文抽样 ----
+  [assets/index-DM2kF3rt.js] ...}function i0e(){return Be(Uf)}function u0e(e){return Be(zv)}const Fce="/api",Kce="/static/upload/",Ut={DOCTOR:"docto...
+  [assets/index-DM2kF3rt.js] ...0e(){return Be(Uf)}function u0e(e){return Be(zv)}const Fce="/api",Kce="/static/upload/",Ut={DOCTOR:"doctor",COACH:"coach",ADMIN...
+已写入 C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\DIST_SCAN.json

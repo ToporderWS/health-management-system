@@ -1,0 +1,9 @@
+old MEMORY.md bytes = 14805 chars = 9516
+[ARC] 写入并逐字节复核通过
+archive  : MEMORY-v1-full-archive-20261002.md bytes=14805 sha256[:16]=a1f60a06b8a03ad6
+[DET] 写入并逐字节复核通过 = True
+DETAIL   : MEMORY-DETAIL-v1.md bytes=14805 sha256[:16]=a1f60a06b8a03ad6
+new MEMORY.md chars(LF) = 3281 (limit 5000)
+MEMORY.md: bytes 14805 -> 4603 ; chars 9516 -> 3281
+sha256[:16] = 66ecccf4f0a81db4
+OK. 三个文件均就位（新增 2 + 重写 1，未删除任何文件）。

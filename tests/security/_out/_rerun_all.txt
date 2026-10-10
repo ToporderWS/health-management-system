@@ -1,0 +1,214 @@
+
+======== 专项 A ========
+[PASS] A-01 user Token -> user API                    http=200  code=200  操作成功
+[PASS] A-02 user Token -> doctor API（越权）              http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-03 user Token -> coach API（越权）               http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-04 user Token -> admin API（越权）               http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-05 doctor Token -> user API（越权）              http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-06 doctor Token -> doctor API                http=200  code=200  操作成功
+[PASS] A-07 doctor Token -> coach API（越权）             http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-08 doctor Token -> admin API（越权）             http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-09 coach Token -> user API（越权）               http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-10 coach Token -> doctor API（越权）             http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-11 coach Token -> coach API                  http=200  code=200  操作成功
+[PASS] A-12 coach Token -> admin API（越权）              http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-13 admin Token -> user API（越权）               http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-14 admin Token -> doctor API（越权）             http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-15 admin Token -> coach API（越权）              http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] A-16 admin Token -> admin API                  http=200  code=200  操作成功
+[PASS] A-17 无 Token -> user API                       http=401  code=401  未登录，请先登录
+[PASS] A-18 无 Token -> doctor API                     http=401  code=401  未登录，请先登录
+[PASS] A-19 无 Token -> coach API                      http=401  code=401  未登录，请先登录
+[PASS] A-20 无 Token -> admin API                      http=401  code=401  未登录，请先登录
+C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\.venv\Lib\site-packages\jwt\api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 19 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+[PASS] A-21 伪造 Token(错误密钥) -> user API                http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-22 伪造 Token(错误密钥) -> doctor API              http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-23 伪造 Token(错误密钥) -> coach API               http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-24 伪造 Token(错误密钥) -> admin API               http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-25 损坏 Token -> user API                      http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-26 损坏 Token -> doctor API                    http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-27 损坏 Token -> coach API                     http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-28 损坏 Token -> admin API                     http=401  code=401  登录状态已失效，请重新登录
+[PASS] A-29 医生 Token 无 Bearer 前缀 -> 管理员 API           http=401  code=401  无权访问该接口（Token 类型不匹配）
+---- A: 29/29 PASS, 0 FAIL (3s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_A.json
+
+======== 专项 B ========
+[PASS] B-a 患者列表包含自己的患者 user=20                        http=200  code=200  操作成功
+[PASS] B-a 患者列表不含他人患者 user=21                         http=200  code=200  操作成功
+[PASS] B-b 患者列表包含自己的患者 user=21                        http=200  code=200  操作成功
+[PASS] B-b 患者列表不含他人患者 user=20                         http=200  code=200  操作成功
+[PASS] B-越权-01 医生A 直构 user_id=B 读患者详情                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-越权-02 医生A 直构 user_id=B 读健康指标                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-越权-03 医生A 直构 user_id=B 读睡眠数据                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-越权-04 医生A 直构 user_id=B 读运动数据                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-越权-05 医生A 直构 user_id=B 读健康计划                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-越权-06 医生A 直构 user_id=B 读健康趋势                 http=401  code=401  无权访问该患者数据（未建立医患关系）
+[PASS] B-正例-01 医生A 读自己患者健康指标                          http=200  code=200  操作成功
+[PASS] B-正例-02 医生A 确实读到患者A的健康记录                       http=200  code=200  操作成功
+[PASS] B-越权-07 医生A 越权写患者B的健康建议                        http=400  code=400  该用户不是您的负责患者，无权发送建议
+[PASS] B-越权-08 医生A 越权写患者B的体检通知                        http=400  code=400  该用户不是您的负责患者，无权发送通知
+[PASS] B-越权-09 医生A 越权写患者B的医疗记录                        http=400  code=400  该用户不是您的负责患者，无权创建记录
+[PASS] B-DB-doctor_advice 医生A 对患者B 的doctor_advice写入为 0 条 http=400  code=400  该用户不是您的负责患者，无权创建记录
+[PASS] B-DB-medical_notice 医生A 对患者B 的medical_notice写入为 0 条 http=400  code=400  该用户不是您的负责患者，无权创建记录
+[PASS] B-DB-medical_record 医生A 对患者B 的medical_record写入为 0 条 http=400  code=400  该用户不是您的负责患者，无权创建记录
+---- B: 18/18 PASS, 0 FAIL (2s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_B.json
+
+======== 专项 C ========
+[PASS] C-a 学员列表包含自己的学员 user=20                        http=200  code=200  操作成功
+[PASS] C-a 学员列表不含他人学员 user=21                         http=200  code=200  操作成功
+[PASS] C-b 学员列表包含自己的学员 user=21                        http=200  code=200  操作成功
+[PASS] C-b 学员列表不含他人学员 user=20                         http=200  code=200  操作成功
+[PASS] C-越权-01 教练A 直构 user_id=B 读学员详情                 http=401  code=401  无权访问该学员数据（未建立教练学员关系）
+[PASS] C-越权-02 教练A 直构 user_id=B 读学员运动数据               http=401  code=401  无权访问该学员数据（未建立教练学员关系）
+[PASS] C-越权-03 教练A 直构 user_id=B 读学员运动统计               http=401  code=401  无权访问该学员数据（未建立教练学员关系）
+[PASS] C-正例-01 教练A 读自己学员运动数据                          http=200  code=200  操作成功
+[PASS] C-越权-04 教练A 越权写学员B的运动目标                        http=400  code=400  该用户不是您的负责学员，无权操作
+[PASS] C-越权-05 教练A 越权写学员B的训练计划                        http=400  code=400  该用户不是您的负责学员，无权操作
+[PASS] C-越权-06 教练A 越权写学员B的健身建议                        http=400  code=400  该用户不是您的负责学员，无权发送建议
+[PASS] C-越权-07 教练A 改教练B 的运动目标(id=11)                  http=400  code=400  目标不存在或无权操作
+[PASS] C-越权-08 教练A 改教练B 的训练计划(id=12)                  http=400  code=400  训练计划不存在或无权操作
+[PASS] C-DB-sport_goal 教练A 对学员B 的写入为 0 条              http=400  code=400  训练计划不存在或无权操作
+[PASS] C-DB-training_plan 教练A 对学员B 的写入为 0 条           http=400  code=400  训练计划不存在或无权操作
+[PASS] C-DB-fitness_advice 教练A 对学员B 的写入为 0 条          http=400  code=400  训练计划不存在或无权操作
+---- C: 16/16 PASS, 0 FAIL (2s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_C.json
+
+======== 专项 D ========
+[FAIL] D-01 新注册医生 audit_status 强制为 0                  http=400  code=400  该医生账号已被注册
+[FAIL] D-02 新注册教练 audit_status 强制为 0                  http=400  code=400  该教练账号已被注册
+[FAIL] D-03 医生注册恶意提交 audit_status=1 仍存 0              http=400  code=400  该医生账号已被注册
+[FAIL] D-04 医生注册忽略客户端 id（未被覆盖为 1）                     http=400  code=400  该医生账号已被注册
+[FAIL] D-05 医生注册忽略客户端 created_at                      http=400  code=400  该医生账号已被注册
+[PASS] D-06 audit_status=0 医生不允许登录                    http=400  code=400  账号审核未通过，请联系管理员
+[PASS] D-07 audit_status=0 教练不允许登录                    http=400  code=400  账号审核未通过，请联系管理员
+[FAIL] D-08 管理员可把待审核(0)医生改为审核拒绝(2)                    http=400  code=400  缺少医生 id
+[PASS] D-09 audit_status=2 医生不允许登录                    http=400  code=400  账号审核未通过，请联系管理员
+[PASS] D-10 audit_status=2 教练不允许登录                    http=400  code=400  账号审核未通过，请联系管理员
+[PASS] D-11 审核不可逆：拒绝(2)后不得再改为通过(1)                    http=400  code=400  缺少医生 id
+[FAIL] D-12 拒绝后状态保持 2（未被改写）                           http=400  code=400  缺少医生 id
+[FAIL] D-13 新注册医生初始 audit_status=0                    http=400  code=400  该医生账号已被注册
+[FAIL] D-14 待审核(0) -> 审核通过(1) 允许                      http=400  code=400  该申请已完成审核，无需重复操作
+[PASS] D-15 审核通过(1)后医生可登录                             http=200  code=200  登录成功
+[PASS] D-16 医生登录返回非空 token                            http=200  code=200  登录成功
+[FAIL] D-17 待审核(0) -> 审核通过(1) 教练允许                    http=400  code=400  该申请已完成审核，无需重复操作
+[PASS] D-18 审核通过(1)后教练可登录                             http=200  code=200  登录成功
+[PASS] D-19 教练登录返回非空 token                            http=200  code=200  登录成功
+[PASS] D-20 已审核通过(1)的申请不可重复审核                         http=400  code=400  该申请已完成审核，无需重复操作
+---- D: 10/20 PASS, 10 FAIL (4s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_D.json
+
+======== 专项 E ========
+[PASS] E-01 普通用户重复手机号注册                               http=400  code=400  该手机号已注册
+[PASS] E-02 医生重复 doctor_name 注册                       http=400  code=400  该医生账号已被注册
+[PASS] E-03 教练重复 coach_name 注册                        http=400  code=400  该教练账号已被注册
+[PASS] E-04 普通用户空手机号注册                                http=400  code=400  请输入正确的手机号
+[PASS] E-05 普通用户空密码注册                                 http=400  code=400  密码不能为空
+[PASS] E-06 普通用户空昵称注册                                 http=400  code=400  昵称不能为空
+[PASS] E-07 非法手机号注册                                   http=400  code=400  请输入正确的手机号
+[PASS] E-08 非法性别取值注册                                  http=400  code=400  性别取值不合法
+[PASS] E-09 密码长度不足注册                                  http=400  code=400  密码长度不能少于 6 位
+[PASS] E-10 users 表不存在 confirm_password 列             http=400  code=400  密码长度不能少于 6 位
+[PASS] E-11 doctor_user 表不存在 confirm_password 列       http=400  code=400  密码长度不能少于 6 位
+[PASS] E-12 coach_user 表不存在 confirm_password 列        http=400  code=400  密码长度不能少于 6 位
+[PASS] E-13 普通用户注册忽略恶意 id=99999                       http=400  code=400  该手机号已注册
+[PASS] E-14 普通用户注册忽略恶意 created_at                     http=400  code=400  该手机号已注册
+[PASS] E-15 users 表无 role 字段（结构上无法提权）                 http=400  code=400  该手机号已注册
+[PASS] E-16 users 表无 audit_status 字段                  http=400  code=400  该手机号已注册
+---- E: 16/16 PASS, 0 FAIL (0s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_E.json
+
+======== 专项 F ========
+[PASS] F-01 user 正确账号+错误密码                            http=400  code=400  手机号或密码错误
+[PASS] F-01* user 错误密码响应无敏感信息泄露                       http=400  code=400  手机号或密码错误
+[PASS] F-02 doctor 正确账号+错误密码                          http=400  code=400  账号或密码错误
+[PASS] F-02* doctor 错误密码响应无敏感信息泄露                     http=400  code=400  账号或密码错误
+[PASS] F-03 coach 正确账号+错误密码                           http=400  code=400  账号或密码错误
+[PASS] F-03* coach 错误密码响应无敏感信息泄露                      http=400  code=400  账号或密码错误
+[PASS] F-04 admin 正确账号+错误密码                           http=400  code=400  账号或密码错误
+[PASS] F-04* admin 错误密码响应无敏感信息泄露                      http=400  code=400  账号或密码错误
+[PASS] F-05 user 不存在账号                                http=400  code=400  手机号或密码错误
+[PASS] F-06 doctor 不存在账号                              http=400  code=400  账号或密码错误
+[PASS] F-07 coach 不存在账号                               http=400  code=400  账号或密码错误
+[PASS] F-08 admin 不存在账号                               http=400  code=400  账号或密码错误
+[PASS] F-09 user 空账号                                  http=400  code=400  请输入手机号和密码
+[PASS] F-10 doctor 空账号                                http=400  code=400  请输入医生账号和密码
+[PASS] F-11 coach 空账号                                 http=400  code=400  请输入教练账号和密码
+[PASS] F-12 admin 空账号                                 http=400  code=400  请输入管理员账号和密码
+[PASS] F-13 user 空密码                                  http=400  code=400  请输入手机号和密码
+[PASS] F-14 doctor 空密码                                http=400  code=400  请输入医生账号和密码
+[PASS] F-15 coach 空密码                                 http=400  code=400  请输入教练账号和密码
+[PASS] F-16 admin 空密码                                 http=400  code=400  请输入管理员账号和密码
+[PASS] F-17 未审核医生登录                                   http=400  code=400  账号正在审核中，请耐心等待
+[PASS] F-17* 未审核登录响应无敏感信息                             http=400  code=400  账号正在审核中，请耐心等待
+[PASS] F-18 审核拒绝医生登录                                  http=400  code=400  账号审核未通过，请联系管理员
+[PASS] F-19 审核拒绝教练登录                                  http=400  code=400  账号审核未通过，请联系管理员
+---- F: 24/24 PASS, 0 FAIL (4s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_F.json
+
+======== 专项 G ========
+[PASS] G-my_list 用户A 篡改 user_id=B 读取「健康指标」            http=200  code=200  操作成功
+[PASS] G-my_list 用户A 篡改 user_id=B 读取「睡眠记录」            http=200  code=200  操作成功
+[PASS] G-my_list 用户A 篡改 user_id=B 读取「运动记录」            http=200  code=200  操作成功
+[PASS] G-my_list 用户A 篡改 user_id=B 读取「健康计划」            http=200  code=200  操作成功
+[PASS] G-statistics 用户A 篡改 user_id=B 读取「数据报告」         http=200  code=200  操作成功
+[PASS] G-doctor_advice 用户A 篡改 user_id=B 读取「医生建议」      http=200  code=200  操作成功
+[PASS] G-medical_notice 用户A 篡改 user_id=B 读取「体检通知」     http=200  code=200  操作成功
+[PASS] G-medical_record 用户A 篡改 user_id=B 读取「医疗记录」     http=200  code=200  操作成功
+[PASS] G-sport_goal 用户A 篡改 user_id=B 读取「运动目标」         http=200  code=200  操作成功
+[PASS] G-training_plan 用户A 篡改 user_id=B 读取「训练计划」      http=200  code=200  操作成功
+[PASS] G-fitness_advice 用户A 篡改 user_id=B 读取「健身建议」     http=200  code=200  操作成功
+[PASS] G-写-01 用户A 提交 user_id=B 新增健康记录                 http=200  code=200  健康指标记录成功
+[PASS] G-写-02 新增记录归属用户A（而非B）                          http=200  code=200  健康指标记录成功
+[PASS] G-写-03 用户A 附 user_id=B 创建计划仍归属用户A              http=200  code=200  健康计划创建成功
+[PASS] G-写-04 用户A 改用户B 的计划状态(id=16)                   http=400  code=400  计划不存在或无权操作
+[PASS] G-写-05 用户B 的计划状态未被篡改                           http=400  code=400  计划不存在或无权操作
+---- G: 16/16 PASS, 0 FAIL (2s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_G.json
+
+======== 专项 H ========
+[PASS] H-list 管理员监管查看「原始健康指标」                         http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「睡眠记录」                           http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「运动记录」                           http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「用户健康计划」                         http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「医生健康建议」                         http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「体检通知」                           http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「医疗记录」                           http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「教练运动目标」                         http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「训练计划」                           http=200  code=200  操作成功
+[PASS] H-list 管理员监管查看「健身建议」                           http=200  code=200  操作成功
+[PASS] H-越权-01 管理员 Token 冒充业务角色写医生健康建议                http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-02 管理员 Token 冒充业务角色写体检通知                  http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-03 管理员 Token 冒充业务角色写医疗记录                  http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-04 管理员 Token 冒充业务角色写运动目标                  http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-05 管理员 Token 冒充业务角色写训练计划                  http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-06 管理员 Token 冒充业务角色写健身建议                  http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-07 管理员 Token 写用户健康记录                      http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-越权-08 管理员 Token 写用户健康计划                      http=401  code=401  无权访问该接口（Token 类型不匹配）
+[PASS] H-静态-01 管理员路由中不存在健康/专业业务写入接口                   http=401  code=401  无权访问该接口（Token 类型不匹配）
+---- H: 19/19 PASS, 0 FAIL (1s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_H.json
+
+======== 专项 I ========
+[PASS] I-01 管理员解除医患关系（删除前先确认存在）                       http=200  code=200  医患关系已解除
+[PASS] I-02 管理员恢复医患绑定（消除测试副作用）                        http=200  code=200  医患关系绑定成功
+[PASS] I-03 管理员解除教练学员关系                               http=200  code=200  教练学员关系已解除
+[PASS] I-04 管理员恢复教练学员绑定（消除测试副作用）                      http=200  code=200  教练学员关系绑定成功
+[PASS] I-05 管理员重置医生登录密码                               http=200  code=200  密码重置成功
+[PASS] I-06 管理员重置教练登录密码                               http=200  code=200  密码重置成功
+[PASS] I-07 密码重置后医生仍可用原口令登录                           http=200  code=200  登录成功
+[PASS] I-日志 存在「医生审核通过」审计记录                            http=200  code=200  登录成功
+[PASS] I-日志 存在「教练审核通过」审计记录                            http=200  code=200  登录成功
+[PASS] I-日志 存在「医患绑定」审计记录                              http=200  code=200  登录成功
+[PASS] I-日志 存在「医患解绑」审计记录                              http=200  code=200  登录成功
+[PASS] I-日志 存在「教练学员绑定」审计记录                            http=200  code=200  登录成功
+[PASS] I-日志 存在「教练学员解绑」审计记录                            http=200  code=200  登录成功
+[PASS] I-日志 存在「医生密码重置」审计记录                            http=200  code=200  登录成功
+[PASS] I-日志 存在「教练密码重置」审计记录                            http=200  code=200  登录成功
+[PASS] I-08 操作日志不含明文密码/哈希/JWT/Secret/DB密码             http=200  code=200  登录成功
+[PASS] I-09 操作日志不含 password_hash 字样                   http=200  code=200  登录成功
+---- I: 17/17 PASS, 0 FAIL (3s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_I.json
+
+======== 专项 J ========
+[PASS] J-01 全部请求未出现 HTTP 500                          http=None code=None 
+[PASS] J-02 无连接层异常（后端进程全程存活）                          http=None code=None 
+[PASS] J-03 所有响应均为统一 {code,msg,data} 契约（无 HTML 错误页）   http=None code=None 
+[PASS] J-04 全部响应无敏感信息泄露（traceback/SQL/哈希/密钥；登录下发 token 除外） http=None code=None 
+[PASS] J-05 经历全部异常请求后后端仍存活                            http=200  code=200  数据库连接正常
+[PASS] J-06 /api/health 报告数据库连通                       http=200  code=200  数据库连接正常
+[PASS] J-07 不存在接口返回统一契约而非 HTML 404                    http=400  code=400  接口不存在：/api/no_such_api_sec_test
+---- J: 7/7 PASS, 0 FAIL (0s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_J.json

@@ -1,0 +1,17 @@
+A list total=29 passed=29 fails=0 mtime=1790849292
+B list total=18 passed=18 fails=0 mtime=1790849294
+C list total=16 passed=16 fails=0 mtime=1790849295
+D list total=20 passed=20 fails=0 mtime=1790849302
+E list total=16 passed=16 fails=0 mtime=1790849303
+F list total=24 passed=24 fails=0 mtime=1790849307
+G list total=16 passed=16 fails=0 mtime=1790849309
+H list total=19 passed=19 fails=0 mtime=1790849310
+I list total=17 passed=17 fails=0 mtime=1790849313
+J list total=7 passed=5 fails=2 mtime=1790849313
+      FAIL: {"id": "J-04 全部响应无敏感信息泄露（traceback/SQL/哈希/密钥）", "group": "J", "role": "all", "goal": "REQUESTS", "expect": "无泄露", "http": null, "code": null, "msg": null, "passed": false, "note": "泄露项=[{\"path\": \"/user/login\", \"status\": 200, \"hits\": [\"JWT 原文段\"]}, {\"path\": \"/doctor/login\", \"status\": 200, \"hits\": [\"JWT 原文段\"]}, {\"path\": \"/coach/login\", \"status\": 200, \"hits\": [\"JWT 原文段\"]}, {\"path\": \"/admin/login\", \"status\": 200, \"hits\": [\"JWT 原文段\"]}, {\"path\": \"/doctor/login
+      FAIL: {"id": "J-06 /api/health 报告数据库连通", "group": "J", "role": "anon", "goal": "/api/health", "expect": "database=ok", "http": 200, "code": 200, "msg": "数据库连接正常", "passed": false, "note": "", "db": "", "severity": ""}
+K list total=15 passed=11 fails=4 mtime=1790849301
+      FAIL: {"id": "K-01 源码中不存在 :5000 端口硬编码", "group": "K", "role": "static", "goal": ":5000", "expect": "0 处命中", "http": null, "code": null, "msg": null, "passed": false, "note": "[{\"file\": \"docs/TEST_REPORT.md\", \"line\": 261, \"text\": \"| 7 | 端口扫描误报 FAIL | 扫描器自身含 `:5000` 字面量 | 扫描器移入 `tests/` 并排除工具文件扫描范围 | ✅ 通过 |\"}]", "db": "", "severity": ""}
+      FAIL: {"id": "K-07 前端源码不含硬编码角色/审核绕过", "group": "K", "role": "static", "goal": "frontend", "expect": "0 处命中", "http": null, "code": null, "msg": null, "passed": false, "note": "[{\"file\": \"management-web/src/views/coach/Login.vue\", \"line\": 70, \"text\": \"<div class=\\\"lp__note\\\">注册后需等待管理员审核，审核通过（audit_status = 1）方可登录。</div>\"}, {\"file\": \"management-web/src/views/doctor/Login.vue\", \"line\": 76, \"text\": \"<div class=\\\"lp__note\\\">注册后需等待管理员审核，审核通过（audit_status = 1）方可登录。</div>\"}]", "db"
+      FAIL: {"id": "K-10 源码中无 TODO/FIXME/XXX 遗留标记", "group": "K", "role": "static", "goal": "all", "expect": "0 处命中", "http": null, "code": null, "msg": null, "passed": false, "note": "[{\"file\": \"backend/utils/helpers.py\", \"line\": 177, \"text\": \"# 形如 password=xxx / \\\"pwd\\\":\\\"xxx\\\" 的片段统一替换为 ***\"}, {\"file\": \"docs/API.md\", \"line\": 5, \"text\": \"> 统一响应体：`{ \\\"code\\\": 200, \\\"msg\\\": \\\"xxx\\\", \\\"data\\\": {...} }`\"}, {\"file\": \"docs/API.md\", \"line\": 92, \"text\": \"> 上述「我的
+      FAIL: {"id": "K-11 源码中无 mock/假数据替代核心业务", "group": "K", "role": "static", "goal": "all", "expect": "0 处命中", "http": null, "code": null, "msg": null, "passed": false, "note": "[{\"file\": \"docs/FINAL_REPORT.md\", \"line\": 43, \"text\": \"| 16 | **真实数据，无 Mock / 无 TODO / 无空页面** | ✅ 完成 |\"}, {\"file\": \"docs/FINAL_REPORT.md\", \"line\": 194, \"text\": \"- 全项目无硬编码 IP（唯一地址源 `common/config.js`）、无 Mock 数据、无 TODO 标记。\"}, {\"file\": \"docs/FINAL_REPORT.md\", \"line\": 403, \"text\": \"> 无 Mock 数据、无 TODO 占位、无空

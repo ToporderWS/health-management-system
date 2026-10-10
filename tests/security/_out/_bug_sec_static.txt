@@ -1,0 +1,16 @@
+[PASS] K-01 源码中不存在 :5000 端口硬编码                        http=None code=None 
+[PASS] K-02 源码中不存在 :5001 端口硬编码                        http=None code=None 
+[PASS] K-03 前端源码不存在 password_hash                     http=None code=None 
+[PASS] K-04 前端源码不含 JWT Secret / JWT_SECRET            http=None code=None 
+[PASS] K-05 前端源码不含数据库连接配置                             http=None code=None 
+[PASS] K-06 前端源码不含硬编码 token / 口令字面量                   http=None code=None 
+[PASS] K-07 前端代码中不含硬编码角色/审核绕过                         http=None code=None 
+[PASS] K-08 后端 auth.py 同时具备 Token 类型隔离与关系校验           http=None code=None 
+[PASS] K-09 前端存在路由守卫（展示层过滤，非唯一防线）                     http=None code=None 
+[PASS] K-10 源码中无 TODO/FIXME/XXX 遗留标记                  http=None code=None 
+[PASS] K-11 源码中无 mock/桩数据替代核心业务                       http=None code=None 
+[PASS] K-12 前端 Token key 与角色映射一一对应（无串用）               http=None code=None 
+[PASS] K-13 后端 TOKEN_ROLE_MAP 显式定义四类映射                http=None code=None 
+[PASS] K-14 管理端工程内不含 .env 密钥泄露                        http=None code=None 
+[PASS] K-15 后端路由/服务未发现写死中文数据的假接口                      http=None code=None 
+---- K: 15/15 PASS, 0 FAIL (1s) -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\sec_K.json

@@ -1,0 +1,236 @@
+{
+ "pass": 46,
+ "total": 46,
+ "cases": [
+  {
+   "name": "后端 /api/health 存活",
+   "ok": true,
+   "detail": "{'database': 'ok', 'service': 'ok', 'version': 'V3.2 FINAL'}"
+  },
+  {
+   "name": "USER 登录",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "USER info",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 健康记录",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 睡眠记录",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 运动记录",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 健康计划",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 统计报告",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 医生建议",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 体检通知",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 医疗记录",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 运动目标",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 训练计划",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "USER 健身建议",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 登录",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "DOCTOR info",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR dashboard",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR patient/list",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 小周健康数据",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 小周睡眠数据",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 小周运动数据",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 医生建议列表",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "DOCTOR 关系权限：非本人患者(user1) 被拒",
+   "ok": true,
+   "detail": "401"
+  },
+  {
+   "name": "COACH 登录",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "COACH info",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH dashboard",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH student/list",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH 小周运动数据",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH 小周运动统计",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH 运动目标列表",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "COACH 关系权限：非本人学员(user12) 被拒",
+   "ok": true,
+   "detail": "401"
+  },
+  {
+   "name": "ADMIN 登录",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "ADMIN 首页/仪表盘",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 1 普通用户管理",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 2 医生管理",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 3 教练管理",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 4 审核中心",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 5 关系管理",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 6 健康数据",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 7 健康计划",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 8 医生业务",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 9 教练业务",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 10 内容运营",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 11 系统管理",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 12 操作日志",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "ADMIN 边界：匿名访问被拒",
+   "ok": true,
+   "detail": "401"
+  }
+ ]
+}

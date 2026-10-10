@@ -1,0 +1,31 @@
+{
+ "plan": {
+  "users": [
+   42,
+   43
+  ],
+  "doctor_user": [
+   63,
+   64,
+   65
+  ],
+  "coach_user": [
+   46,
+   47
+  ],
+  "doctor_patient": [],
+  "coach_student": [],
+  "doctor_advice": [],
+  "medical_notice": [],
+  "medical_record": [],
+  "sport_goal": [],
+  "training_plan": [],
+  "fitness_advice": [],
+  "health_record": [],
+  "sleep_record": [],
+  "sport_record": [],
+  "health_plan": []
+ },
+ "skipped": [],
+ "total": 7
+}

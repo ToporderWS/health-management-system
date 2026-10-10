@@ -1,0 +1,21 @@
+{
+ "deleted": {
+  "doctor_patient": 0,
+  "coach_student": 0,
+  "doctor_advice": 0,
+  "medical_notice": 0,
+  "medical_record": 0,
+  "sport_goal": 0,
+  "training_plan": 0,
+  "fitness_advice": 0,
+  "health_record": 0,
+  "sleep_record": 0,
+  "sport_record": 0,
+  "health_plan": 0,
+  "doctor_user": 3,
+  "coach_user": 2,
+  "users": 2
+ },
+ "skipped": [],
+ "total": 7
+}

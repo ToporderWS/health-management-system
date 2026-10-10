@@ -1,0 +1,18 @@
+---- del batch n=8 ----
+  CHECK  backend/services/__pycache__/__init__.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/admin_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/coach_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/content_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/doctor_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/health_service.cpython-311.pyc 
+  CHECK  backend/services/__pycache__/user_service.cpython-311.pyc 
+  CHECK  backend/utils/__pycache__/__init__.cpython-311.pyc 
+  OK  backend/services/__pycache__/__init__.cpython-311.pyc
+  OK  backend/services/__pycache__/admin_service.cpython-311.pyc
+  OK  backend/services/__pycache__/coach_service.cpython-311.pyc
+  OK  backend/services/__pycache__/content_service.cpython-311.pyc
+  OK  backend/services/__pycache__/doctor_service.cpython-311.pyc
+  OK  backend/services/__pycache__/health_service.cpython-311.pyc
+  OK  backend/services/__pycache__/user_service.cpython-311.pyc
+  OK  backend/utils/__pycache__/__init__.cpython-311.pyc
+>> DELETED=8 / 8

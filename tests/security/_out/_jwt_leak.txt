@@ -1,0 +1,16 @@
+== 扫描基准（只报长度，不报值） ==
+  OLD_SECRET_LENGTH = 60
+  NEW_SECRET_LENGTH = 86
+  NEW_FULL_IN_ENV   = 1
+
+1) 旧 Secret 完整值全项目命中 = 0 
+   其中 backend/.env 之外命中 = 0 
+2) 新 Secret 完整值 backend/.env 之外命中 = 0 
+3) 旧 Secret 前缀(含截断提及)命中 = 1 {'docs/FINAL_SECURITY_ACCEPTANCE_REPORT.md': 1}
+4) management-web 内 JWT_SECRET 字样命中 = 0 
+5) miniapp 内 JWT_SECRET 字样命中 = 0 
+6) dist 内 Secret/JWT_SECRET 命中 = 0 
+7) docs/tests/backend 内新 Secret 完整值命中 = 1 {'backend/.env': 1}
+
+written -> C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\JWT_LEAK_SCAN.json
+LEAK_SCAN_ALL_ZERO = NO

@@ -1,0 +1,189 @@
+==============================================================================
+最终封板 · 只读侦察  @ 2026-10-01 20:12:49
+==============================================================================
+
+## 1. 数据库表清单（共 19 张）
+   - admin_operation_log
+   - admin_user
+   - coach_student
+   - coach_user
+   - doctor_advice
+   - doctor_patient
+   - doctor_user
+   - fitness_advice
+   - health_article
+   - health_plan
+   - health_record
+   - medical_notice
+   - medical_record
+   - notice
+   - sleep_record
+   - sport_goal
+   - sport_record
+   - training_plan
+   - users
+
+## 2. 结构指纹 SHOW: cols=139  fingerprint=049ca8feccf33fc27a021e14ca2c5b32d5c2eaa921ad5d2209d6988a8fe94ec2
+
+## 3. users  共 13 行  (列: id,nickname,phone,gender,age,created_at)
+    id=1 | nickname=小林同学 | phone=13800138001 | gender=男 | age=26 | created_at=2026-10-01 12:51:53
+    id=2 | nickname=阿may | phone=13800138002 | gender=女 | age=24 | created_at=2026-10-01 12:51:53
+    id=3 | nickname=测试用户A改 | phone=13990830469 | gender=女 | age=30 | created_at=2026-10-01 12:54:30
+    id=4 | nickname=测试用户A改 | phone=13990830516 | gender=女 | age=30 | created_at=2026-10-01 12:55:16
+    id=5 | nickname=接口测试用户B | phone=13890830516 | gender=None | age=None | created_at=2026-10-01 12:55:44
+    id=6 | nickname=测试用户A改 | phone=13990830630 | gender=女 | age=30 | created_at=2026-10-01 12:57:10
+    id=7 | nickname=接口测试用户B | phone=13890830630 | gender=None | age=None | created_at=2026-10-01 12:57:40
+    id=8 | nickname=测试用户A改 | phone=13990830676 | gender=女 | age=30 | created_at=2026-10-01 12:57:57
+    id=9 | nickname=接口测试用户B | phone=13890830676 | gender=None | age=None | created_at=2026-10-01 12:58:26
+    id=10 | nickname=测试用户A改 | phone=13990830747 | gender=女 | age=30 | created_at=2026-10-01 12:59:07
+    id=11 | nickname=接口测试用户B | phone=13890830747 | gender=None | age=None | created_at=2026-10-01 12:59:37
+    id=12 | nickname=小孙 | phone=13844475825 | gender=男 | age=15 | created_at=2026-10-01 17:19:45
+    id=13 | nickname=小周 | phone=13814142525 | gender=男 | age=15 | created_at=2026-10-01 17:20:57
+
+## 3. doctor_user  共 18 行  (列: id,doctor_name,real_name,phone,gender,audit_status,created_at)
+    id=1 | doctor_name=doctor001 | real_name=张明远 | phone=13800000001 | gender=男 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=2 | doctor_name=doctor002 | real_name=李欣 | phone=13800000002 | gender=女 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=3 | doctor_name=doctor003 | real_name=王海涛 | phone=13800000003 | gender=男 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=4 | doctor_name=doc_test_1001125429 | real_name=接口测试医生 | phone=13790830469 | gender=男 | audit_status=1 | created_at=2026-10-01 12:54:36
+    id=5 | doctor_name=doc_test_1001125516 | real_name=接口测试医生改 | phone=13790830516 | gender=男 | audit_status=1 | created_at=2026-10-01 12:55:22
+    id=6 | doctor_name=doc_reject_1001125516 | real_name=待拒绝医生 | phone=13590830516 | gender=男 | audit_status=2 | created_at=2026-10-01 12:55:38
+    id=7 | doctor_name=doc_other_1001125516 | real_name=另一名医生 | phone=13390830516 | gender=男 | audit_status=1 | created_at=2026-10-01 12:55:46
+    id=8 | doctor_name=doc_test_1001125710 | real_name=接口测试医生改 | phone=13790830630 | gender=男 | audit_status=1 | created_at=2026-10-01 12:57:17
+    id=9 | doctor_name=doc_reject_1001125710 | real_name=待拒绝医生 | phone=13590830630 | gender=男 | audit_status=2 | created_at=2026-10-01 12:57:33
+    id=10 | doctor_name=doc_other_1001125710 | real_name=另一名医生 | phone=13390830630 | gender=男 | audit_status=1 | created_at=2026-10-01 12:57:42
+    id=11 | doctor_name=doc_test_1001125756 | real_name=接口测试医生改 | phone=13790830676 | gender=男 | audit_status=1 | created_at=2026-10-01 12:58:03
+    id=12 | doctor_name=doc_reject_1001125756 | real_name=待拒绝医生 | phone=13590830676 | gender=男 | audit_status=2 | created_at=2026-10-01 12:58:20
+    id=13 | doctor_name=doc_other_1001125756 | real_name=另一名医生 | phone=13390830676 | gender=男 | audit_status=1 | created_at=2026-10-01 12:58:28
+    id=14 | doctor_name=doc_test_1001125907 | real_name=接口测试医生改 | phone=13790830747 | gender=男 | audit_status=1 | created_at=2026-10-01 12:59:13
+    id=15 | doctor_name=doc_reject_1001125907 | real_name=待拒绝医生 | phone=13590830747 | gender=男 | audit_status=2 | created_at=2026-10-01 12:59:31
+    id=16 | doctor_name=doc_other_1001125907 | real_name=另一名医生 | phone=13390830747 | gender=男 | audit_status=1 | created_at=2026-10-01 12:59:39
+    id=17 | doctor_name=001 | real_name=小黑 | phone=14725836911 | gender=男 | audit_status=1 | created_at=2026-10-01 16:25:23
+    id=18 | doctor_name=003 | real_name=小文医生 | phone=14736925847 | gender=女 | audit_status=1 | created_at=2026-10-01 16:57:15
+
+## 3. coach_user  共 12 行  (列: id,coach_name,real_name,phone,gender,audit_status,created_at)
+    id=1 | coach_name=coach001 | real_name=陈昊 | phone=13900000001 | gender=男 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=2 | coach_name=coach002 | real_name=刘雨欣 | phone=13900000002 | gender=女 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=3 | coach_name=coach003 | real_name=赵强 | phone=13900000003 | gender=男 | audit_status=1 | created_at=2026-10-01 12:51:53
+    id=4 | coach_name=coach_test_1001125516 | real_name=接口测试教练 | phone=13690830516 | gender=女 | audit_status=1 | created_at=2026-10-01 12:55:27
+    id=5 | coach_name=coach_reject_1001125516 | real_name=待拒绝教练 | phone=13490830516 | gender=女 | audit_status=2 | created_at=2026-10-01 12:55:39
+    id=6 | coach_name=coach_test_1001125710 | real_name=接口测试教练 | phone=13690830630 | gender=女 | audit_status=1 | created_at=2026-10-01 12:57:22
+    id=7 | coach_name=coach_reject_1001125710 | real_name=待拒绝教练 | phone=13490830630 | gender=女 | audit_status=2 | created_at=2026-10-01 12:57:35
+    id=8 | coach_name=coach_test_1001125756 | real_name=接口测试教练 | phone=13690830676 | gender=女 | audit_status=1 | created_at=2026-10-01 12:58:08
+    id=9 | coach_name=coach_reject_1001125756 | real_name=待拒绝教练 | phone=13490830676 | gender=女 | audit_status=2 | created_at=2026-10-01 12:58:21
+    id=10 | coach_name=coach_test_1001125907 | real_name=接口测试教练 | phone=13690830747 | gender=女 | audit_status=1 | created_at=2026-10-01 12:59:18
+    id=11 | coach_name=coach_reject_1001125907 | real_name=待拒绝教练 | phone=13490830747 | gender=女 | audit_status=2 | created_at=2026-10-01 12:59:32
+    id=12 | coach_name=002 | real_name=小李教练 | phone=13825832587 | gender=女 | audit_status=1 | created_at=2026-10-01 16:39:23
+
+## 3. admin_user  共 1 行  (列: id,admin_name,real_name,created_at)
+    id=1 | admin_name=admin | real_name=系统管理员 | created_at=2026-10-01 12:51:53
+
+## 4. doctor_patient  共 7 行
+    doctor_id=1 -> user_id=1
+    doctor_id=1 -> user_id=2
+    doctor_id=2 -> user_id=13
+    doctor_id=5 -> user_id=4
+    doctor_id=8 -> user_id=6
+    doctor_id=11 -> user_id=8
+    doctor_id=14 -> user_id=10
+
+## 4. coach_student  共 7 行
+    coach_id=1 -> user_id=1
+    coach_id=1 -> user_id=2
+    coach_id=1 -> user_id=13
+    coach_id=4 -> user_id=4
+    coach_id=6 -> user_id=6
+    coach_id=8 -> user_id=8
+    coach_id=10 -> user_id=10
+
+## 5. 业务表计数 + 按 user_id 聚合
+   health_record    total=10
+        by user_id: u1=2, u2=2, u3=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   sleep_record     total=7
+        by user_id: u1=1, u2=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   sport_record     total=12
+        by user_id: u1=3, u2=3, u3=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   health_plan      total=8
+        by user_id: u1=1, u2=1, u3=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   doctor_advice    total=6
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   medical_notice   total=6
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   medical_record   total=6
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   sport_goal       total=5
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1
+   training_plan    total=6
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1, u13=1
+   fitness_advice   total=6
+        by user_id: u1=1, u4=1, u6=1, u8=1, u10=1, u13=1
+
+## 6. 历届 api_test 残留候选（命名/手机号特征）
+
+   [users_3_11] 9 行
+       id=3 | nickname=测试用户A改 | phone=13990830469 | created_at=2026-10-01 12:54:30
+       id=4 | nickname=测试用户A改 | phone=13990830516 | created_at=2026-10-01 12:55:16
+       id=5 | nickname=接口测试用户B | phone=13890830516 | created_at=2026-10-01 12:55:44
+       id=6 | nickname=测试用户A改 | phone=13990830630 | created_at=2026-10-01 12:57:10
+       id=7 | nickname=接口测试用户B | phone=13890830630 | created_at=2026-10-01 12:57:40
+       id=8 | nickname=测试用户A改 | phone=13990830676 | created_at=2026-10-01 12:57:57
+       id=9 | nickname=接口测试用户B | phone=13890830676 | created_at=2026-10-01 12:58:26
+       id=10 | nickname=测试用户A改 | phone=13990830747 | created_at=2026-10-01 12:59:07
+       id=11 | nickname=接口测试用户B | phone=13890830747 | created_at=2026-10-01 12:59:37
+
+   [doctors_4_16] 13 行
+       id=4 | doctor_name=doc_test_1001125429 | real_name=接口测试医生 | phone=13790830469 | audit_status=1 | created_at=2026-10-01 12:54:36
+       id=5 | doctor_name=doc_test_1001125516 | real_name=接口测试医生改 | phone=13790830516 | audit_status=1 | created_at=2026-10-01 12:55:22
+       id=6 | doctor_name=doc_reject_1001125516 | real_name=待拒绝医生 | phone=13590830516 | audit_status=2 | created_at=2026-10-01 12:55:38
+       id=7 | doctor_name=doc_other_1001125516 | real_name=另一名医生 | phone=13390830516 | audit_status=1 | created_at=2026-10-01 12:55:46
+       id=8 | doctor_name=doc_test_1001125710 | real_name=接口测试医生改 | phone=13790830630 | audit_status=1 | created_at=2026-10-01 12:57:17
+       id=9 | doctor_name=doc_reject_1001125710 | real_name=待拒绝医生 | phone=13590830630 | audit_status=2 | created_at=2026-10-01 12:57:33
+       id=10 | doctor_name=doc_other_1001125710 | real_name=另一名医生 | phone=13390830630 | audit_status=1 | created_at=2026-10-01 12:57:42
+       id=11 | doctor_name=doc_test_1001125756 | real_name=接口测试医生改 | phone=13790830676 | audit_status=1 | created_at=2026-10-01 12:58:03
+       id=12 | doctor_name=doc_reject_1001125756 | real_name=待拒绝医生 | phone=13590830676 | audit_status=2 | created_at=2026-10-01 12:58:20
+       id=13 | doctor_name=doc_other_1001125756 | real_name=另一名医生 | phone=13390830676 | audit_status=1 | created_at=2026-10-01 12:58:28
+       id=14 | doctor_name=doc_test_1001125907 | real_name=接口测试医生改 | phone=13790830747 | audit_status=1 | created_at=2026-10-01 12:59:13
+       id=15 | doctor_name=doc_reject_1001125907 | real_name=待拒绝医生 | phone=13590830747 | audit_status=2 | created_at=2026-10-01 12:59:31
+       id=16 | doctor_name=doc_other_1001125907 | real_name=另一名医生 | phone=13390830747 | audit_status=1 | created_at=2026-10-01 12:59:39
+
+   [coaches_4_11] 8 行
+       id=4 | coach_name=coach_test_1001125516 | real_name=接口测试教练 | phone=13690830516 | audit_status=1 | created_at=2026-10-01 12:55:27
+       id=5 | coach_name=coach_reject_1001125516 | real_name=待拒绝教练 | phone=13490830516 | audit_status=2 | created_at=2026-10-01 12:55:39
+       id=6 | coach_name=coach_test_1001125710 | real_name=接口测试教练 | phone=13690830630 | audit_status=1 | created_at=2026-10-01 12:57:22
+       id=7 | coach_name=coach_reject_1001125710 | real_name=待拒绝教练 | phone=13490830630 | audit_status=2 | created_at=2026-10-01 12:57:35
+       id=8 | coach_name=coach_test_1001125756 | real_name=接口测试教练 | phone=13690830676 | audit_status=1 | created_at=2026-10-01 12:58:08
+       id=9 | coach_name=coach_reject_1001125756 | real_name=待拒绝教练 | phone=13490830676 | audit_status=2 | created_at=2026-10-01 12:58:21
+       id=10 | coach_name=coach_test_1001125907 | real_name=接口测试教练 | phone=13690830747 | audit_status=1 | created_at=2026-10-01 12:59:18
+       id=11 | coach_name=coach_reject_1001125907 | real_name=待拒绝教练 | phone=13490830747 | audit_status=2 | created_at=2026-10-01 12:59:32
+
+## 6b. 全库按「测试命名特征」扫描
+   doctor_user 命中 doc_/sec_: 13
+       4 doc_test_1001125429 2026-10-01 12:54:36
+       5 doc_test_1001125516 2026-10-01 12:55:22
+       6 doc_reject_1001125516 2026-10-01 12:55:38
+       7 doc_other_1001125516 2026-10-01 12:55:46
+       8 doc_test_1001125710 2026-10-01 12:57:17
+       9 doc_reject_1001125710 2026-10-01 12:57:33
+       10 doc_other_1001125710 2026-10-01 12:57:42
+       11 doc_test_1001125756 2026-10-01 12:58:03
+       12 doc_reject_1001125756 2026-10-01 12:58:20
+       13 doc_other_1001125756 2026-10-01 12:58:28
+       14 doc_test_1001125907 2026-10-01 12:59:13
+       15 doc_reject_1001125907 2026-10-01 12:59:31
+       16 doc_other_1001125907 2026-10-01 12:59:39
+   coach_user 命中 coach_/sec_: 8
+       4 coach_test_1001125516 2026-10-01 12:55:27
+       5 coach_reject_1001125516 2026-10-01 12:55:39
+       6 coach_test_1001125710 2026-10-01 12:57:22
+       7 coach_reject_1001125710 2026-10-01 12:57:35
+       8 coach_test_1001125756 2026-10-01 12:58:08
+       9 coach_reject_1001125756 2026-10-01 12:58:21
+       10 coach_test_1001125907 2026-10-01 12:59:18
+       11 coach_reject_1001125907 2026-10-01 12:59:32
+   users 命中测试手机号段/命名: 5
+       3 测试用户A改 13990830469 2026-10-01 12:54:30
+       4 测试用户A改 13990830516 2026-10-01 12:55:16
+       6 测试用户A改 13990830630 2026-10-01 12:57:10
+       8 测试用户A改 13990830676 2026-10-01 12:57:57
+       10 测试用户A改 13990830747 2026-10-01 12:59:07
+
+>>> WRITTEN C:\Users\Toporder-WS\Desktop\项目\个人健康管理系统小程序\health-management-system\tests\security\_out\_seal_recon.txt 13077 chars

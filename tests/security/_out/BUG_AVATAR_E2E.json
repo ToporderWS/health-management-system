@@ -1,0 +1,101 @@
+{
+ "steps": [
+  {
+   "name": "1 注册临时用户",
+   "ok": true,
+   "detail": "200 注册成功"
+  },
+  {
+   "name": "2 登录获取 user_token",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "3 新用户 /user/info 返回默认头像",
+   "ok": true,
+   "detail": "'default_health.jpg'"
+  },
+  {
+   "name": "4 上传头像返回 UUID 文件名",
+   "ok": true,
+   "detail": "200 84c40afbfb9b41499be060ac2bddb4a1.jpg"
+  },
+  {
+   "name": "5 backend/static/upload 生成真实文件",
+   "ok": true,
+   "detail": "84c40afbfb9b41499be060ac2bddb4a1.jpg size=12266"
+  },
+  {
+   "name": "6 数据库只保存文件名（无路径 / 无完整 URL）",
+   "ok": true,
+   "detail": "'84c40afbfb9b41499be060ac2bddb4a1.jpg'"
+  },
+  {
+   "name": "7 /user/info 返回新头像文件名",
+   "ok": true,
+   "detail": "'84c40afbfb9b41499be060ac2bddb4a1.jpg'"
+  },
+  {
+   "name": "8 头像可访问 http://127.0.0.1:8080",
+   "ok": true,
+   "detail": "200 image/jpeg 12266 bytes"
+  },
+  {
+   "name": "8 头像可访问 http://192.168.2.219:8080",
+   "ok": true,
+   "detail": "200 image/jpeg 12266 bytes"
+  },
+  {
+   "name": "9 拼接出的最终头像 URL 返回 200 + image/*",
+   "ok": true,
+   "detail": "200 image/jpeg"
+  },
+  {
+   "name": "10 医生登录不受影响",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "11 教练登录不受影响",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "12 管理员登录不受影响",
+   "ok": true,
+   "detail": "登录成功"
+  },
+  {
+   "name": "13 管理员用户列表含 avatar 字段",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "14 管理员教练列表含 avatar 字段",
+   "ok": true,
+   "detail": "操作成功"
+  },
+  {
+   "name": "15 业务表计数回到基线",
+   "ok": true,
+   "detail": "before=4 after=4"
+  },
+  {
+   "name": "16 upload 目录无本批残留文件",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "17 无 sec_avatar_probe 残留",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "18 无 199 段临时用户残留",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "ok": true,
+ "FINAL_AVATAR_URL_PROBE": "http://192.168.2.219:8080/static/upload/84c40afbfb9b41499be060ac2bddb4a1.jpg"
+}
